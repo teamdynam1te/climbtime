@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (controller.collisions.above || controller.collisions.below)
         {
