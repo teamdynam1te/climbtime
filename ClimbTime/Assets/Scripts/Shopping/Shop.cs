@@ -45,15 +45,16 @@ public class Shop : MonoBehaviour
         }
         else if (itemStock < 1)
         {
-            itemStockText.text = "Out of stock :(";
+            itemStockText.text = "Out of stock.";
         }
+        
         itemTitleText.text = itemTitle;
 
         if (Player.GetComponent<PlaceHolderScoreCounter>().score >= itemPrice && itemStock >= 1)
         {
             canBuy = true;
         }
-        else if (Player.GetComponent<PlaceHolderScoreCounter>().score >= itemPrice)
+        else if (Player.GetComponent<PlaceHolderScoreCounter>().score <= itemPrice)
         {
             canBuy = false;
         }
