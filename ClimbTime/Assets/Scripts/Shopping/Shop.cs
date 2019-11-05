@@ -39,7 +39,14 @@ public class Shop : MonoBehaviour
     void Update()
     {
         itemPriceText.text = "Price: " + itemPrice.ToString();
-        itemStockText.text = "Stock: " + itemStock.ToString();
+        if (itemStock >= 1)
+        {
+            itemStockText.text = "Stock: " + itemStock.ToString();
+        }
+        else if (itemStock < 1)
+        {
+            itemStockText.text = "Out of stock :(";
+        }
         itemTitleText.text = itemTitle;
 
         if (Player.GetComponent<PlaceHolderScoreCounter>().score >= itemPrice && itemStock >= 1)
