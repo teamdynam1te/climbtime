@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller2D : MonoBehaviour
 {
-    public LayerMask collisionMask; //reference to layermask
+    public LayerMask[] collisionMask; //reference to layermask
 
     const float skinWidth = .015f; //safety zone outside of sprite
     public int horizontalRayCount = 4; //number of rays horizontal
@@ -49,15 +49,19 @@ public class Controller2D : MonoBehaviour
         {
             Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
             rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
 
-            if(hit)
+            foreach (LayerMask mask in collisionMask)
             {
-                velocity.y = (hit.distance - skinWidth) * directionY;
-                rayLength = hit.distance; //changes ray distance to avoid falling through platforms
+                RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, mask);
 
-                collisions.below = directionY == -1; //if hitting something equals true
-                collisions.above = directionY == 1;
+                if (hit)
+                {
+                    velocity.y = (hit.distance - skinWidth) * directionY;
+                    rayLength = hit.distance; //changes ray distance to avoid falling through platforms
+
+                    collisions.below = directionY == -1; //if hitting something equals true
+                    collisions.above = directionY == 1;
+                }
             }
         }
     }
@@ -71,17 +75,22 @@ public class Controller2D : MonoBehaviour
         {
             Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight;
             rayOrigin += Vector2.up * (horizontalRaySpacing * i);
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
 
-            if (hit)
+            foreach (LayerMask mask in collisionMask)
             {
-                velocity.x = (hit.distance - skinWidth) * directionX;
-                rayLength = hit.distance; //changes ray distance to avoid falling through platforms
 
-                collisions.left = directionX == -1; //if hitting something equals true
-                collisions.right = directionX == 1;
+                RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, mask);
+
+                if (hit)
+                {
+                    velocity.x = (hit.distance - skinWidth) * directionX;
+                    rayLength = hit.distance; //changes ray distance to avoid falling through platforms
+
+                    collisions.left = directionX == -1; //if hitting something equals true
+                    collisions.right = directionX == 1;
+                }
             }
-        }
+        }s
     }
 
     void UpdateRaycastOrigins() //origin of raycast

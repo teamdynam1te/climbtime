@@ -52,14 +52,14 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        /*if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             moveState = movementStates.dashing;
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        //else if (Input.GetKeyUp(KeyCode.Space))
         {
-            moveState = movementStates.regMovement;
-        }*/
+            //moveState = movementStates.regMovement;
+        }
 
 
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
@@ -89,9 +89,8 @@ public class Player : MonoBehaviour
 
             case movementStates.dashing:
 
-                float dashVelocityX = input.x * dashSpeed;
-                velocity.x = Mathf.SmoothDamp(velocity.x, dashVelocityX, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
-
+                float dashDistance = 50f;
+                //transform.position.x += transform.position.x * dashDistance; 
                 break;
 
             case movementStates.hook:
