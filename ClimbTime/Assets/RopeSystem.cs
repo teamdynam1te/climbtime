@@ -78,7 +78,7 @@ public class RopeSystem : MonoBehaviour
 
             var hit = Physics2D.Raycast(playerPos, aimDirection, ropeMaxDistance, ropeLayerMask);
 
-            if(hit.collider != null)
+            if(hit.collider != null) // checks to see if hit anything
             {
                 ropeAttach = true;
                 if(!ropePositions.Contains(hit.point))
@@ -105,7 +105,7 @@ public class RopeSystem : MonoBehaviour
 
     }
 
-    private void ResetRope()
+    private void ResetRope() //resets values to false or off
     {
         ropeJoint.enabled = false;
         ropeAttach = false;
