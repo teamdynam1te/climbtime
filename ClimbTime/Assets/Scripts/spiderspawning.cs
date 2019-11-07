@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyspawning : MonoBehaviour
+public class spiderspawning : MonoBehaviour
 {
 
     public bool canSpawn;
@@ -11,7 +11,7 @@ public class enemyspawning : MonoBehaviour
     public Transform spawnPos;
     public float realTimer;
     public float timer;
-    public int enemylimt;
+    public float enemylimt = 0f;
 
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class enemyspawning : MonoBehaviour
     {
         realTimer = timer;
         enemyCounter = 0;
-        enemylimt = 3;
+        //enemylimt = 3;
         canSpawn = true;
     }
 
