@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemObj1.SetActive(false);
             itemObj2.SetActive(false);
-            itemObj3.SetActive(true);
+            itemObj3.SetActive(true);   
         }
     }
 }
