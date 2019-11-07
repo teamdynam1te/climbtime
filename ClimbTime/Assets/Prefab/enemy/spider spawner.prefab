@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSpawn: 0
   enemyCounter: 0
-  enemyPrefab: {fileID: 629345450368581078, guid: d27ab61cb094d75439a8cc0549196472,
+  enemyPrefab: {fileID: 1443777718924498027, guid: d0fdecb8276ad6745a3b64be314283f7,
     type: 3}
   spawnPos: {fileID: 704042757985650475}
   realTimer: 0
