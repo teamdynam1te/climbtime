@@ -10,7 +10,12 @@ public class Player : MonoBehaviour
     public float timeToApex = .4f; //time to reach jump height
     float accelTimeAir = .2f; //acceleration speed in the air
     float accelTimeGround = .1f; //acceleration speed on the ground
-    public float moveSpeed = 6;
+    public float moveSpeed = 6f;
+    public float dashSpeed = 15f;
+    public float dashTime = 1.5f;
+
+    public enum movementStates {regMovement, dashing, hook };
+    movementStates moveState;
 
     //custom velocity and gravity settings
     float maxJumpVelocity;
@@ -23,6 +28,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        moveState = movementStates.regMovement;
         controller = GetComponent<Controller2D>();
 
         //equation for turning movement in to velocity for movement
@@ -34,6 +40,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Move();
+    }
+
+    private void Move()
+    {
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0; //stops accumulation of gravity
@@ -41,10 +52,21 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+        /*if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveState = movementStates.dashing;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            moveState = movementStates.regMovement;
+        }*/
+
+
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
             velocity.y = maxJumpVelocity;
         }
+
 
         //input for min jump height
         if (Input.GetKeyUp(KeyCode.Space))
@@ -55,10 +77,30 @@ public class Player : MonoBehaviour
             }
         }
 
+        switch(moveState)
+        {
+            case movementStates.regMovement:
+
+                float targetVelocityX = input.x * moveSpeed;
+                velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
+                velocity.y += gravity * Time.deltaTime;
+
+                break;
+
+            case movementStates.dashing:
+
+                float dashVelocityX = input.x * dashSpeed;
+                velocity.x = Mathf.SmoothDamp(velocity.x, dashVelocityX, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
+
+                break;
+
+            case movementStates.hook:
+
+                //hook
+
+                break;
+        }
         //movement and acceleration
-        float targetVelocityX = input.x * moveSpeed;
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocitySmoothing, (controller.collisions.below)?accelTimeGround:accelTimeAir);
-        velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 }
