@@ -19,6 +19,7 @@ public class RopeSystem : MonoBehaviour
     public LayerMask ropeLayerMask; //defines layer
     public float ropeMaxDistance = 20f; //defines rope reach
     private List<Vector2> ropePositions = new List<Vector2>(); //gives me the list of the rope positions
+    public float timeToTravel = 2f;
 
     private void Awake()
     {
