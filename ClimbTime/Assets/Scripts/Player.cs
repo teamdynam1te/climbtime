@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float timeToApex = .4f; //time to reach jump height
     float accelTimeAir = .2f; //acceleration speed in the air
     float accelTimeGround = .1f; //acceleration speed on the ground
-    float moveSpeed = 6;
+    public float moveSpeed = 6;
 
     //custom velocity and gravity settings
     float maxJumpVelocity;

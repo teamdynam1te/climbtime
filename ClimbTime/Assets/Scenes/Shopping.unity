@@ -573,6 +573,8 @@ MonoBehaviour:
   itemTitleText: {fileID: 1415995943}
   itemPriceText: {fileID: 902598517}
   itemStockText: {fileID: 1997449296}
+  items: []
+  cst: coming soon
 --- !u!61 &296324730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -923,6 +925,7 @@ GameObject:
   - component: {fileID: 470293999}
   - component: {fileID: 470294005}
   - component: {fileID: 470294006}
+  - component: {fileID: 470294008}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -992,6 +995,7 @@ MonoBehaviour:
   maxJumpHeight: 4
   minJumpHeight: 1
   timeToApex: 0.4
+  moveSpeed: 6
 --- !u!114 &470294002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,6 +1116,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 100
   scoreText: {fileID: 423484311}
+--- !u!114 &470294008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470293998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991522c15ee1f0448b6c79ba2438d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setPlayerHealth: 1
+  currentPlayerHealth: 0
 --- !u!1 &480364733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,6 +2546,8 @@ MonoBehaviour:
   itemTitleText: {fileID: 578562890}
   itemPriceText: {fileID: 2053980943}
   itemStockText: {fileID: 1114002343}
+  items: []
+  cst: coming soon
 --- !u!61 &1135454644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2913,6 +2933,8 @@ MonoBehaviour:
   itemTitleText: {fileID: 1738054705}
   itemPriceText: {fileID: 703212210}
   itemStockText: {fileID: 244954984}
+  items: []
+  cst: coming soon
 --- !u!61 &1388925221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3136,6 +3158,8 @@ MonoBehaviour:
   itemTitleText: {fileID: 34676448}
   itemPriceText: {fileID: 1056051482}
   itemStockText: {fileID: 2074014371}
+  items: []
+  cst: coming soon
 --- !u!1 &1415995939
 GameObject:
   m_ObjectHideFlags: 0
