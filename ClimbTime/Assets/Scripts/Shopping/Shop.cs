@@ -27,6 +27,10 @@ public class Shop : MonoBehaviour
     public Text itemPriceText;
     public Text itemStockText;
 
+    [Header("Item Settings")]
+    public GameObject[] items;
+    public string cst = "coming soon";
+
 
 
     // Start is called before the first frame update
