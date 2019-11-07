@@ -90,7 +90,7 @@ public class Controller2D : MonoBehaviour
                     collisions.right = directionX == 1;
                 }
             }
-        }s
+        }
     }
 
     void UpdateRaycastOrigins() //origin of raycast

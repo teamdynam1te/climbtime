@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
+            Debug.Log("is dashing");
             moveState = movementStates.dashing;
         }
         //else if (Input.GetKeyUp(KeyCode.Space))
@@ -89,8 +90,8 @@ public class Player : MonoBehaviour
 
             case movementStates.dashing:
 
-                float dashDistance = 50f;
-                //transform.position.x += transform.position.x * dashDistance; 
+                float dashDistance = input.x * dashSpeed;
+                velocity.x = Mathf.SmoothDamp(velocity.x, dashDistance, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
                 break;
 
             case movementStates.hook:
