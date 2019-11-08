@@ -11,8 +11,11 @@ public class Player : MonoBehaviour
     float accelTimeAir = .2f; //acceleration speed in the air
     float accelTimeGround = .1f; //acceleration speed on the ground
     public float moveSpeed = 12f;
-    public float dashDist = 5f;
-    public float dashTime = 1.5f;
+    public float dashSpeed = 48f;
+    public float dashTimeDefault = 0.5f;
+    public float dashCooldown = 1.5f;
+    public float dashCooldownDefault = 1.5f;
+    public float dashTime = 0.5f;
 
     public enum movementStates {regMovement, dashing, hook };
     movementStates moveState;
@@ -23,6 +26,8 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     float gravity;
     float velocitySmoothing;
+
+    bool canDash = true; //checks to see if can dash
 
     Controller2D controller; //reference to Controller2D Script
 
@@ -41,6 +46,21 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        CheckCanDash();
+    }
+
+    private void CheckCanDash()
+    {
+        if (canDash == false)
+        {
+            dashCooldown -= Time.deltaTime;
+
+            if (dashCooldown <= 0)
+            {
+                canDash = true;
+                dashCooldown = dashCooldownDefault;
+            }
+        }
     }
 
     private void Move()
@@ -52,10 +72,18 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && canDash)
         {
             Debug.Log("is dashing");
             moveState = movementStates.dashing;
+            dashTime -= Time.deltaTime;
+
+            if (dashTime <= 0)
+            {
+                canDash = false;
+                dashTime = dashTimeDefault;
+                moveState = movementStates.regMovement;
+            }
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -92,18 +120,7 @@ public class Player : MonoBehaviour
 
             case movementStates.dashing:
 
-                if (input.x > 0)
-                {
-                    Vector3 dash = new Vector3(dashDist, 0, 0);
-                    //float dashVelocityX = input.x * dashDist;
-                    gameObject.transform.Translate(dash);
-                }
-                else if (input.x < 0)
-                {
-                    Vector3 dash = new Vector3(-dashDist, 0, 0);
-                    //float dashVelocityX = input.x * dashDist;
-                    gameObject.transform.Translate(dash);
-                }
+                velocity = new Vector3(input.x * dashSpeed, 0); //change to 0 if dont like feel
                 break;
 
             case movementStates.hook:
