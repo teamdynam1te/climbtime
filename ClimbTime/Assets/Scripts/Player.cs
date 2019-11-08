@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     public float timeToApex = .4f; //time to reach jump height
     float accelTimeAir = .2f; //acceleration speed in the air
     float accelTimeGround = .1f; //acceleration speed on the ground
-    public float moveSpeed = 6f;
-    public float dashSpeed = 15f;
+    public float moveSpeed = 12f;
+    public float dashDist = 5f;
     public float dashTime = 1.5f;
 
     public enum movementStates {regMovement, dashing, hook };
@@ -57,14 +57,16 @@ public class Player : MonoBehaviour
             Debug.Log("is dashing");
             moveState = movementStates.dashing;
         }
-        //else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            //moveState = movementStates.regMovement;
+            Debug.Log("is regMovement");
+            moveState = movementStates.regMovement;
         }
 
 
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
+            Debug.Log("is jumping");
             velocity.y = maxJumpVelocity;
         }
 
@@ -90,8 +92,18 @@ public class Player : MonoBehaviour
 
             case movementStates.dashing:
 
-                float dashDistance = input.x * dashSpeed;
-                velocity.x = Mathf.SmoothDamp(velocity.x, dashDistance, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
+                if (input.x > 0)
+                {
+                    Vector3 dash = new Vector3(dashDist, 0, 0);
+                    //float dashVelocityX = input.x * dashDist;
+                    gameObject.transform.Translate(dash);
+                }
+                else if (input.x < 0)
+                {
+                    Vector3 dash = new Vector3(-dashDist, 0, 0);
+                    //float dashVelocityX = input.x * dashDist;
+                    gameObject.transform.Translate(dash);
+                }
                 break;
 
             case movementStates.hook:

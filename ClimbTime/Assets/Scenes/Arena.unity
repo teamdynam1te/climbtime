@@ -609,6 +609,9 @@ MonoBehaviour:
   maxJumpHeight: 5
   minJumpHeight: 1
   timeToApex: 0.4
+  moveSpeed: 9
+  dashDist: 5
+  dashTime: 1.5
 --- !u!114 &470294002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMask:
-    serializedVersion: 2
+  - serializedVersion: 2
     m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
