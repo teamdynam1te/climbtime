@@ -78,7 +78,6 @@ public class Controller2D : MonoBehaviour
 
             foreach (LayerMask mask in collisionMask)
             {
-
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, mask);
 
                 if (hit)

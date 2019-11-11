@@ -9,4 +9,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Arena");
     }
+
+    public void ArenaEnd()
+    {
+    new WaitForSeconds(1f);
+    SceneManager.LoadScene("Shopping");
+    }
 }
