@@ -13,7 +13,7 @@ public class Shop : MonoBehaviour
     public GameObject shopManager;
     [Tooltip("Currently checking what input to look for.    ")]
     private bool inShop = false;
-    
+    public InventoryManager InvManager;
 
     [Header("Shop Settings")]
     public int itemPrice;
@@ -28,8 +28,11 @@ public class Shop : MonoBehaviour
     public Text itemStockText;
 
     [Header("Item Settings")]
-    public GameObject[] items;
-    public string cst = "coming soon";
+    public bool isArmour = false;
+    public bool isGrapple = false;
+    public bool isDashPotion = false;
+    public GameObject grapplehook;
+
 
 
 
@@ -37,6 +40,7 @@ public class Shop : MonoBehaviour
     void Start()
     {
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
+        InvManager = GameObject.FindGameObjectWithTag("InvManager").GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -76,7 +80,21 @@ public class Shop : MonoBehaviour
                 Debug.Log("Buy");
                 Player.GetComponent<PlaceHolderScoreCounter>().score -= itemPrice;
                 itemStock--;
+                if (isArmour)
+                {
+                    InvManager.ArmourAmount++;       
+                }
+                if (isGrapple)
+                {
+                    InvManager.GrappleAmmoAmount++;
+                    
+                }
+                if (isDashPotion)
+                {
+                    InvManager.dashPotionAmount++;
+                }
             }
+            
         }
     }
 
