@@ -6,33 +6,19 @@ public class AmmoScript : MonoBehaviour
 {
 
     public KeyCode fireButton;
-    public int ammo;
-    public float cooldownTime;
-    
+    public int ammo;    
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-        if (Input.GetKeyDown(fireButton) && ammo <= 1)
+        if (Input.GetKeyDown(fireButton) && ammo >= 1)
         {
-            Shoot();
+            ammo--;
         }
-
     }
-
-    public void Shoot()
-    {
-        ammo--;
-    }
-    
-
 }
 
