@@ -15,11 +15,13 @@ public class Controller2D : MonoBehaviour
     float verticalRaySpacing;
 
     BoxCollider2D collider;
+    ScoreManager scoreManager;
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
         collider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
     }
@@ -56,6 +58,11 @@ public class Controller2D : MonoBehaviour
 
                 if (hit)
                 {
+                    if(CheckItemCollision(hit))
+                    {
+                        continue;
+                    }
+
                     velocity.y = (hit.distance - skinWidth) * directionY;
                     rayLength = hit.distance; //changes ray distance to avoid falling through platforms
 
@@ -82,6 +89,11 @@ public class Controller2D : MonoBehaviour
 
                 if (hit)
                 {
+                    if (CheckItemCollision(hit))
+                    {
+                        continue;
+                    }
+
                     velocity.x = (hit.distance - skinWidth) * directionX;
                     rayLength = hit.distance; //changes ray distance to avoid falling through platforms
 
@@ -90,6 +102,21 @@ public class Controller2D : MonoBehaviour
                 }
             }
         }
+    }
+
+    bool CheckItemCollision(RaycastHit2D hit)
+    {
+        int coinValue = 1;
+
+        if (hit.collider.tag == "Coin")
+        {
+            Destroy(hit.collider.gameObject);
+            //audio clip
+            scoreManager.AddToScore(coinValue);
+            Debug.Log("Coin Hit");
+            return true;
+        }
+        return false;
     }
 
     void UpdateRaycastOrigins() //origin of raycast

@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             timeLeft--;
+
+            if(timeLeft <= 0)
+            {
+                new WaitForSeconds(3f);
+                SceneManager.LoadScene("Shopping");
+            }
         }
     } //countdown timer
 }
