@@ -21,7 +21,7 @@ public class Controller2D : MonoBehaviour
 
     void Start()
     {
-        scoreManager = GetComponent<ScoreManager>();
+        scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
         collider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
     }
@@ -110,7 +110,9 @@ public class Controller2D : MonoBehaviour
 
         if (hit.collider.tag == "Coin")
         {
-            FindObjectOfType<ScoreManager>().AddToScore(coinValue);
+            Destroy(hit.collider.gameObject);
+            //audio clip
+            scoreManager.AddToScore(coinValue);
             Debug.Log("Coin Hit");
             return true;
         }
