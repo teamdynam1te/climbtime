@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public float hookSpeed = 60f;
     public float hookDist = 5f;
 
-    public enum movementStates {regMovement, dashing, hook };
+    public enum movementStates {regMovement, dashing, hook};
     movementStates moveState;
 
     //custom velocity and gravity settings
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        ShootHook();
         worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
         facingDir = worldMousePos - transform.position;
         var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
         playerPos = transform.position;
 
         SetCrosshairPosition(aimAngle);
-        ShootHook();
+        //ShootHook();
     }
 
     private void CheckCanDash()
@@ -118,13 +119,11 @@ public class Player : MonoBehaviour
             moveState = movementStates.regMovement;
         }
 
-
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
             Debug.Log("is jumping");
             velocity.y = maxJumpVelocity;
         }
-
 
         //input for min jump height
         if (Input.GetKeyUp(KeyCode.Space))
@@ -176,11 +175,13 @@ public class Player : MonoBehaviour
     private void ShootHook() // handles shooting the hook
     {
         LayerMask mask = LayerMask.GetMask("Obstacles");
+        //bool canHook = true;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
         Debug.DrawRay(transform.position, facingDir, Color.red);
 
         if (Input.GetMouseButtonDown(0) && hit)
         {
+            Debug.Log("Button Down");
             moveState = movementStates.hook;
         }
         if (Input.GetMouseButtonUp(0))
