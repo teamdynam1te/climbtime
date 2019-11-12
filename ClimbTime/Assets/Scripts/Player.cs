@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     float gravity;
     float velocitySmoothing;
     Vector2 facingDir;
+    Vector2 hookDirOnClick;
     Vector3 worldMousePos;
 
     public Transform crossHair;
@@ -61,20 +62,29 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        ShootHook();
+        SetCrosshairPosition();
+        CheckCanHook();
+    }
+
+    private void CheckCanHook()
+    {
         worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
         facingDir = worldMousePos - transform.position;
-        var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
-        if (aimAngle < 0f)
+
+        LayerMask mask = LayerMask.GetMask("Obstacles");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
+        Debug.DrawRay(transform.position, facingDir, Color.red);
+
+        if (Input.GetMouseButtonDown(0) && hit)
         {
-            aimAngle = Mathf.PI * 2 + aimAngle;
+            Debug.Log("Button Down");
+            hookDirOnClick = facingDir;
+            moveState = movementStates.hook;
         }
-
-        var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
-        playerPos = transform.position;
-
-        SetCrosshairPosition(aimAngle);
-        //ShootHook();
+        if (Input.GetMouseButtonUp(0))
+        {
+            moveState = movementStates.regMovement;
+        }
     }
 
     private void CheckCanDash()
@@ -151,15 +161,25 @@ public class Player : MonoBehaviour
 
             case movementStates.hook:
 
-                velocity = facingDir * hookSpeed;
+                velocity = hookDirOnClick * hookSpeed;
+                if (controller.collisions.above || controller.collisions.below)
+                {
+                    velocity.x = 0; //stops accumulation of gravity
+                }
                 break;
         }
         //movement and acceleration
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void SetCrosshairPosition(float aimAngle) // cross hair aiming
+    private void SetCrosshairPosition() // cross hair aiming
     {
+        var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
+        if (aimAngle < 0f)
+        {
+            aimAngle = Mathf.PI * 2 + aimAngle;
+        }
+
         if (!crossHairSprite.enabled)
         {
             crossHairSprite.enabled = true;
@@ -171,23 +191,4 @@ public class Player : MonoBehaviour
         var crossHairPosition = new Vector3(x, y, 0);
         crossHair.transform.position = crossHairPosition;
     } 
-
-    private void ShootHook() // handles shooting the hook
-    {
-        LayerMask mask = LayerMask.GetMask("Obstacles");
-        //bool canHook = true;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
-        Debug.DrawRay(transform.position, facingDir, Color.red);
-
-        if (Input.GetMouseButtonDown(0) && hit)
-        {
-            Debug.Log("Button Down");
-            moveState = movementStates.hook;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            moveState = movementStates.regMovement;
-        }
-    }
-
 }

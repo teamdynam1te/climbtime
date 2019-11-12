@@ -715,6 +715,11 @@ MonoBehaviour:
   dashCooldown: 1.5
   dashCooldownDefault: 1.5
   dashTime: 0.1
+  hookSpeed: 60
+  hookDist: 5
+  crossHair: {fileID: 0}
+  crossHairSprite: {fileID: 0}
+  shootPoint: {fileID: 0}
 --- !u!114 &470294002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,6 +3821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff99f351af651b4f9e4128f574633e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 2055381233}
 --- !u!58 &1457463448
 CircleCollider2D:
   m_ObjectHideFlags: 0
