@@ -16,8 +16,10 @@ public class Player : MonoBehaviour
     public float dashCooldown = 1.5f;
     public float dashCooldownDefault = 1.5f;
     public float dashTime = 0.5f;
+    public float hookSpeed = 60f;
+    public float hookDist = 5f;
 
-    public enum movementStates {regMovement, dashing, hook };
+    public enum movementStates {regMovement, dashing, hook};
     movementStates moveState;
 
     //custom velocity and gravity settings
@@ -26,6 +28,13 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     float gravity;
     float velocitySmoothing;
+    Vector2 facingDir;
+    Vector3 worldMousePos;
+
+    public Transform crossHair;
+    public SpriteRenderer crossHairSprite;
+    private Vector2 playerPos;
+    public Transform shootPoint;
 
     bool canDash = true; //checks to see if can dash
 
@@ -40,13 +49,32 @@ public class Player : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+
+        playerPos = transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Move();
         CheckCanDash();
+    }
+
+    void Update()
+    {
+        ShootHook();
+        worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        facingDir = worldMousePos - transform.position;
+        var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
+        if (aimAngle < 0f)
+        {
+            aimAngle = Mathf.PI * 2 + aimAngle;
+        }
+
+        var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
+        playerPos = transform.position;
+
+        SetCrosshairPosition(aimAngle);
+        //ShootHook();
     }
 
     private void CheckCanDash()
@@ -85,19 +113,17 @@ public class Player : MonoBehaviour
                 moveState = movementStates.regMovement;
             }
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             Debug.Log("is regMovement");
             moveState = movementStates.regMovement;
         }
-
 
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
             Debug.Log("is jumping");
             velocity.y = maxJumpVelocity;
         }
-
 
         //input for min jump height
         if (Input.GetKeyUp(KeyCode.Space))
@@ -125,11 +151,43 @@ public class Player : MonoBehaviour
 
             case movementStates.hook:
 
-                //hook
-
+                velocity = facingDir * hookSpeed;
                 break;
         }
         //movement and acceleration
         controller.Move(velocity * Time.deltaTime);
     }
+
+    private void SetCrosshairPosition(float aimAngle) // cross hair aiming
+    {
+        if (!crossHairSprite.enabled)
+        {
+            crossHairSprite.enabled = true;
+        }
+
+        var x = transform.position.x + 2f * Mathf.Cos(aimAngle);
+        var y = transform.position.y + 2f * Mathf.Sin(aimAngle);
+
+        var crossHairPosition = new Vector3(x, y, 0);
+        crossHair.transform.position = crossHairPosition;
+    } 
+
+    private void ShootHook() // handles shooting the hook
+    {
+        LayerMask mask = LayerMask.GetMask("Obstacles");
+        //bool canHook = true;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
+        Debug.DrawRay(transform.position, facingDir, Color.red);
+
+        if (Input.GetMouseButtonDown(0) && hit)
+        {
+            Debug.Log("Button Down");
+            moveState = movementStates.hook;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            moveState = movementStates.regMovement;
+        }
+    }
+
 }
