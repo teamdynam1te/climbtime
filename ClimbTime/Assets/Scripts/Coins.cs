@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class Coins : MonoBehaviour
 {
     int coinValue = 1;
+    public ScoreManager scoreManager;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void AddCoin()
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            FindObjectOfType<ScoreManager>().AddToScore(coinValue);
-            Debug.Log("Coin Hit");
-        }
+        FindObjectOfType<ScoreManager>().AddToScore(coinValue);
+        Debug.Log("Coin Hit");
     }
 }
+

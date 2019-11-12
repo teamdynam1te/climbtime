@@ -567,14 +567,17 @@ MonoBehaviour:
   shopPanel: {fileID: 316996511}
   Player: {fileID: 470293998}
   shopManager: {fileID: 765274129}
-  itemPrice: -500
+  InvManager: {fileID: 0}
+  itemPrice: -50000
   itemStock: 10
   canBuy: 0
   itemTitleText: {fileID: 1415995943}
   itemPriceText: {fileID: 902598517}
   itemStockText: {fileID: 1997449296}
-  items: []
-  cst: coming soon
+  isArmour: 0
+  isGrapple: 0
+  isDashPotion: 0
+  grapplehook: {fileID: 0}
 --- !u!61 &296324730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1623,6 +1626,51 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Armour
+--- !u!1 &598095517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598095519}
+  - component: {fileID: 598095518}
+  m_Layer: 0
+  m_Name: SceneSwap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &598095518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598095517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3378f3b69323eb843a138e7d69da091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneSwitch: 13
+  SceneName: Mountain
+--- !u!4 &598095519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598095517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.709673, y: -6.226533, z: -6.9765625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703212206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,14 +2596,17 @@ MonoBehaviour:
   shopPanel: {fileID: 282396149}
   Player: {fileID: 470293998}
   shopManager: {fileID: 765274129}
+  InvManager: {fileID: 0}
   itemPrice: 100
   itemStock: 2
   canBuy: 0
   itemTitleText: {fileID: 578562890}
   itemPriceText: {fileID: 2053980943}
   itemStockText: {fileID: 1114002343}
-  items: []
-  cst: coming soon
+  isArmour: 0
+  isGrapple: 1
+  isDashPotion: 0
+  grapplehook: {fileID: 0}
 --- !u!61 &1135454644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2754,6 +2805,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1277672923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277672925}
+  - component: {fileID: 1277672924}
+  m_Layer: 0
+  m_Name: PlayerInventoryManager
+  m_TagString: InvManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1277672924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277672923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d8b477b2b834a4dbf4f1e1448f11ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrappleAmmoAmount: 0
+  ArmourAmount: 0
+  dashPotionAmount: 0
+--- !u!4 &1277672925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277672923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.709673, y: -6.226533, z: -6.9765625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294947067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,14 +3032,17 @@ MonoBehaviour:
   shopPanel: {fileID: 1943570850}
   Player: {fileID: 470293998}
   shopManager: {fileID: 765274129}
+  InvManager: {fileID: 0}
   itemPrice: 200
   itemStock: 50
   canBuy: 0
   itemTitleText: {fileID: 1738054705}
   itemPriceText: {fileID: 703212210}
   itemStockText: {fileID: 244954984}
-  items: []
-  cst: coming soon
+  isArmour: 0
+  isGrapple: 0
+  isDashPotion: 1
+  grapplehook: {fileID: 0}
 --- !u!61 &1388925221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3160,14 +3260,17 @@ MonoBehaviour:
   shopPanel: {fileID: 1994745888}
   Player: {fileID: 470293998}
   shopManager: {fileID: 765274129}
+  InvManager: {fileID: 0}
   itemPrice: 50
   itemStock: 10
   canBuy: 0
   itemTitleText: {fileID: 34676448}
   itemPriceText: {fileID: 1056051482}
   itemStockText: {fileID: 2074014371}
-  items: []
-  cst: coming soon
+  isArmour: 1
+  isGrapple: 0
+  isDashPotion: 0
+  grapplehook: {fileID: 0}
 --- !u!1 &1415995939
 GameObject:
   m_ObjectHideFlags: 0
