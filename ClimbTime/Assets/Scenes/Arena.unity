@@ -710,7 +710,7 @@ MonoBehaviour:
   minJumpHeight: 1
   timeToApex: 0.4
   moveSpeed: 9
-  dashSpeed: 48
+  dashSpeed: 40
   dashTimeDefault: 0.1
   dashCooldown: 1.5
   dashCooldownDefault: 1.5
