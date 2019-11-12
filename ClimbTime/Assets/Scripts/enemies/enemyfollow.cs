@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemymovement : MonoBehaviour
+public class enemyfollow : MonoBehaviour
 {
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {

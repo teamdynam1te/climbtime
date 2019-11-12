@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 5943755679763620532, guid: bd7a52723f045f4439028bf5684dd5de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5943755679763620532, guid: bd7a52723f045f4439028bf5684dd5de,
         type: 3}
@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 470294002}
   - component: {fileID: 470294001}
   - component: {fileID: 470294000}
+  - component: {fileID: 470293999}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -214,6 +215,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &470293999
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470293998}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!61 &470294000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -256,6 +283,11 @@ MonoBehaviour:
   minJumpHeight: 1
   timeToApex: 0.4
   moveSpeed: 6
+  dashSpeed: 48
+  dashTimeDefault: 0.5
+  dashCooldown: 1.5
+  dashCooldownDefault: 1.5
+  dashTime: 0.5
 --- !u!114 &470294002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMask:
-    serializedVersion: 2
+  - serializedVersion: 2
+    m_Bits: 8192
+  - serializedVersion: 2
     m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
@@ -330,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470293998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9, z: 0}
+  m_LocalPosition: {x: -1.48, y: -9, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -844,6 +878,10 @@ PrefabInstance:
     - target: {fileID: 472510573196953, guid: 978fb86e83ac8b1499435ea8da3922d0, type: 3}
       propertyPath: m_Name
       value: bat spawning
+      objectReference: {fileID: 0}
+    - target: {fileID: 472510573196953, guid: 978fb86e83ac8b1499435ea8da3922d0, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 472510573196958, guid: 978fb86e83ac8b1499435ea8da3922d0, type: 3}
       propertyPath: m_LocalPosition.x
