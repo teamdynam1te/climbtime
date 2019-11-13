@@ -41,6 +41,7 @@ public class Shop : MonoBehaviour
     {
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
         InvManager = GameObject.FindGameObjectWithTag("InvManager").GetComponent<InventoryManager>();
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
