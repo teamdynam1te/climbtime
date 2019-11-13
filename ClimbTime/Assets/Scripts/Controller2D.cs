@@ -19,11 +19,12 @@ public class Controller2D : MonoBehaviour
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
-    void Start()
+    void Awake()
     {
         scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
         collider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
+        UpdateRaycastOrigins();
     }
 
     public void Move(Vector3 velocity) //movement script
@@ -119,7 +120,7 @@ public class Controller2D : MonoBehaviour
         return false;
     }
 
-    void UpdateRaycastOrigins() //origin of raycast
+    public void UpdateRaycastOrigins() //origin of raycast
     {
         Bounds bounds = collider.bounds;
         bounds.Expand(skinWidth * -2);

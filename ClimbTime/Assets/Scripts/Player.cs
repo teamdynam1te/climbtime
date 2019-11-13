@@ -166,6 +166,10 @@ public class Player : MonoBehaviour
                 {
                     velocity.x = 0; //stops accumulation of gravity
                 }
+                if (controller.collisions.left || controller.collisions.right)
+                {
+                    velocity.y = 0;
+                }
                 break;
         }
         //movement and acceleration
