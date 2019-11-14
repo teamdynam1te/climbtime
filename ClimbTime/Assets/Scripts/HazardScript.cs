@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HazardScript : MonoBehaviour
 {
+    public Player playerMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,15 @@ public class HazardScript : MonoBehaviour
     {
         
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Hit");
+        }
+    }
+
+
 }
