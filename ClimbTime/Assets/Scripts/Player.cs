@@ -37,9 +37,20 @@ public class Player : MonoBehaviour
     private Vector2 playerPos;
     public Transform shootPoint;
 
+    //look at enum 
+    public bool arenaCheck;
+    public bool mountainCheck;
+
+    //enum stateCheck { }
+
     bool canDash = true; //checks to see if can dash
 
     Controller2D controller; //reference to Controller2D Script
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     void Start()
     {
@@ -62,28 +73,38 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        SetCrosshairPosition();
-        CheckCanHook();
+        if (mountainCheck == true)
+        {
+            SetCrosshairPosition();
+            CheckCanHook();
+        }
     }
 
     private void CheckCanHook()
     {
-        worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        facingDir = worldMousePos - transform.position;
-
-        LayerMask mask = LayerMask.GetMask("Obstacles");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
-        Debug.DrawRay(transform.position, facingDir, Color.red);
-
-        if (Input.GetMouseButtonDown(0) && hit)
+        if (mountainCheck == true)
         {
-            Debug.Log("Button Down");
-            hookDirOnClick = facingDir;
-            moveState = movementStates.hook;
+            worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+            facingDir = worldMousePos - transform.position;
+
+            LayerMask mask = LayerMask.GetMask("Obstacles");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
+            Debug.DrawRay(transform.position, facingDir, Color.red);
+
+            if (Input.GetMouseButtonDown(0) && hit)
+            {
+                Debug.Log("Button Down");
+                hookDirOnClick = facingDir;
+                moveState = movementStates.hook;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                moveState = movementStates.regMovement;
+            }
         }
-        if (Input.GetMouseButtonUp(0))
+        if (mountainCheck == false)
         {
-            moveState = movementStates.regMovement;
+            return;
         }
     }
 
@@ -110,24 +131,27 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if(Input.GetKey(KeyCode.LeftShift) && canDash)
+        if (mountainCheck == true)
         {
-            Debug.Log("is dashing");
-            moveState = movementStates.dashing;
-            dashTime -= Time.deltaTime;
-
-            if (dashTime <= 0)
+            if (Input.GetKey(KeyCode.LeftShift) && canDash)
             {
-                canDash = false;
-                dashTime = dashTimeDefault;
+                Debug.Log("is dashing");
+                moveState = movementStates.dashing;
+                dashTime -= Time.deltaTime;
+
+                if (dashTime <= 0)
+                {
+                    canDash = false;
+                    dashTime = dashTimeDefault;
+                    moveState = movementStates.regMovement;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                Debug.Log("is regMovement");
                 moveState = movementStates.regMovement;
             }
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Debug.Log("is regMovement");
-            moveState = movementStates.regMovement;
-        }
+        } //dashing only works when mountain
 
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
@@ -178,21 +202,31 @@ public class Player : MonoBehaviour
 
     private void SetCrosshairPosition() // cross hair aiming
     {
-        var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
-        if (aimAngle < 0f)
+        if (mountainCheck == true)
         {
-            aimAngle = Mathf.PI * 2 + aimAngle;
-        }
+            var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
+            if (aimAngle < 0f)
+            {
+                aimAngle = Mathf.PI * 2 + aimAngle;
+            }
 
-        if (!crossHairSprite.enabled)
+            if (!crossHairSprite.enabled)
+            {
+                crossHairSprite.enabled = true;
+            }
+
+            var x = transform.position.x + 2f * Mathf.Cos(aimAngle);
+            var y = transform.position.y + 2f * Mathf.Sin(aimAngle);
+
+            var crossHairPosition = new Vector3(x, y, 0);
+            crossHair.transform.position = crossHairPosition;
+        }
+        if(mountainCheck == false)
         {
-            crossHairSprite.enabled = true;
+            if (crossHairSprite.enabled)
+            {
+                crossHairSprite.enabled = false;
+            }
         }
-
-        var x = transform.position.x + 2f * Mathf.Cos(aimAngle);
-        var y = transform.position.y + 2f * Mathf.Sin(aimAngle);
-
-        var crossHairPosition = new Vector3(x, y, 0);
-        crossHair.transform.position = crossHairPosition;
     } 
 }
