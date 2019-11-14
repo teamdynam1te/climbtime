@@ -21,7 +21,6 @@ public class Controller2D : MonoBehaviour
 
     void Awake()
     {
-        scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
         collider = GetComponent<BoxCollider2D>();
         CalculateRaySpacing();
         UpdateRaycastOrigins();
@@ -107,18 +106,33 @@ public class Controller2D : MonoBehaviour
 
     bool CheckItemCollision(RaycastHit2D hit)
     {
+        scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
+
         int coinValue = 1;
 
         if (hit.collider.tag == "Coin")
         {
             Destroy(hit.collider.gameObject);
             //audio clip
-            scoreManager.AddToScore(coinValue);
+            if (scoreManager != null)
+            {
+                scoreManager.AddToScore(coinValue);
+            }
             Debug.Log("Coin Hit");
             return true;
         }
         return false;
     }
+
+    bool CheckShopCollision(RaycastHit2D hit)
+    {
+        if (hit.collider.tag == "Shop")
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     public void UpdateRaycastOrigins() //origin of raycast
     {

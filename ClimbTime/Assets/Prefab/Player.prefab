@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8089896460577548019}
   - component: {fileID: 8089896460577548016}
   - component: {fileID: 8089896460577548017}
+  - component: {fileID: 7186729534659376045}
+  - component: {fileID: -7023497386918000541}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -94,8 +96,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc28fcb2470a9ad4f8c893fa45b33652, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   collisionMask:
   - serializedVersion: 2
     m_Bits: 4608
@@ -111,8 +113,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4d8716646ba40428a6096983f8dded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   maxJumpHeight: 5
   minJumpHeight: 1
   timeToApex: 0.4
@@ -127,6 +129,8 @@ MonoBehaviour:
   crossHair: {fileID: 8089896461449857810}
   crossHairSprite: {fileID: 8089896461449857813}
   shootPoint: {fileID: 8089896461449857810}
+  arenaCheck: 0
+  mountainCheck: 0
 --- !u!61 &8089896460577548017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +157,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &7186729534659376045
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089896460577548015}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+
 --- !u!1 &8089896461449857811
 GameObject:
   m_ObjectHideFlags: 0
