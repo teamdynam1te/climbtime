@@ -26,7 +26,11 @@ public class HazardScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Hit");
+<<<<<<< HEAD
             //playerMove.Jump();
+=======
+            playerMove.Jump(5f);
+>>>>>>> 7706dac510718fef27165b685bcd81aa16141400
         }
     }
 
