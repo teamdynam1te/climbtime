@@ -4204,6 +4204,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548021, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548021, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548018, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 74c301395acb9074cad891f207cde75a,
+        type: 3}
+    - target: {fileID: 8089896460577548019, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: collisionMask.Array.data[0].m_Bits
+      value: 12800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548017, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.035939742
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548017, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.29427484
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
 --- !u!1 &1730388420
