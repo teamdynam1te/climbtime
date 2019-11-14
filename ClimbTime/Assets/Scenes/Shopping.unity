@@ -222,6 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132669999}
+  - component: {fileID: 132670000}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -241,12 +242,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 650651315}
-  - {fileID: 1277672925}
   - {fileID: 765274131}
+<<<<<<< HEAD
   - {fileID: 429993725}
+=======
+  - {fileID: 1277672925}
+>>>>>>> 2f958b1518727b3fc1b75988d73bebdb62bb6fd2
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132670000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132669998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cefb0d7b0a08649b4f6ed3f89d4e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &188908760
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +389,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
+=======
+--- !u!4 &229246701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8089896460577548021, guid: 522db23fb6c687e48a7ade7f44694d70,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344649082}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> 2f958b1518727b3fc1b75988d73bebdb62bb6fd2
 --- !u!114 &229246702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +412,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 423484311}
+--- !u!61 &229246703
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229246696}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &236403343
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,9 +694,11 @@ MonoBehaviour:
   Player: {fileID: 0}
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
+  scoreScript: {fileID: 0}
   itemPrice: -50000
   itemStock: 10
   canBuy: 0
+  anim: {fileID: 0}
   itemTitleText: {fileID: 1415995943}
   itemPriceText: {fileID: 902598517}
   itemStockText: {fileID: 1997449296}
@@ -894,6 +947,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &412009866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412009867}
+  - component: {fileID: 412009868}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412009867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412009866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 229246701}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &412009868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412009866}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &423484308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +2036,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 132669999}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &815123419
 GameObject:
@@ -2527,12 +2637,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTitle: Grappling hook
   shopPanel: {fileID: 282396149}
-  Player: {fileID: 0}
+  Player: {fileID: 229246696}
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
+  scoreScript: {fileID: 0}
   itemPrice: 100
   itemStock: 2
   canBuy: 0
+  anim: {fileID: 0}
   itemTitleText: {fileID: 578562890}
   itemPriceText: {fileID: 2053980943}
   itemStockText: {fileID: 1114002343}
@@ -2782,7 +2894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 132669999}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294947067
 GameObject:
@@ -2917,6 +3029,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548016, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548016, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: crossHairSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089896460577548016, guid: 522db23fb6c687e48a7ade7f44694d70,
+        type: 3}
+      propertyPath: crossHair
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
 --- !u!1 &1360248385
@@ -3032,12 +3159,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTitle: Dash Potion
   shopPanel: {fileID: 1943570850}
-  Player: {fileID: 0}
+  Player: {fileID: 229246696}
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
+  scoreScript: {fileID: 0}
   itemPrice: 200
   itemStock: 50
   canBuy: 0
+  anim: {fileID: 0}
   itemTitleText: {fileID: 1738054705}
   itemPriceText: {fileID: 703212210}
   itemStockText: {fileID: 244954984}
@@ -3260,12 +3389,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTitle: Armour
   shopPanel: {fileID: 1994745888}
-  Player: {fileID: 0}
+  Player: {fileID: 229246696}
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
+  scoreScript: {fileID: 0}
   itemPrice: 50
   itemStock: 10
   canBuy: 0
+  anim: {fileID: 0}
   itemTitleText: {fileID: 34676448}
   itemPriceText: {fileID: 1056051482}
   itemStockText: {fileID: 2074014371}
@@ -4345,18 +4476,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000029802322, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 3, y: 1}
+    newSize: {x: 3.966176, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 3.9253516, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &2082912581
 SpriteRenderer:
@@ -4401,7 +4532,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 3.966176, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4415,7 +4546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082912579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.5, z: 0}
+  m_LocalPosition: {x: 0.003, y: -6.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

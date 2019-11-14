@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 470294000}
   - component: {fileID: 470294005}
   - component: {fileID: 470293999}
+  - component: {fileID: 470294006}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -322,6 +323,16 @@ MonoBehaviour:
   minJumpHeight: 1
   timeToApex: 0.4
   moveSpeed: 6
+  dashSpeed: 48
+  dashTimeDefault: 0.5
+  dashCooldown: 1.5
+  dashCooldownDefault: 1.5
+  dashTime: 0.5
+  hookSpeed: 60
+  hookDist: 5
+  crossHair: {fileID: 0}
+  crossHairSprite: {fileID: 0}
+  shootPoint: {fileID: 0}
 --- !u!114 &470294002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,8 +346,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMask:
-    serializedVersion: 2
-    m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 0
+  - serializedVersion: 2
+    m_Bits: 0
   horizontalRayCount: 4
   verticalRayCount: 4
 --- !u!212 &470294003
@@ -428,6 +441,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &470294006
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470293998}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &480364733
 GameObject:
   m_ObjectHideFlags: 0

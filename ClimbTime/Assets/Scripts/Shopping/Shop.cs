@@ -14,6 +14,7 @@ public class Shop : MonoBehaviour
     [Tooltip("Currently checking what input to look for.    ")]
     private bool inShop = false;
     public InventoryManager InvManager;
+    public PlaceHolderScoreCounter scoreScript;
 
     [Header("Shop Settings")]
     public int itemPrice;
@@ -23,6 +24,7 @@ public class Shop : MonoBehaviour
     private KeyCode buyKey;
 
     [Header("UI settings")]
+    public Animator anim;
     public Text itemTitleText;
     public Text itemPriceText;
     public Text itemStockText;
@@ -42,6 +44,8 @@ public class Shop : MonoBehaviour
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
         InvManager = GameObject.FindGameObjectWithTag("InvManager").GetComponent<InventoryManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        scoreScript = Player.GetComponent<PlaceHolderScoreCounter>();
+        anim = shopPanel.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,11 +63,11 @@ public class Shop : MonoBehaviour
         
         itemTitleText.text = itemTitle;
 
-        if (Player.GetComponent<PlaceHolderScoreCounter>().score >= itemPrice && itemStock >= 1)
+        if (scoreScript.score >= itemPrice && itemStock >= 1)
         {
             canBuy = true;
         }
-        else if (Player.GetComponent<PlaceHolderScoreCounter>().score <= itemPrice)
+        else if (scoreScript.score <= itemPrice)
         {
             canBuy = false;
         }
@@ -79,7 +83,7 @@ public class Shop : MonoBehaviour
             if (Input.GetKeyDown(buyKey))
             {
                 Debug.Log("Buy");
-                Player.GetComponent<PlaceHolderScoreCounter>().score -= itemPrice;
+                scoreScript.score -= itemPrice;
                 itemStock--;
                 if (isArmour)
                 {
@@ -103,18 +107,16 @@ public class Shop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Enter");
             inShop = true;
-            shopPanel.GetComponent<Animator>().SetBool("HasEntered", true);
+            anim.SetBool("HasEntered", true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Exit");
             inShop = false;
-            shopPanel.GetComponent<Animator>().SetBool("HasEntered", false);
+            anim.SetBool("HasEntered", false);
 
         }
     }
