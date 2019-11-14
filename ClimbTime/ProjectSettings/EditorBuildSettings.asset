@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mountain.unity
     guid: 1dd13edbab5f1284587b83d879dc5150
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: b973e2bba2daa744592cc17e126ddf8f
   m_configObjects: {}
