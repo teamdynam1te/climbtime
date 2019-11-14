@@ -4204,16 +4204,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8089896460577548016, guid: 522db23fb6c687e48a7ade7f44694d70,
-        type: 3}
-      propertyPath: mountainCheck
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8089896460577548016, guid: 522db23fb6c687e48a7ade7f44694d70,
-        type: 3}
-      propertyPath: arenaCheck
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
 --- !u!1 &1730388420
