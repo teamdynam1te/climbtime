@@ -103,6 +103,7 @@ public class Shop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Enter");
             inShop = true;
             shopPanel.GetComponent<Animator>().SetBool("HasEntered", true);
         }
@@ -111,8 +112,10 @@ public class Shop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Exit");
             inShop = false;
             shopPanel.GetComponent<Animator>().SetBool("HasEntered", false);
+
         }
     }
 
