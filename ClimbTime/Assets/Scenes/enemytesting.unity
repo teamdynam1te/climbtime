@@ -132,10 +132,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: skelton spawning
       objectReference: {fileID: 0}
+    - target: {fileID: 5943755679763620535, guid: bd7a52723f045f4439028bf5684dd5de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1494020064396882899, guid: bd7a52723f045f4439028bf5684dd5de,
         type: 3}
       propertyPath: enemylimt
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5943755679763620532, guid: bd7a52723f045f4439028bf5684dd5de,
         type: 3}
@@ -145,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 5943755679763620532, guid: bd7a52723f045f4439028bf5684dd5de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.68
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 5943755679763620532, guid: bd7a52723f045f4439028bf5684dd5de,
         type: 3}
@@ -1041,8 +1046,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536887179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 9.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5, y: -4.68, z: 0}
+  m_LocalScale: {x: 1.69, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1485582060}
   m_RootOrder: 4

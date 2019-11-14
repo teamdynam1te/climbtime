@@ -13,6 +13,8 @@ public class enemymovmentskelton : MonoBehaviour
     public float moveSpeed = 12f;
     [Range(-1.0f, 1.0f)]
     public float moveX = 0f;
+
+  
    
 
     
@@ -37,6 +39,8 @@ public class enemymovmentskelton : MonoBehaviour
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+
+      
     }
 
     // Update is called once per frame
@@ -46,7 +50,14 @@ public class enemymovmentskelton : MonoBehaviour
         
     }
 
-   
+    private void Update()
+    {
+      
+    }
+
+
+
+
 
 
 
@@ -60,14 +71,14 @@ public class enemymovmentskelton : MonoBehaviour
             velocity.y = 0; //stops accumulation of gravity
         }
 
-    
 
 
 
-    Vector2 input = new Vector2(moveX, 0);              // -1 left +1 right
-        
 
-       
+        Vector2 input = new Vector2(moveX, 0);              // -1 left +1 right
+      
+
+
 
 
         //if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
@@ -77,7 +88,7 @@ public class enemymovmentskelton : MonoBehaviour
         //}
 
 
-        
+
 
         float targetVelocityX = input.x * moveSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
