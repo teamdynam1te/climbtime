@@ -37,11 +37,20 @@ public class Player : MonoBehaviour
     private Vector2 playerPos;
     public Transform shootPoint;
 
+    //look at enum 
     public bool arenaCheck;
     public bool mountainCheck;
+
+    //enum stateCheck { }
+
     bool canDash = true; //checks to see if can dash
 
     Controller2D controller; //reference to Controller2D Script
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     void Start()
     {
@@ -54,9 +63,6 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
         playerPos = transform.position;
-
-        arenaCheck = true;
-        mountainCheck = true;
     }
 
     void FixedUpdate()
@@ -145,7 +151,7 @@ public class Player : MonoBehaviour
                 Debug.Log("is regMovement");
                 moveState = movementStates.regMovement;
             }
-        }
+        } //dashing only works when mountain
 
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
@@ -196,21 +202,31 @@ public class Player : MonoBehaviour
 
     private void SetCrosshairPosition() // cross hair aiming
     {
-        var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
-        if (aimAngle < 0f)
+        if (mountainCheck == true)
         {
-            aimAngle = Mathf.PI * 2 + aimAngle;
-        }
+            var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
+            if (aimAngle < 0f)
+            {
+                aimAngle = Mathf.PI * 2 + aimAngle;
+            }
 
-        if (!crossHairSprite.enabled)
+            if (!crossHairSprite.enabled)
+            {
+                crossHairSprite.enabled = true;
+            }
+
+            var x = transform.position.x + 2f * Mathf.Cos(aimAngle);
+            var y = transform.position.y + 2f * Mathf.Sin(aimAngle);
+
+            var crossHairPosition = new Vector3(x, y, 0);
+            crossHair.transform.position = crossHairPosition;
+        }
+        if(mountainCheck == false)
         {
-            crossHairSprite.enabled = true;
+            if (crossHairSprite.enabled)
+            {
+                crossHairSprite.enabled = false;
+            }
         }
-
-        var x = transform.position.x + 2f * Mathf.Cos(aimAngle);
-        var y = transform.position.y + 2f * Mathf.Sin(aimAngle);
-
-        var crossHairPosition = new Vector3(x, y, 0);
-        crossHair.transform.position = crossHairPosition;
     } 
 }
