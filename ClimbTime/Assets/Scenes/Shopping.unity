@@ -243,11 +243,8 @@ Transform:
   m_Children:
   - {fileID: 650651315}
   - {fileID: 765274131}
-<<<<<<< HEAD
   - {fileID: 429993725}
-=======
   - {fileID: 1277672925}
->>>>>>> 2f958b1518727b3fc1b75988d73bebdb62bb6fd2
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -389,15 +386,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-<<<<<<< HEAD
-=======
 --- !u!4 &229246701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8089896460577548021, guid: 522db23fb6c687e48a7ade7f44694d70,
     type: 3}
   m_PrefabInstance: {fileID: 1344649082}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 2f958b1518727b3fc1b75988d73bebdb62bb6fd2
 --- !u!114 &229246702
 MonoBehaviour:
   m_ObjectHideFlags: 0
