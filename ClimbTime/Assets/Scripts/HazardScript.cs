@@ -7,6 +7,7 @@ public class HazardScript : MonoBehaviour
     public Player playerMove;
     public GameObject plr;
     public playerHealth healthScript;
+    public float jumpHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class HazardScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Hit");
-            playerMove.Jump(5f);
+            playerMove.Jump(jumpHeight);
             healthScript.currentPlayerHealth--;
         }
     }
