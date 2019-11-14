@@ -153,9 +153,22 @@ public class Player : MonoBehaviour
             }
         } //dashing only works when mountain
 
-        Jump();
+        if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+        {
+            Debug.Log("is jumping");
+            Jump(maxJumpVelocity);
+        }
 
-        switch (moveState)
+        //input for min jump height
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (velocity.y > minJumpVelocity)
+            {
+                velocity.y = minJumpVelocity;
+            }
+        }
+
+        switch(moveState)
         {
             case movementStates.regMovement:
 
@@ -187,22 +200,9 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    public void Jump()
+    public void Jump(float jumpVelocity)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
-        {
-            Debug.Log("is jumping");
-            velocity.y = maxJumpVelocity;
-        }
-
-        //input for min jump height
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            if (velocity.y > minJumpVelocity)
-            {
-                velocity.y = minJumpVelocity;
-            }
-        }
+        velocity.y = jumpVelocity;
     }
 
     private void SetCrosshairPosition() // cross hair aiming
