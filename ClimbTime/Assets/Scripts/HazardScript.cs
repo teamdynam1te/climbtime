@@ -5,11 +5,13 @@ using UnityEngine;
 public class HazardScript : MonoBehaviour
 {
     public Player playerMove;
+    public GameObject plr;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        plr = GameObject.FindGameObjectWithTag("Player");
+        playerMove = plr.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class HazardScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Hit");
+            playerMove.Jump();
         }
     }
 
