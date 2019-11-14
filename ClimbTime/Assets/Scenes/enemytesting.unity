@@ -199,7 +199,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd7a52723f045f4439028bf5684dd5de, type: 3}
-<<<<<<< HEAD
 --- !u!1 &470293998
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,8 +382,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> 2f958b1518727b3fc1b75988d73bebdb62bb6fd2
 --- !u!1 &480364733
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +880,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 5}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!1 &877533399
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +923,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
 --- !u!1001 &813236391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1012,7 +1007,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
->>>>>>> 2f958b1518727b3fc1b75988d73bebdb62bb6fd2
 --- !u!1001 &921907602
 PrefabInstance:
   m_ObjectHideFlags: 0
