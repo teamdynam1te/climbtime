@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     private Vector2 playerPos;
     public Transform shootPoint;
 
+    public bool arenaCheck;
+    public bool mountainCheck;
     bool canDash = true; //checks to see if can dash
 
     Controller2D controller; //reference to Controller2D Script
@@ -52,6 +54,9 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
         playerPos = transform.position;
+
+        arenaCheck = true;
+        mountainCheck = true;
     }
 
     void FixedUpdate()
@@ -62,28 +67,38 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        SetCrosshairPosition();
-        CheckCanHook();
+        if (mountainCheck == true)
+        {
+            SetCrosshairPosition();
+            CheckCanHook();
+        }
     }
 
     private void CheckCanHook()
     {
-        worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        facingDir = worldMousePos - transform.position;
-
-        LayerMask mask = LayerMask.GetMask("Obstacles");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
-        Debug.DrawRay(transform.position, facingDir, Color.red);
-
-        if (Input.GetMouseButtonDown(0) && hit)
+        if (mountainCheck == true)
         {
-            Debug.Log("Button Down");
-            hookDirOnClick = facingDir;
-            moveState = movementStates.hook;
+            worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+            facingDir = worldMousePos - transform.position;
+
+            LayerMask mask = LayerMask.GetMask("Obstacles");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
+            Debug.DrawRay(transform.position, facingDir, Color.red);
+
+            if (Input.GetMouseButtonDown(0) && hit)
+            {
+                Debug.Log("Button Down");
+                hookDirOnClick = facingDir;
+                moveState = movementStates.hook;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                moveState = movementStates.regMovement;
+            }
         }
-        if (Input.GetMouseButtonUp(0))
+        if (mountainCheck == false)
         {
-            moveState = movementStates.regMovement;
+            return;
         }
     }
 
@@ -110,23 +125,26 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if(Input.GetKey(KeyCode.LeftShift) && canDash)
+        if (mountainCheck == true)
         {
-            Debug.Log("is dashing");
-            moveState = movementStates.dashing;
-            dashTime -= Time.deltaTime;
-
-            if (dashTime <= 0)
+            if (Input.GetKey(KeyCode.LeftShift) && canDash)
             {
-                canDash = false;
-                dashTime = dashTimeDefault;
+                Debug.Log("is dashing");
+                moveState = movementStates.dashing;
+                dashTime -= Time.deltaTime;
+
+                if (dashTime <= 0)
+                {
+                    canDash = false;
+                    dashTime = dashTimeDefault;
+                    moveState = movementStates.regMovement;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                Debug.Log("is regMovement");
                 moveState = movementStates.regMovement;
             }
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Debug.Log("is regMovement");
-            moveState = movementStates.regMovement;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
