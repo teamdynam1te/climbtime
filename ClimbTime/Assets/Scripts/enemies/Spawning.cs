@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spiderspawning : MonoBehaviour
+public class Spawning : MonoBehaviour
 {
-
     public bool canSpawn;
     public int enemyCounter;
     public GameObject enemyPrefab;
@@ -19,7 +18,6 @@ public class spiderspawning : MonoBehaviour
     {
         realTimer = timer;
         enemyCounter = 0;
-        //enemylimt = 3;
         canSpawn = true;
     }
 
@@ -27,23 +25,23 @@ public class spiderspawning : MonoBehaviour
     private void Update()
     {
         realTimer -= Time.deltaTime;
-       // if (enemyCounter <= enemylimt)
-      // {
-           
-            if (canSpawn == true)
+        // if (enemyCounter <= enemylimt)
+        // {
+
+        if (canSpawn == true)
+        {
+            if (realTimer <= 0)
             {
-                if (realTimer <= 0)
-                {
-                    Instantiate(enemyPrefab, spawnPos.position, Quaternion.identity);
-                    realTimer = timer;
-                    enemyCounter++;
-                }
+                Instantiate(enemyPrefab, spawnPos.position, Quaternion.identity);
+                realTimer = timer;
+                enemyCounter++;
             }
-       // }
+        }
+        // }
         if (enemyCounter >= enemylimt)
         {
             canSpawn = false;
         }
-       
+
     }
 }

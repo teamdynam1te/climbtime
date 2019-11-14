@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3922301518603461394}
   - component: {fileID: 769000740327457655}
   - component: {fileID: 5904878772073567934}
+  - component: {fileID: 6443119656226072284}
   m_Layer: 13
   m_Name: spider
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1443777718924498027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.031, y: -9.006, z: 0}
-  m_LocalScale: {x: 3.438216, y: 0.489242, z: 1}
+  m_LocalScale: {x: 2.51, y: 0.489242, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -143,6 +144,23 @@ MonoBehaviour:
   maxJumpHeight: 4
   minJumpHeight: 1
   timeToApex: 0.4
-  moveSpeed: 12
+  moveSpeed: 8
   moveX: 0
   Timer: 2
+  enemytype: 0
+  target: {fileID: 0}
+  distance: 0
+  groundetection: {fileID: 0}
+--- !u!114 &6443119656226072284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443777718924498027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9802e1da9e0318a4486d3d8ba4193d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemymaxhealth: 1

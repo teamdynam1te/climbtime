@@ -41,10 +41,9 @@ GameObject:
   - component: {fileID: 1170768344368920807}
   - component: {fileID: 4959627098104261806}
   - component: {fileID: 4265201839252968237}
+  - component: {fileID: 8423515934668171491}
   - component: {fileID: 1521918476219564306}
   - component: {fileID: -2916547010958425485}
-  - component: {fileID: 462906216464915160}
-  - component: {fileID: 385052962}
   m_Layer: 13
   m_Name: skelton
   m_TagString: Untagged
@@ -142,6 +141,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8423515934668171491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399746093691422988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5354410ccf7843ac1d57a91860d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJumpHeight: 4
+  minJumpHeight: 1
+  timeToApex: 0.4
+  moveSpeed: 12
+  moveX: 0
+  Timer: 2
+  enemytype: 1
+  target: {fileID: 0}
+  distance: 2
+  groundetection: {fileID: 1047148756}
 --- !u!114 &1521918476219564306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,35 +195,3 @@ MonoBehaviour:
     m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
---- !u!114 &462906216464915160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399746093691422988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ecf028890bbcf4aa2bd30fe983205a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxJumpHeight: 4
-  minJumpHeight: 1
-  timeToApex: 0.4
-  moveSpeed: 5.8
-  moveX: 0
---- !u!114 &385052962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399746093691422988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbb1653d12ff3348bb224367e72dff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  distance: 2
-  groundetection: {fileID: 1047148756}
