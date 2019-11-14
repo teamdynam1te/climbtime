@@ -243,6 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMove: {fileID: 0}
+  plr: {fileID: 0}
+  healthScript: {fileID: 0}
 --- !u!1 &480364733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1080,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1750248773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8089896460577548015, guid: 522db23fb6c687e48a7ade7f44694d70,
+    type: 3}
+  m_PrefabInstance: {fileID: 812888012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1750248780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750248773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991522c15ee1f0448b6c79ba2438d526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setPlayerHealth: 1
+  currentPlayerHealth: 0
 --- !u!1 &1877337471
 GameObject:
   m_ObjectHideFlags: 0

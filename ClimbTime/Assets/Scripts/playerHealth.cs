@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class playerHealth : MonoBehaviour
     public void KillPlayer()
     {
         this.gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
 
     public void DamagePlayer(float damageToGive)

@@ -6,12 +6,14 @@ public class HazardScript : MonoBehaviour
 {
     public Player playerMove;
     public GameObject plr;
+    public playerHealth healthScript;
 
     // Start is called before the first frame update
     void Start()
     {
         plr = GameObject.FindGameObjectWithTag("Player");
         playerMove = plr.GetComponent<Player>();
+        healthScript = plr.GetComponent<playerHealth>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class HazardScript : MonoBehaviour
         {
             Debug.Log("Hit");
             playerMove.Jump(5f);
-
+            healthScript.currentPlayerHealth--;
         }
     }
 
