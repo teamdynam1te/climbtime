@@ -29,6 +29,11 @@ public class ScoreManager : MonoBehaviour
         return coinValue;
     }
 
+    public void TakeScore(int price)
+    {
+        coinValue -= price;
+    }
+
     public void AddToScore(int scoreValue)
     {
         coinValue += scoreValue;
