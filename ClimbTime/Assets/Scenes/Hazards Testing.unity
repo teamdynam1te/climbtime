@@ -245,6 +245,7 @@ MonoBehaviour:
   playerMove: {fileID: 0}
   plr: {fileID: 0}
   healthScript: {fileID: 0}
+  jumpHeight: 0
 --- !u!1 &480364733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,9 +1133,9 @@ RectTransform:
   m_Father: {fileID: 1564247268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -255.6, y: -185.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877337473

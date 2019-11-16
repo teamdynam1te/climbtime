@@ -355,7 +355,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Over
 
-    You Suck'
+    Try Again!'
 --- !u!222 &1271952550
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8471643040489254508}
   - component: {fileID: 5932842154704650857}
   - component: {fileID: -8592503308251237873}
+  - component: {fileID: -6141959458652703572}
   m_Layer: 13
   m_Name: bat
   m_TagString: Untagged
@@ -141,3 +142,25 @@ MonoBehaviour:
     m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
+--- !u!114 &-6141959458652703572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490799169812345367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f5354410ccf7843ac1d57a91860d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJumpHeight: 4
+  minJumpHeight: 1
+  timeToApex: 0.4
+  moveSpeed: 12
+  moveX: 0
+  Timer: 2
+  enemytype: 2
+  target: {fileID: 0}
+  distance: 0
+  groundetection: {fileID: 0}
