@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public enum movementStates {regMovement, dashing, hook};
     movementStates moveState;
 
-    //custom velocity and gravity settings
+    [Header("PlayerSettings")]
     float maxJumpVelocity;
     float minJumpVelocity;
     Vector3 velocity;
