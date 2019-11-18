@@ -50,7 +50,10 @@ public class enemymovement : MonoBehaviour
         actualTimer = Timer;
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -59,11 +62,6 @@ public class enemymovement : MonoBehaviour
 
 
     }
-
-
-
-
-
 
 
 
@@ -89,7 +87,7 @@ public class enemymovement : MonoBehaviour
                 actualTimer -= Time.deltaTime;
                 if (actualTimer <= 0 && controller.collisions.below)
                 {
-                    Debug.Log("is jumping");
+                   
                     velocity.y = maxJumpVelocity;
                     actualTimer = Timer;
                 }
@@ -99,7 +97,10 @@ public class enemymovement : MonoBehaviour
                 Vector3 direction = otherpostion - thispostion;
                 direction.Normalize();
                 velocity.x = direction.x * moveSpeed;
+
                 
+
+
                 break;
             case Enemytype.skeleton:
                 // do skeleton stuff here
@@ -120,6 +121,20 @@ public class enemymovement : MonoBehaviour
                 break;
             case Enemytype.bat:
                 // do bat stuff here
+                Vector3 enemypostion = transform.position;
+                Vector3 playerpostion = target.position;
+                Vector3 direction2 = playerpostion - enemypostion;
+                direction2.Normalize();
+                velocity.x = direction2.x * moveSpeed;
+
+                actualTimer -= Time.deltaTime;
+                if (actualTimer <= 0 )
+                {
+                    Debug.Log("is jumping");
+                    velocity.y = maxJumpVelocity;
+                    actualTimer = Timer;
+                }
+
                 break;
         }
 
