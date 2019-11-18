@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 296324730}
   - component: {fileID: 296324729}
   m_Layer: 0
-  m_Name: Shop Item 1 (1)
+  m_Name: GiveMoney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,7 +616,8 @@ MonoBehaviour:
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
-  itemPrice: -50000
+  ScoreManage: {fileID: 0}
+  itemPrice: -100
   itemStock: 10
   canBuy: 0
   anim: {fileID: 0}
@@ -1631,7 +1632,7 @@ GameObject:
   - component: {fileID: 650651316}
   m_Layer: 0
   m_Name: ScoreManager
-  m_TagString: Untagged
+  m_TagString: ScoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1682,6 +1683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 423484311}
+  scoreScript: {fileID: 0}
+  ScoreManage: {fileID: 0}
 --- !u!1 &703212206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,6 +2612,7 @@ MonoBehaviour:
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
+  ScoreManage: {fileID: 0}
   itemPrice: 100
   itemStock: 2
   canBuy: 0
@@ -3047,6 +3051,7 @@ MonoBehaviour:
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
+  ScoreManage: {fileID: 0}
   itemPrice: 200
   itemStock: 50
   canBuy: 0
@@ -3277,6 +3282,7 @@ MonoBehaviour:
   shopManager: {fileID: 765274129}
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
+  ScoreManage: {fileID: 0}
   itemPrice: 50
   itemStock: 10
   canBuy: 0

@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Obstacles
   - Bullet
+  - ScoreManager
   layers:
   - Default
   - TransparentFX

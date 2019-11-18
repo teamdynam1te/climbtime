@@ -14,7 +14,8 @@ public class Shop : MonoBehaviour
     [Tooltip("Currently checking what input to look for.    ")]
     private bool inShop = false;
     public InventoryManager InvManager;
-    public PlaceHolderScoreCounter scoreScript;
+    public ScoreManager scoreScript;
+    public GameObject ScoreManage;
 
     [Header("Shop Settings")]
     public int itemPrice;
@@ -34,7 +35,7 @@ public class Shop : MonoBehaviour
     public bool isGrapple = false;
     public bool isDashPotion = false;
     public GameObject grapplehook;
-
+    
 
 
 
@@ -44,8 +45,10 @@ public class Shop : MonoBehaviour
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
         InvManager = GameObject.FindGameObjectWithTag("InvManager").GetComponent<InventoryManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
-        scoreScript = Player.GetComponent<PlaceHolderScoreCounter>();
         anim = shopPanel.GetComponent<Animator>();
+        ScoreManage = GameObject.FindGameObjectWithTag("ScoreManager");
+        scoreScript = ScoreManage.GetComponent<ScoreManager>();
+        
     }
 
     // Update is called once per frame
@@ -63,11 +66,11 @@ public class Shop : MonoBehaviour
         
         itemTitleText.text = itemTitle;
 
-        if (scoreScript.score >= itemPrice && itemStock >= 1)
+        if (scoreScript.GetScore() >= itemPrice && itemStock >= 1)
         {
             canBuy = true;
         }
-        else if (scoreScript.score <= itemPrice)
+        else if (scoreScript.GetScore() <= itemPrice)
         {
             canBuy = false;
         }
@@ -83,7 +86,7 @@ public class Shop : MonoBehaviour
             if (Input.GetKeyDown(buyKey))
             {
                 Debug.Log("Buy");
-                scoreScript.score -= itemPrice;
+                scoreScript.TakeScore(itemPrice);
                 itemStock--;
                 if (isArmour)
                 {
