@@ -18,7 +18,7 @@ public class enemymovement : MonoBehaviour
 
     public Enemytype enemytype;
     public Transform target;
-
+    public Transform batTarget = null;
 
     //custom velocity and gravity settings
     public float JumpHeight;
@@ -50,6 +50,8 @@ public class enemymovement : MonoBehaviour
         actualTimer = Timer;
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        
 
 
     }
@@ -132,22 +134,34 @@ public class enemymovement : MonoBehaviour
                 break;
             case Enemytype.bat:
                 // do bat stuff here
-                gravity = batGravity;
-
-                Vector3 enemypostion = transform.position;
-                Vector3 playerpostion = target.position;
-                Vector3 direction2 = playerpostion - enemypostion;
-                direction2.Normalize();
-                velocity.x = direction2.x * moveSpeed;
 
                 actualTimer -= Time.deltaTime;
-                if (actualTimer <= 0 )
+                if (actualTimer <= 0)
                 {
                     Debug.Log("is jumping");
                     velocity.y = JumpHeight;
                     actualTimer = Timer;
                 }
 
+                gravity = batGravity;
+
+                if(canmove == true)
+                {
+                Vector3 enemypostion = transform.position;
+                Vector3 playerpostion = target.position;
+                Vector3 direction2 = playerpostion - enemypostion;
+                direction2.Normalize();
+                velocity.x = direction2.x * moveSpeed;
+                }
+                if(canmove == false)
+                {
+                    Vector3 enemypostion = transform.position;
+                    Vector3 targetpostion = batTarget.position;
+                    Vector3 direction2 = targetpostion - enemypostion;
+                    direction2.Normalize();
+                    velocity.x = direction2.x * moveSpeed;
+                }
+                
                 break;
         }
 

@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - ScoreManager
   - turn
+  - Batspawn
   layers:
   - Default
   - TransparentFX
