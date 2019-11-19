@@ -27,11 +27,13 @@ public class enemymovement : MonoBehaviour
     float gravity;
     float velocitySmoothing;
 
-    public float distance;
+    
 
-    private bool movingRight = true;
+    public bool MoveRight;
 
-    public Transform groundetection;
+    
+
+
 
 
 
@@ -61,6 +63,21 @@ public class enemymovement : MonoBehaviour
         Move();
 
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D trig)
+    {
+        if(trig.gameObject.CompareTag("turn"))
+        {
+            if(MoveRight)
+            {
+                MoveRight = false;
+            }
+            else
+            {
+                MoveRight = true;
+            }
+        }
     }
 
 
@@ -104,20 +121,24 @@ public class enemymovement : MonoBehaviour
                 break;
             case Enemytype.skeleton:
                 // do skeleton stuff here
-                RaycastHit2D groundinfo = Physics2D.Raycast(groundetection.position, Vector2.down, distance);
-                if (groundinfo.collider == false)
+                // if move right bool is true means he will move to the right
+               if(MoveRight)
                 {
-                    if (movingRight == true)
-                    {
-                        moveX = 1;
-                        movingRight = false;
-                    }
-                    else
-                    {
-                        moveX = -1;
-                        movingRight = true;
-                    }
+                    transform.Translate(2 * Time.deltaTime * moveSpeed, 0, 0);
+                    transform.localScale = new Vector2(1, 3);
                 }
+                else
+                {
+                    transform.Translate(-2 * Time.deltaTime * moveSpeed, 0, 0);
+                    transform.localScale = new Vector2(-1, 3);
+                }
+
+             
+
+
+
+
+
                 break;
             case Enemytype.bat:
                 // do bat stuff here
@@ -137,6 +158,8 @@ public class enemymovement : MonoBehaviour
 
                 break;
         }
+
+        
 
         Vector2 input = new Vector2(moveX, 0);              // -1 left +1 right
 

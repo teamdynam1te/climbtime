@@ -9,6 +9,7 @@ TagManager:
   - Obstacles
   - Bullet
   - ScoreManager
+  - turn
   layers:
   - Default
   - TransparentFX
