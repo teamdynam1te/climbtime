@@ -124,13 +124,11 @@ public class enemymovement : MonoBehaviour
                 // if move right bool is true means he will move to the right
                if(MoveRight)
                 {
-                    transform.Translate(2 * Time.deltaTime * moveSpeed, 0, 0);
-                    transform.localScale = new Vector2(1, 3);
+                    moveX = -1;
                 }
                 else
                 {
-                    transform.Translate(-2 * Time.deltaTime * moveSpeed, 0, 0);
-                    transform.localScale = new Vector2(-1, 3);
+                    moveX = 1;
                 }
 
              
