@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 156576981}
   - component: {fileID: 156576983}
   - component: {fileID: 156576982}
+  - component: {fileID: 156576984}
   m_Layer: 9
   m_Name: Spawn (7)
   m_TagString: Obstacles
@@ -475,6 +476,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &156576984
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156576980}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &198624089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436123842406432057, guid: 19acb2471b78bc843a4937be312d14ae,
@@ -492,6 +514,7 @@ GameObject:
   - component: {fileID: 248535279}
   - component: {fileID: 248535281}
   - component: {fileID: 248535280}
+  - component: {fileID: 248535282}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -588,6 +611,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &248535282
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248535278}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &282423573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2858120541531006173, guid: 06098894aa983cb44b872b4767a3436b,
@@ -605,6 +649,7 @@ GameObject:
   - component: {fileID: 303817028}
   - component: {fileID: 303817030}
   - component: {fileID: 303817029}
+  - component: {fileID: 303817031}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -701,6 +746,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &303817031
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303817027}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &351410010
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +778,7 @@ GameObject:
   - component: {fileID: 351410011}
   - component: {fileID: 351410013}
   - component: {fileID: 351410012}
+  - component: {fileID: 351410014}
   m_Layer: 9
   m_Name: TopRightCave
   m_TagString: Obstacles
@@ -808,6 +875,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &351410014
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351410010}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &480364733
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +907,7 @@ GameObject:
   - component: {fileID: 480364736}
   - component: {fileID: 480364735}
   - component: {fileID: 480364734}
+  - component: {fileID: 480364737}
   m_Layer: 9
   m_Name: Ceiling
   m_TagString: Obstacles
@@ -915,6 +1004,27 @@ Transform:
   m_Father: {fileID: 1485582060}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &480364737
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480364733}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &483144778
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +1036,7 @@ GameObject:
   - component: {fileID: 483144779}
   - component: {fileID: 483144781}
   - component: {fileID: 483144780}
+  - component: {fileID: 483144782}
   m_Layer: 9
   m_Name: RightBreak
   m_TagString: Obstacles
@@ -1022,6 +1133,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &483144782
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483144778}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &485396047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1166,7 @@ GameObject:
   - component: {fileID: 485396049}
   - component: {fileID: 485396048}
   - component: {fileID: 485396051}
+  - component: {fileID: 485396052}
   m_Layer: 9
   m_Name: LeftWall
   m_TagString: Obstacles
@@ -1142,6 +1275,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e71507defd71040ad974fc9ee47b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &485396052
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485396047}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,8 +1340,8 @@ MonoBehaviour:
   smoothTimeY: 0.125
   player: {fileID: 1875717350}
   bounds: 1
-  minCameraPos: {x: -28.5, y: -1, z: -10}
-  maxCameraPos: {x: 28.5, y: 6.5, z: -10}
+  minCameraPos: {x: -31, y: -1, z: -10}
+  maxCameraPos: {x: 31, y: 6.5, z: -10}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1256,6 +1410,7 @@ GameObject:
   - component: {fileID: 527643226}
   - component: {fileID: 527643228}
   - component: {fileID: 527643227}
+  - component: {fileID: 527643229}
   m_Layer: 9
   m_Name: LeftCave
   m_TagString: Obstacles
@@ -1352,6 +1507,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &527643229
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527643225}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &537678935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454267bbe9d41e04689bf4c1aaab71e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 10
+  offset: 0
   shot: {fileID: 4413496649617815074, guid: 257727ae899341d4da041d7a864a39ca, type: 3}
   shotZone: {fileID: 609735119}
   startTimeBetweenShots: 0.25
@@ -1580,6 +1756,7 @@ GameObject:
   - component: {fileID: 627028218}
   - component: {fileID: 627028220}
   - component: {fileID: 627028219}
+  - component: {fileID: 627028221}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -1676,6 +1853,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &627028221
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627028217}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &640654746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1829,6 +2027,7 @@ GameObject:
   - component: {fileID: 746211689}
   - component: {fileID: 746211691}
   - component: {fileID: 746211690}
+  - component: {fileID: 746211692}
   m_Layer: 9
   m_Name: TopRightCave
   m_TagString: Obstacles
@@ -1925,6 +2124,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &746211692
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746211688}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &760720861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2156,7 @@ GameObject:
   - component: {fileID: 760720863}
   - component: {fileID: 760720862}
   - component: {fileID: 760720864}
+  - component: {fileID: 760720865}
   m_Layer: 9
   m_Name: Bottom
   m_TagString: Obstacles
@@ -2032,6 +2253,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 5}
   m_EdgeRadius: 0
+--- !u!50 &760720865
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760720861}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &762201893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2285,7 @@ GameObject:
   - component: {fileID: 762201894}
   - component: {fileID: 762201896}
   - component: {fileID: 762201895}
+  - component: {fileID: 762201897}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -2139,6 +2382,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &762201897
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762201893}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &781597790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2414,7 @@ GameObject:
   - component: {fileID: 781597791}
   - component: {fileID: 781597793}
   - component: {fileID: 781597792}
+  - component: {fileID: 781597794}
   m_Layer: 9
   m_Name: TopRightCave
   m_TagString: Obstacles
@@ -2246,6 +2511,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &781597794
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781597790}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &781707088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,6 +2543,7 @@ GameObject:
   - component: {fileID: 781707089}
   - component: {fileID: 781707091}
   - component: {fileID: 781707090}
+  - component: {fileID: 781707092}
   m_Layer: 9
   m_Name: Stairs
   m_TagString: Obstacles
@@ -2353,6 +2640,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &781707092
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781707088}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &851437079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,6 +2788,7 @@ GameObject:
   - component: {fileID: 885245258}
   - component: {fileID: 885245260}
   - component: {fileID: 885245259}
+  - component: {fileID: 885245261}
   m_Layer: 9
   m_Name: LeftBurrow
   m_TagString: Obstacles
@@ -2576,6 +2885,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &885245261
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885245257}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &916666228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,6 +2917,7 @@ GameObject:
   - component: {fileID: 916666229}
   - component: {fileID: 916666231}
   - component: {fileID: 916666230}
+  - component: {fileID: 916666232}
   m_Layer: 9
   m_Name: LeftCave
   m_TagString: Obstacles
@@ -2683,6 +3014,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &916666232
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916666228}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &918300740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2961,6 +3313,7 @@ GameObject:
   - component: {fileID: 988317403}
   - component: {fileID: 988317405}
   - component: {fileID: 988317404}
+  - component: {fileID: 988317406}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -3057,6 +3410,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &988317406
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988317402}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1002046537
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,6 +3442,7 @@ GameObject:
   - component: {fileID: 1002046538}
   - component: {fileID: 1002046540}
   - component: {fileID: 1002046539}
+  - component: {fileID: 1002046541}
   m_Layer: 9
   m_Name: LeftCave
   m_TagString: Obstacles
@@ -3164,6 +3539,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1002046541
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002046537}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1017039891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,6 +3602,7 @@ GameObject:
   - component: {fileID: 1056544476}
   - component: {fileID: 1056544478}
   - component: {fileID: 1056544477}
+  - component: {fileID: 1056544479}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -3302,6 +3699,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1056544479
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056544475}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1071203534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3731,7 @@ GameObject:
   - component: {fileID: 1071203535}
   - component: {fileID: 1071203537}
   - component: {fileID: 1071203536}
+  - component: {fileID: 1071203538}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -3409,6 +3828,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1071203538
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071203534}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1100169462
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3860,7 @@ GameObject:
   - component: {fileID: 1100169463}
   - component: {fileID: 1100169465}
   - component: {fileID: 1100169464}
+  - component: {fileID: 1100169466}
   m_Layer: 9
   m_Name: LeftCave
   m_TagString: Obstacles
@@ -3516,6 +3957,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1100169466
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100169462}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1138158893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,6 +4055,7 @@ GameObject:
   - component: {fileID: 1151155851}
   - component: {fileID: 1151155853}
   - component: {fileID: 1151155852}
+  - component: {fileID: 1151155854}
   m_Layer: 9
   m_Name: TopRightCave
   m_TagString: Obstacles
@@ -3689,6 +4152,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1151155854
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151155850}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1175013253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3700,6 +4184,7 @@ GameObject:
   - component: {fileID: 1175013254}
   - component: {fileID: 1175013256}
   - component: {fileID: 1175013255}
+  - component: {fileID: 1175013257}
   m_Layer: 9
   m_Name: Stairs
   m_TagString: Obstacles
@@ -3796,6 +4281,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1175013257
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175013253}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1176989095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3886,6 +4392,7 @@ GameObject:
   - component: {fileID: 1233124753}
   - component: {fileID: 1233124752}
   - component: {fileID: 1233124751}
+  - component: {fileID: 1233124754}
   m_Layer: 9
   m_Name: RightWall
   m_TagString: Obstacles
@@ -3982,6 +4489,27 @@ Transform:
   m_Father: {fileID: 1485582060}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1233124754
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233124750}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1310179521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,6 +4521,7 @@ GameObject:
   - component: {fileID: 1310179522}
   - component: {fileID: 1310179524}
   - component: {fileID: 1310179523}
+  - component: {fileID: 1310179525}
   m_Layer: 9
   m_Name: RightBreak
   m_TagString: Obstacles
@@ -4089,6 +4618,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1310179525
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310179521}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1380459139
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,6 +4650,7 @@ GameObject:
   - component: {fileID: 1380459140}
   - component: {fileID: 1380459142}
   - component: {fileID: 1380459141}
+  - component: {fileID: 1380459143}
   m_Layer: 9
   m_Name: LeftBurrow
   m_TagString: Obstacles
@@ -4196,6 +4747,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1380459143
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380459139}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1447962323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,6 +4779,7 @@ GameObject:
   - component: {fileID: 1447962324}
   - component: {fileID: 1447962326}
   - component: {fileID: 1447962325}
+  - component: {fileID: 1447962327}
   m_Layer: 9
   m_Name: Stairs
   m_TagString: Obstacles
@@ -4303,6 +4876,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1447962327
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447962323}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1451823202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4314,6 +4908,7 @@ GameObject:
   - component: {fileID: 1451823203}
   - component: {fileID: 1451823205}
   - component: {fileID: 1451823204}
+  - component: {fileID: 1451823206}
   m_Layer: 9
   m_Name: Stairs
   m_TagString: Obstacles
@@ -4410,6 +5005,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1451823206
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451823202}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &1457463450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436123842406432057, guid: 19acb2471b78bc843a4937be312d14ae,
@@ -4493,6 +5109,7 @@ GameObject:
   - component: {fileID: 1536887180}
   - component: {fileID: 1536887182}
   - component: {fileID: 1536887181}
+  - component: {fileID: 1536887183}
   m_Layer: 9
   m_Name: TopRightCave
   m_TagString: Obstacles
@@ -4589,6 +5206,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1536887183
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536887179}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1602014802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,6 +5238,7 @@ GameObject:
   - component: {fileID: 1602014803}
   - component: {fileID: 1602014805}
   - component: {fileID: 1602014804}
+  - component: {fileID: 1602014806}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -4696,6 +5335,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1602014806
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602014802}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1614376889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4807,6 +5467,7 @@ GameObject:
   - component: {fileID: 1640845800}
   - component: {fileID: 1640845802}
   - component: {fileID: 1640845801}
+  - component: {fileID: 1640845803}
   m_Layer: 9
   m_Name: RightBreak
   m_TagString: Obstacles
@@ -4903,6 +5564,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1640845803
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640845799}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1689497450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5114,6 +5796,7 @@ GameObject:
   - component: {fileID: 1730388421}
   - component: {fileID: 1730388423}
   - component: {fileID: 1730388422}
+  - component: {fileID: 1730388424}
   m_Layer: 9
   m_Name: LeftCave
   m_TagString: Obstacles
@@ -5210,6 +5893,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1730388424
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730388420}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1787352953
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,6 +5925,7 @@ GameObject:
   - component: {fileID: 1787352954}
   - component: {fileID: 1787352956}
   - component: {fileID: 1787352955}
+  - component: {fileID: 1787352957}
   m_Layer: 9
   m_Name: TopRightCave
   m_TagString: Obstacles
@@ -5317,6 +6022,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1787352957
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787352953}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1875717350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8089896460577548015, guid: 522db23fb6c687e48a7ade7f44694d70,
@@ -5340,6 +6066,7 @@ GameObject:
   - component: {fileID: 1963656401}
   - component: {fileID: 1963656403}
   - component: {fileID: 1963656402}
+  - component: {fileID: 1963656404}
   m_Layer: 9
   m_Name: LeftCave
   m_TagString: Obstacles
@@ -5436,6 +6163,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1963656404
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963656400}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2010656062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5526,6 +6274,7 @@ GameObject:
   - component: {fileID: 2016590065}
   - component: {fileID: 2016590067}
   - component: {fileID: 2016590066}
+  - component: {fileID: 2016590068}
   m_Layer: 9
   m_Name: Ruins
   m_TagString: Obstacles
@@ -5622,6 +6371,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2016590068
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016590064}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2040493739
 GameObject:
   m_ObjectHideFlags: 0
@@ -5725,6 +6495,7 @@ GameObject:
   - component: {fileID: 2082912582}
   - component: {fileID: 2082912581}
   - component: {fileID: 2082912580}
+  - component: {fileID: 2082912583}
   m_Layer: 9
   m_Name: Spawn
   m_TagString: Obstacles
@@ -5821,6 +6592,27 @@ Transform:
   m_Father: {fileID: 1485582060}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2082912583
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082912579}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2117558916
 PrefabInstance:
   m_ObjectHideFlags: 0
