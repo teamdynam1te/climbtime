@@ -154,13 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f5354410ccf7843ac1d57a91860d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxJumpHeight: 4
+  maxJumpHeight: 1
   minJumpHeight: 1
-  timeToApex: 0.4
+  timeToApex: 0.1
   moveSpeed: 5
   moveX: 0
-  Timer: 2
+  Timer: 1.5
   enemytype: 2
   target: {fileID: 0}
-  distance: 0
-  groundetection: {fileID: 0}
+  JumpHeight: 3.9
+  gravity: -5
+  MoveRight: 0
+  batGravity: -5

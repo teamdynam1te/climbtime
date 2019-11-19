@@ -21,21 +21,19 @@ public class enemymovement : MonoBehaviour
 
 
     //custom velocity and gravity settings
+    public float JumpHeight;
     float maxJumpVelocity;
     float minJumpVelocity;
     Vector3 velocity;
-    float gravity;
+   public float gravity;
     float velocitySmoothing;
+ 
 
-    
 
     public bool MoveRight;
-
-    
-
-
-
-
+    public bool canmove;
+   public float batGravity;
+ 
 
     Controller2D controller; //reference to Controller2D Script
 
@@ -78,8 +76,9 @@ public class enemymovement : MonoBehaviour
                 MoveRight = true;
             }
         }
-    }
 
+
+    }
 
 
     private void Move()
@@ -89,31 +88,29 @@ public class enemymovement : MonoBehaviour
             velocity.y = 0; //stops accumulation of gravity
         }
 
-
-
-
-
-        
-
        
-
+     
         switch(enemytype)
         {
             case Enemytype.spider:
                 // do spider stuff here
                 actualTimer -= Time.deltaTime;
                 if (actualTimer <= 0 && controller.collisions.below)
-                {
-                   
+
+                {                 
                     velocity.y = maxJumpVelocity;
                     actualTimer = Timer;
                 }
-
+                if(canmove == true)
+                {
                 Vector3 thispostion = transform.position;
                 Vector3 otherpostion = target.position;
                 Vector3 direction = otherpostion - thispostion;
                 direction.Normalize();
                 velocity.x = direction.x * moveSpeed;
+                }
+
+                
 
                 
 
@@ -131,15 +128,12 @@ public class enemymovement : MonoBehaviour
                     moveX = 1;
                 }
 
-             
-
-
-
-
 
                 break;
             case Enemytype.bat:
                 // do bat stuff here
+                gravity = batGravity;
+
                 Vector3 enemypostion = transform.position;
                 Vector3 playerpostion = target.position;
                 Vector3 direction2 = playerpostion - enemypostion;
@@ -150,15 +144,14 @@ public class enemymovement : MonoBehaviour
                 if (actualTimer <= 0 )
                 {
                     Debug.Log("is jumping");
-                    velocity.y = maxJumpVelocity;
+                    velocity.y = JumpHeight;
                     actualTimer = Timer;
                 }
 
                 break;
         }
 
-        
-
+ 
         Vector2 input = new Vector2(moveX, 0);              // -1 left +1 right
 
 
