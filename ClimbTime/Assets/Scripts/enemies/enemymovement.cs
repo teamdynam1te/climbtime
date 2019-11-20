@@ -33,6 +33,7 @@ public class enemymovement : MonoBehaviour
     public bool MoveRight;
     public bool canmove;
    public float batGravity;
+   
  
 
     Controller2D controller; //reference to Controller2D Script
@@ -133,33 +134,32 @@ public class enemymovement : MonoBehaviour
 
                 break;
             case Enemytype.bat:
-                // do bat stuff here
-
-                actualTimer -= Time.deltaTime;
-                if (actualTimer <= 0)
-                {
-                    Debug.Log("is jumping");
-                    velocity.y = JumpHeight;
-                    actualTimer = Timer;
-                }
+                // do bat stuff here                               
 
                 gravity = batGravity;
 
-                if(canmove == true)
+                if (canmove == true)
                 {
-                Vector3 enemypostion = transform.position;
-                Vector3 playerpostion = target.position;
-                Vector3 direction2 = playerpostion - enemypostion;
-                direction2.Normalize();
-                velocity.x = direction2.x * moveSpeed;
+                    Vector3 enemypostion = transform.position;
+                    Vector3 playerpostion = target.position;
+                    Vector3 direction2 = playerpostion - enemypostion;
+                    direction2.Normalize();
+                    velocity.x = direction2.x * moveSpeed;
+                    velocity.y = direction2.y * moveSpeed;
+                    
+                    
                 }
                 if(canmove == false)
                 {
+                       
+
                     Vector3 enemypostion = transform.position;
                     Vector3 targetpostion = batTarget.position;
                     Vector3 direction2 = targetpostion - enemypostion;
                     direction2.Normalize();
                     velocity.x = direction2.x * moveSpeed;
+                    velocity.y = direction2.y * moveSpeed;
+                   
                 }
                 
                 break;
