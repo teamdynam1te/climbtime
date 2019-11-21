@@ -48,3 +48,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 114757767
+    locked: 0
+  - name: ForeGround
+    uniqueID: 2083760633
+    locked: 0
+  - name: Characters
+    uniqueID: 4032834799
+    locked: 0
+  - name: Items
+    uniqueID: 691290895
+    locked: 0
