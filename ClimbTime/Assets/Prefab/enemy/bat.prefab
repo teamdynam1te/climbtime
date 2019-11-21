@@ -220,12 +220,13 @@ MonoBehaviour:
   maxJumpHeight: 1
   minJumpHeight: 1
   timeToApex: 0.1
-  moveSpeed: 5
+  moveSpeed: 7
   moveX: 0
   Timer: 1.5
   enemytype: 2
   target: {fileID: 6962046729570295572}
-  batTarget: {fileID: 0}
+  batTarget: {fileID: 1053000282770521208, guid: 8bbf7649ef9e4ef4194cd6abee8c0b63,
+    type: 3}
   JumpHeight: 3.9
   gravity: -5
   MoveRight: 0
