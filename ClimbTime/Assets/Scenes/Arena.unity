@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 731150181}
   - component: {fileID: 731150180}
   m_Layer: 5
-  m_Name: White Fade Out (Scene transsitions)
+  m_Name: White Fade Out (Scene transitions)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
