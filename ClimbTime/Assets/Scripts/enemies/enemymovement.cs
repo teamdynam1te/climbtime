@@ -33,15 +33,20 @@ public class enemymovement : MonoBehaviour
     public bool MoveRight;
     public bool canmove;
    public float batGravity;
-   
- 
 
+    Vector3 batTargetPos = Vector3.zero;
+    Vector3 batDirection = Vector3.zero;
+
+
+    CircleCollider2D detectioncollider;
     Controller2D controller; //reference to Controller2D Script
 
+  
     void Start()
     {
 
         controller = GetComponent<Controller2D>();
+        detectioncollider = GetComponentInChildren<CircleCollider2D>();
 
         //equation for turning movement in to velocity for movement
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
@@ -140,28 +145,34 @@ public class enemymovement : MonoBehaviour
 
                 if (canmove == true)
                 {
-                    Vector3 enemypostion = transform.position;
-                    Vector3 playerpostion = target.position;
-                    Vector3 direction2 = playerpostion - enemypostion;
-                    direction2.Normalize();
-                    velocity.x = direction2.x * moveSpeed;
-                    velocity.y = direction2.y * moveSpeed;
-                    
-                    
+                    batTargetPos = target.position;
                 }
-                if(canmove == false)
+                else if (canmove == false)
                 {
-                       
-
-                    Vector3 enemypostion = transform.position;
-                    Vector3 targetpostion = batTarget.position;
-                    Vector3 direction2 = targetpostion - enemypostion;
-                    direction2.Normalize();
-                    velocity.x = direction2.x * moveSpeed;
-                    velocity.y = direction2.y * moveSpeed;
-                   
+                    batTargetPos = batTarget.position;
                 }
-                
+
+                batDirection = batTargetPos - transform.position;
+                batDirection.Normalize();
+
+                foreach(LayerMask mask in controller.collisionMask)
+                {
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, batDirection, detectioncollider.bounds.extents.x, mask);
+
+                    if (hit)
+                    {
+                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+                        {
+                            Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
+                            canmove = false;
+                            
+                        }
+                    }
+                }
+
+                velocity.x = batDirection.x * moveSpeed;
+                velocity.y = batDirection.y * moveSpeed;
+
                 break;
         }
 
