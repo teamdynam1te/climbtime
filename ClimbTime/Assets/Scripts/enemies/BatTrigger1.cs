@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Battrigger : MonoBehaviour
+public class BatTrigger1 : MonoBehaviour
 {
     public GameObject enemy;
     public enemymovement enemyscript;
@@ -33,6 +33,4 @@ public class Battrigger : MonoBehaviour
         }
 
     }
-
 }
-

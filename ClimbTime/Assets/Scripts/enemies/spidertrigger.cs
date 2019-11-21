@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Battrigger : MonoBehaviour
+public class spidertrigger : MonoBehaviour
 {
     public GameObject enemy;
     public enemymovement enemyscript;
+
 
 
 
@@ -15,7 +16,6 @@ public class Battrigger : MonoBehaviour
     {
         enemyscript = enemy.GetComponent<enemymovement>();
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,8 +31,12 @@ public class Battrigger : MonoBehaviour
         {
             enemyscript.canmove = false;
         }
-
     }
 
-}
 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}

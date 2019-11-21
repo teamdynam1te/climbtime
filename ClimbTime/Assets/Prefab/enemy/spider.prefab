@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162865979}
   - component: {fileID: 1162865980}
-  - component: {fileID: 1162865981}
+  - component: {fileID: 8905722564199954501}
   m_Layer: 0
   m_Name: spidertrigger
   m_TagString: Untagged
@@ -48,7 +48,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.48
---- !u!114 &1162865981
+--- !u!114 &8905722564199954501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1162865978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea9f3445ac170464382ab6e2157e596c, type: 3}
+  m_Script: {fileID: 11500000, guid: f6dffbce8345eea44b552a104497340f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1443777718924498027}
