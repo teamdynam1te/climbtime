@@ -498,6 +498,8 @@ MonoBehaviour:
   timeToApex: 0.4
   moveSpeed: 12
   moveX: -0.4
+  particleSys: {fileID: 459443866786295775, guid: 9743aeaab484d5b419845529586e5780,
+    type: 3}
   jumpHeight: 10
   gravity: -10
 --- !u!212 &503735986
@@ -621,7 +623,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.19
+  m_Radius: 0.14
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

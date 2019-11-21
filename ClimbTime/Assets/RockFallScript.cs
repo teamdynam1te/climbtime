@@ -13,6 +13,7 @@ public class RockFallScript : MonoBehaviour
     public float moveSpeed = 12f;
     [Range(-1, 1)]
     public float moveX;
+    public GameObject particleSys;
 
     public float jumpHeight;
 
@@ -23,7 +24,11 @@ public class RockFallScript : MonoBehaviour
     public float gravity;
     float velocitySmoothing;
     Vector2 facingDir;
-    
+
+    public GameObject plr;
+    public playerHealth plrhealth;
+    public int damage;
+
     Controller2D controller; //reference to Controller2D Script
     
 
@@ -35,6 +40,8 @@ public class RockFallScript : MonoBehaviour
        // gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+        plr = GameObject.FindGameObjectWithTag("Player");
+        plrhealth = plr.GetComponent<playerHealth>();
     }
 
     void FixedUpdate()
@@ -81,6 +88,8 @@ public class RockFallScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            plrhealth.DamagePlayer(damage);
+            Instantiate(particleSys, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
