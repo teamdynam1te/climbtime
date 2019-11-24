@@ -143,6 +143,38 @@ public class enemymovement : MonoBehaviour
 
                 gravity = batGravity;
 
+                float obstacalDistance = 0f;
+                float playerDistance = 0f;
+
+                foreach(LayerMask mask in controller.collisionMask)
+                {
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, batDirection, detectioncollider.bounds.extents.x, mask);
+
+                    if (hit)
+                    {
+                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+                        {
+                            Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
+                            //canmove = false;   
+                            obstacalDistance = hit.distance;
+
+                        }
+
+                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
+                        {
+                            Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
+                            //canmove = false;   
+                            playerDistance = hit.distance;
+
+                        }
+                    }
+                }
+
+                if(obstacalDistance < playerDistance)
+                {
+                    canmove = false;
+                }
+
                 if (canmove == true)
                 {
                     batTargetPos = target.position;
@@ -155,20 +187,6 @@ public class enemymovement : MonoBehaviour
                 batDirection = batTargetPos - transform.position;
                 batDirection.Normalize();
 
-                foreach(LayerMask mask in controller.collisionMask)
-                {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, batDirection, detectioncollider.bounds.extents.x, mask);
-
-                    if (hit)
-                    {
-                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
-                        {
-                            Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
-                            canmove = false;
-                            
-                        }
-                    }
-                }
 
                 velocity.x = batDirection.x * moveSpeed;
                 velocity.y = batDirection.y * moveSpeed;
