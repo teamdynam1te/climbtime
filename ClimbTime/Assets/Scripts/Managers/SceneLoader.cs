@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    GameObject plr;
+    public GameObject plr;
     public GameManager gm;
     public GameObject spawn;
 
     private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        //DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
     }
 
     public void PlayGame()
     {
         gm.gameState = GameManager.GameStates.arena;
         SceneManager.LoadScene("Arena");
-        spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
+        //spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
         Instantiate(plr, spawn.transform.position, Quaternion.identity);
     }
 

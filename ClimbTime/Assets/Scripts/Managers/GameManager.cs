@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +8,8 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 300f; //time left
     public Text levelTimer;
     Player player;
+    public GameObject plr;
+    public GameObject spawn;
     SceneLoader scene;
 
     [Header("Coin Values")]
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         scene = FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
-        player = FindObjectOfType<Player>().GetComponent<Player>();
+        //player = FindObjectOfType<Player>().GetComponent<Player>();
     }
 
     private void Update()
@@ -45,7 +46,8 @@ public class GameManager : MonoBehaviour
 
                 StartCoroutine("ArenaTime");
                 int seconds = Mathf.RoundToInt(timeLeft);
-                levelTimer.text = string.Format("{0:D2}:{1:D2}" + " Time Remaining", (seconds / 60), (seconds % 60)); // turns timer to correct format
+                //levelTimer = ;
+                //levelTimer.text = string.Format("{0:D2}:{1:D2}" + " Time Remaining", (seconds / 60), (seconds % 60)); // turns timer to correct format
 
                 break;
 

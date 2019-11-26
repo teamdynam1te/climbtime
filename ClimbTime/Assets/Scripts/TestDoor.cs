@@ -8,7 +8,7 @@ public class TestDoor : MonoBehaviour
 
     void Start()
     {
-        scene = FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
+        scene = GameManager.FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

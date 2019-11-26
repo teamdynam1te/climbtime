@@ -12,6 +12,7 @@ TagManager:
   - turn
   - Batspawn
   - PlayerSpawn
+  - Spawn
   layers:
   - Default
   - TransparentFX

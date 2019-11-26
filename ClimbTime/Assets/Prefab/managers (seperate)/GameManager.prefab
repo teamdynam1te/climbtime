@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f5bff1c50200042a3b80f63aa87b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 15
+  timeLeft: 300
   levelTimer: {fileID: 0}
   GrappleAmmoAmount: 0
   ArmourAmount: 0
   dashPotionAmount: 0
-  gameState: 1
+  gameState: 0
