@@ -6,20 +6,23 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     Player player;
+    GameObject plr;
+    public Vector3 spawn;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     public void PlayGame()
     {
         SceneManager.LoadScene("Arena");
         new WaitForSeconds(3f);
-        /*player = FindObjectOfType<Player>().GetComponent<Player>();
+        //Instantiate(plr, spawn, Quaternion.identity);
+        player = FindObjectOfType<Player>().GetComponent<Player>();
         player.arenaCheck = true;
         player.SetCrossbow();
-        player.shoppingCheck = false;
+        /*player.shoppingCheck = false;
         player.mountainCheck = false;*/
     }
 
@@ -36,9 +39,9 @@ public class SceneLoader : MonoBehaviour
 
     public void MainMenu()
     {
-        player.mountainCheck = false;
-        player.shoppingCheck = false;
-        Destroy(player);
+        //player.mountainCheck = false;
+        //player.shoppingCheck = false;
+        //Destroy(plr);
         SceneManager.LoadScene("MainMenu");
     }
 

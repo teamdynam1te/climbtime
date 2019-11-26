@@ -52,8 +52,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        SetUpSingleton();
-        arenaCheck = true;
+        SetUpSingleton();        
     }
 
     private void SetUpSingleton()
@@ -80,6 +79,7 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
         playerPos = transform.position;
+        arenaCheck = true;
     }
 
     void FixedUpdate()

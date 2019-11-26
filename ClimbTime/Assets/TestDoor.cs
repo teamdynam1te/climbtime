@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestDoor : MonoBehaviour
 {
-    SceneLoader scene;
+    public SceneLoader scene;
 
     void Start()
     {
