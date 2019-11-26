@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    // git test--- you can throw this away
+
     public float timeLeft = 300f; //time left
     public Text levelTimer;
     Player player;
