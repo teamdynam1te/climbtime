@@ -34,9 +34,6 @@ public class enemymovement : MonoBehaviour
     public bool canmove;
    public float batGravity;
 
-    // skelton attacking variabels
-   
-
     Vector3 batTargetPos = Vector3.zero;
     Vector3 batDirection = Vector3.zero;
 
@@ -118,10 +115,10 @@ public class enemymovement : MonoBehaviour
                 Vector3 otherpostion = target.position;
                 Vector3 direction = otherpostion - thispostion;
                 direction.Normalize();
-                    velocity.x = direction.x * moveSpeed;
+                velocity.x = direction.x * moveSpeed;
                 }
 
-               
+                
 
                 
 
@@ -146,8 +143,8 @@ public class enemymovement : MonoBehaviour
 
                 gravity = batGravity;
 
-                float obstacalDistance = 99999999f;
-                float playerDistance = 99999999f;
+                float obstacalDistance = 0f;
+                float playerDistance = 0f;
 
                 foreach(LayerMask mask in controller.collisionMask)
                 {
