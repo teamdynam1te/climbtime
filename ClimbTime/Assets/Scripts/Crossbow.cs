@@ -7,15 +7,21 @@ public class Crossbow : MonoBehaviour
     public float offset;
     public GameObject shot;
     public Transform shotZone;
+    public GameManager gm;
 
     private float timeBetweenShots;
     public float startTimeBetweenShots;
 
     public Player player;
 
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
+
     void Update()
     {
-        if (player.arenaCheck == true)
+        if (gm.gameState == GameManager.GameStates.arena)
         {
             CanShoot();
         }
@@ -23,7 +29,7 @@ public class Crossbow : MonoBehaviour
 
     public void CanShoot()
     {
-        if (player.arenaCheck == true)
+        if (gm.gameState == GameManager.GameStates.arena)
         {
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;

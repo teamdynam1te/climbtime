@@ -5,53 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    Player player;
     GameObject plr;
-    public Vector3 spawn;
+    public GameManager gm;
+    public GameObject spawn;
 
     private void Awake()
     {
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         //DontDestroyOnLoad(this);
     }
 
     public void PlayGame()
     {
+        gm.gameState = GameManager.GameStates.arena;
         SceneManager.LoadScene("Arena");
-        new WaitForSeconds(3f);
-        //Instantiate(plr, spawn, Quaternion.identity);
-        player = FindObjectOfType<Player>().GetComponent<Player>();
-        player.arenaCheck = true;
-        player.SetCrossbow();
-        /*player.shoppingCheck = false;
-        player.mountainCheck = false;*/
+        spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
+        Instantiate(plr, spawn.transform.position, Quaternion.identity);
     }
 
     public void ArenaEnd()
     {
+        gm.gameState = GameManager.GameStates.shopping;
         SceneManager.LoadScene("Shopping");
-        new WaitForSeconds(5f);
-        player = FindObjectOfType<Player>().GetComponent<Player>();
-        player.arenaCheck = false;
-        player.mountainCheck = false;
-        player.shoppingCheck = true;
-        player.RemoveCrossbow();
+        spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
+        Instantiate(plr, spawn.transform.position, Quaternion.identity);
     }
 
     public void MainMenu()
     {
-        //player.mountainCheck = false;
-        //player.shoppingCheck = false;
-        //Destroy(plr);
+        gm.gameState = GameManager.GameStates.init;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Mountain()
     {
+        gm.gameState = GameManager.GameStates.mountain;
         SceneManager.LoadScene("Mountain");
-        new WaitForSeconds(3f);
-        player = FindObjectOfType<Player>().GetComponent<Player>();
-        player.arenaCheck = false;
-        player.shoppingCheck = false;
-        player.mountainCheck = true;
+        spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
+        Instantiate(plr, spawn.transform.position, Quaternion.identity);
     }
 }

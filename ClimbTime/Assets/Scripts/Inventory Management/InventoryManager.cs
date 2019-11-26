@@ -16,8 +16,5 @@ public class InventoryManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
     }
-
-   
-
 }
 

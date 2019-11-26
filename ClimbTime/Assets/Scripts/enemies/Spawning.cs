@@ -32,7 +32,7 @@ public class Spawning : MonoBehaviour
         {
             if (realTimer <= 0)
             {
-                Instantiate(enemyPrefab, spawnPos.position, Quaternion.identity);
+                Instantiate(enemyPrefab, spawnPos.transform.position, Quaternion.identity);
                 realTimer = timer;
                 enemyCounter++;
             }

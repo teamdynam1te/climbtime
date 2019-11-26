@@ -15,7 +15,7 @@ public class Shop : MonoBehaviour
     private bool inShop = false;
     public InventoryManager InvManager;
     public ScoreManager scoreScript;
-    public GameObject ScoreManage;
+    public GameObject GameManager;
 
     [Header("Shop Settings")]
     public int itemPrice;
@@ -46,8 +46,8 @@ public class Shop : MonoBehaviour
         InvManager = GameObject.FindGameObjectWithTag("InvManager").GetComponent<InventoryManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
         anim = shopPanel.GetComponent<Animator>();
-        ScoreManage = GameObject.FindGameObjectWithTag("ScoreManager");
-        scoreScript = ScoreManage.GetComponent<ScoreManager>();
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        scoreScript = GameManager.GetComponent<ScoreManager>();
         
     }
 

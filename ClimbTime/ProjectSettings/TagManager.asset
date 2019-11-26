@@ -11,6 +11,7 @@ TagManager:
   - ScoreManager
   - turn
   - Batspawn
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

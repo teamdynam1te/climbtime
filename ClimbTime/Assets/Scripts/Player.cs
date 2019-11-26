@@ -38,11 +38,7 @@ public class Player : MonoBehaviour
     public Transform shootPoint;
     public GameObject crossbow;
     public GameObject crosshair;
-
-    //look at enum 
-    public bool arenaCheck;
-    public bool shoppingCheck;
-    public bool mountainCheck;
+    public GameManager gm;
 
     //enum stateCheck { }
 
@@ -50,15 +46,15 @@ public class Player : MonoBehaviour
 
     Controller2D controller; //reference to Controller2D Script
 
-    private void Awake()
+    /*private void Awake()
     {
         SetUpSingleton();        
     }
 
     private void SetUpSingleton()
     {
-        int numberScoreManager = FindObjectsOfType<ScoreManager>().Length;
-        if (numberScoreManager > 1)
+        int playerNum = FindObjectOfType<Player>();
+        if (playerNum > 1)
         {
             Destroy(gameObject);
         }
@@ -66,12 +62,13 @@ public class Player : MonoBehaviour
         {
             DontDestroyOnLoad(this);
         }
-    }
+    }*/
 
     void Start()
     {
         moveState = movementStates.regMovement;
         controller = GetComponent<Controller2D>();
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
         //equation for turning movement in to velocity for movement
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
@@ -79,7 +76,6 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
         playerPos = transform.position;
-        arenaCheck = true;
     }
 
     void FixedUpdate()
@@ -90,23 +86,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (mountainCheck == true)
+        if (gm.gameState == GameManager.GameStates.mountain)
         {
             crosshair.SetActive(true);
             SetCrosshairPosition();
             CheckCanHook();
         }
 
-        if (arenaCheck == true)
+        if (gm.gameState == GameManager.GameStates.arena)
         {
             crossbow.SetActive(true);
             crosshair.SetActive(false);
         }
 
-        /*if (shoppingCheck == true)
+        if (gm.gameState == GameManager.GameStates.shopping)
         {
             crossbow.SetActive(false);
-        }*/
+        }
     }
 
     public void RemoveCrossbow()
@@ -117,14 +113,13 @@ public class Player : MonoBehaviour
 
     public void SetCrossbow()
     {
-        arenaCheck = true;
         crossbow.SetActive(true);
         crosshair.SetActive(false);
     }
 
     private void CheckCanHook()
     {
-        if (mountainCheck == true)
+        if (gm.gameState == GameManager.GameStates.mountain)
         {
             worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
             facingDir = worldMousePos - transform.position;
@@ -143,10 +138,6 @@ public class Player : MonoBehaviour
             {
                 moveState = movementStates.regMovement;
             }
-        }
-        if (mountainCheck == false)
-        {
-            return;
         }
     }
 
@@ -173,7 +164,7 @@ public class Player : MonoBehaviour
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (mountainCheck == true)
+        if (gm.gameState == GameManager.GameStates.mountain)
         {
             if (Input.GetKey(KeyCode.LeftShift) && canDash)
             {
@@ -249,7 +240,7 @@ public class Player : MonoBehaviour
 
     private void SetCrosshairPosition() // cross hair aiming
     {
-        if (mountainCheck == true)
+        if (gm.gameState == GameManager.GameStates.mountain)
         {
             var aimAngle = Mathf.Atan2(facingDir.y, facingDir.x);
             if (aimAngle < 0f)
@@ -268,7 +259,7 @@ public class Player : MonoBehaviour
             var crossHairPosition = new Vector3(x, y, 0);
             crossHair.transform.position = crossHairPosition;
         }
-        if(mountainCheck == false)
+        if(gm.gameState == GameManager.GameStates.mountain)
         {
             if (crossHairSprite.enabled)
             {
