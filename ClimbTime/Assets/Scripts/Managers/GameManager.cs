@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public float timeLeft = 300f; //time left
     public Text levelTimer;
+    SceneLoader scene;
 
     private void Start()
     {
         //if statement to detect if working on correct scene
         StartCoroutine("ArenaTime"); //starts time coroutine
+        scene = FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
     }
 
     private void Update()
@@ -30,8 +31,7 @@ public class GameManager : MonoBehaviour
 
             if(timeLeft <= 0)
             {
-                new WaitForSeconds(3f);
-                SceneManager.LoadScene("Shopping");
+                scene.ArenaEnd();
             }
         }
     } //countdown timer

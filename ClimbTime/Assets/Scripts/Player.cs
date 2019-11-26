@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     private Vector2 playerPos;
     public Transform shootPoint;
     public GameObject crossbow;
+    public GameObject crosshair;
 
     //look at enum 
     public bool arenaCheck;
@@ -51,7 +52,21 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        SetUpSingleton();
+        arenaCheck = true;
+    }
+
+    private void SetUpSingleton()
+    {
+        int numberScoreManager = FindObjectsOfType<ScoreManager>().Length;
+        if (numberScoreManager > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
     }
 
     void Start()
@@ -65,16 +80,6 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
         playerPos = transform.position;
-
-        if(arenaCheck == true)
-        {
-            crossbow.SetActive(true);
-        }
-
-        if(shoppingCheck == true)
-        {
-            crossbow.SetActive(false);
-        }
     }
 
     void FixedUpdate()
@@ -87,9 +92,34 @@ public class Player : MonoBehaviour
     {
         if (mountainCheck == true)
         {
+            crosshair.SetActive(true);
             SetCrosshairPosition();
             CheckCanHook();
         }
+
+        if (arenaCheck == true)
+        {
+            crossbow.SetActive(true);
+            crosshair.SetActive(false);
+        }
+
+        /*if (shoppingCheck == true)
+        {
+            crossbow.SetActive(false);
+        }*/
+    }
+
+    public void RemoveCrossbow()
+    {
+        crossbow.SetActive(false);
+        crosshair.SetActive(false);
+    }
+
+    public void SetCrossbow()
+    {
+        arenaCheck = true;
+        crossbow.SetActive(true);
+        crosshair.SetActive(false);
     }
 
     private void CheckCanHook()

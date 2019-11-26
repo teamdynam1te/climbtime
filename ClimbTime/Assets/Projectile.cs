@@ -9,21 +9,13 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        Invoke("DestroyObject", destroyTime);
+        Destroy(gameObject, destroyTime);
     }
 
     private void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
-        DestroyObject();
-    }
 
-    void DestroyObject()
-    {
-        if(destroyTime <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     void OnCollisionEnter2D(Collision2D other)

@@ -16,10 +16,11 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Arena");
         new WaitForSeconds(3f);
-        player = FindObjectOfType<Player>().GetComponent<Player>();
+        /*player = FindObjectOfType<Player>().GetComponent<Player>();
         player.arenaCheck = true;
+        player.SetCrossbow();
         player.shoppingCheck = false;
-        player.mountainCheck = false;
+        player.mountainCheck = false;*/
     }
 
     public void ArenaEnd()
@@ -30,6 +31,15 @@ public class SceneLoader : MonoBehaviour
         player.arenaCheck = false;
         player.mountainCheck = false;
         player.shoppingCheck = true;
+        player.RemoveCrossbow();
+    }
+
+    public void MainMenu()
+    {
+        player.mountainCheck = false;
+        player.shoppingCheck = false;
+        Destroy(player);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Mountain()

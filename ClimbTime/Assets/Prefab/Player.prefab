@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &537678936
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +259,9 @@ MonoBehaviour:
   crossHair: {fileID: 8089896461449857810}
   crossHairSprite: {fileID: 8089896461449857813}
   shootPoint: {fileID: 8089896461449857810}
-  arenaCheck: 1
+  crossbow: {fileID: 537678935}
+  crosshair: {fileID: 8089896461449857811}
+  arenaCheck: 0
   shoppingCheck: 0
   mountainCheck: 0
 --- !u!61 &8089896460577548017
@@ -339,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8089896461449857810
 Transform:
   m_ObjectHideFlags: 0
