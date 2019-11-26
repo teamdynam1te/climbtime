@@ -12,6 +12,7 @@ TagManager:
   - turn
   - Batspawn
   - PlayerSpawn
+  - LevelTimer
   layers:
   - Default
   - TransparentFX

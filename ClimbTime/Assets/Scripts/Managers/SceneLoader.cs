@@ -5,43 +5,54 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    GameObject plr;
+    public GameObject plr;
     public GameManager gm;
     public GameObject spawn;
 
     private void Awake()
     {
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        //DontDestroyOnLoad(this);
+        gm = GetComponent<GameManager>();
     }
 
     public void PlayGame()
-    {
-        gm.gameState = GameManager.GameStates.arena;
+    {       
         SceneManager.LoadScene("Arena");
+        StartCoroutine(WaitForPlayerSpawn(0.1f));
+        gm.gameState = GameManager.GameStates.arena;
+    }
+
+    IEnumerator WaitForPlayerSpawn(float time)
+    {
+        yield return new WaitForSeconds(time);
         spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
-        Instantiate(plr, spawn.transform.position, Quaternion.identity);
+        if(spawn != null)
+        {
+            Instantiate(plr, spawn.transform.position, Quaternion.identity);           
+        }
+        else
+        {
+            spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
+            Instantiate(plr, spawn.transform.position, Quaternion.identity);
+        }
     }
 
     public void ArenaEnd()
     {
-        gm.gameState = GameManager.GameStates.shopping;
         SceneManager.LoadScene("Shopping");
-        spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
-        Instantiate(plr, spawn.transform.position, Quaternion.identity);
+        StartCoroutine(WaitForPlayerSpawn(0.1f));
+        gm.gameState = GameManager.GameStates.shopping;
     }
 
     public void MainMenu()
     {
-        gm.gameState = GameManager.GameStates.init;
         SceneManager.LoadScene("MainMenu");
+        gm.gameState = GameManager.GameStates.init;
     }
 
     public void Mountain()
     {
-        gm.gameState = GameManager.GameStates.mountain;
         SceneManager.LoadScene("Mountain");
-        spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
-        Instantiate(plr, spawn.transform.position, Quaternion.identity);
+        StartCoroutine(WaitForPlayerSpawn(0.1f));
+        gm.gameState = GameManager.GameStates.mountain;
     }
 }

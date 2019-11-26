@@ -15,7 +15,7 @@ public class Controller2D : MonoBehaviour
     float verticalRaySpacing;
 
     BoxCollider2D collider;
-    ScoreManager scoreManager;
+    GameManager gm;
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
 
@@ -106,7 +106,7 @@ public class Controller2D : MonoBehaviour
 
     bool CheckItemCollision(RaycastHit2D hit)
     {
-        scoreManager = FindObjectOfType<ScoreManager>().GetComponent<ScoreManager>();
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
         int coinValue = 1;
 
@@ -114,9 +114,9 @@ public class Controller2D : MonoBehaviour
         {
             Destroy(hit.collider.gameObject);
             //audio clip
-            if (scoreManager != null)
+            if (gm != null)
             {
-                scoreManager.AddToScore(coinValue);
+                gm.AddToScore(coinValue);
             }
             Debug.Log("Coin Hit");
             return true;

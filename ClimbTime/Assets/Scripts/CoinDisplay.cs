@@ -6,20 +6,17 @@ using UnityEngine.UI;
 public class CoinDisplay : MonoBehaviour
 {
     public Text scoreText;
-    public GameObject scoremanagerobj;
-    public ScoreManager scoreManager;
+    public GameManager gm;
 
     void Start()
     {
-        //scoreText = GetComponent<Text>();
-        scoremanagerobj = GameObject.FindGameObjectWithTag("ScoreManager");
-        scoreManager = scoremanagerobj.GetComponent<ScoreManager>();
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = scoreManager.GetScore().ToString();
+        scoreText.text = gm.GetScore().ToString();
     }
 
 }

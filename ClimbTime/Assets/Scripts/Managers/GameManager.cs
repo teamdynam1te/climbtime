@@ -6,11 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // git test--- you can throw this away
-
+    public float defaultTime = 300f;
     public float timeLeft = 300f; //time left
     public Text levelTimer;
-    Player player;
+    //Player player;
     SceneLoader scene;
 
     [Header("Coin Values")]
@@ -24,6 +23,8 @@ public class GameManager : MonoBehaviour
     public enum GameStates { init, arena, shopping, mountain, end };
     public GameStates gameState;
 
+    bool timerActive = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -31,8 +32,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        scene = FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
-        player = FindObjectOfType<Player>().GetComponent<Player>();
+        scene = GetComponent<SceneLoader>();
+        //player = FindObjectOfType<Player>().GetComponent<Player>();
     }
 
     private void Update()
@@ -40,12 +41,19 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case GameStates.init:
-
+                timeLeft = defaultTime;
                 break;
 
             case GameStates.arena:
 
-                StartCoroutine("ArenaTime");
+                levelTimer = GameObject.FindGameObjectWithTag("LevelTimer").GetComponent<Text>();
+
+                if (!timerActive)
+                {
+                    StartCoroutine("ArenaTime");
+                    timerActive = true;
+                }
+
                 int seconds = Mathf.RoundToInt(timeLeft);
                 levelTimer.text = string.Format("{0:D2}:{1:D2}" + " Time Remaining", (seconds / 60), (seconds % 60)); // turns timer to correct format
 
@@ -73,9 +81,10 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             timeLeft--;
 
-            if(timeLeft <= 0)
+            if(timeLeft == 0)
             {
                 scene.ArenaEnd();
+                StopCoroutine("ArenaTime");
             }
         }
     } //countdown timer
