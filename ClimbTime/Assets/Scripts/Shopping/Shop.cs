@@ -13,8 +13,8 @@ public class Shop : MonoBehaviour
     public GameObject shopManager;
     [Tooltip("Currently checking what input to look for.    ")]
     private bool inShop = false;
-    public InventoryManager InvManager;
-    public ScoreManager scoreScript;
+    public GameManager InvManager;
+    public GameManager scoreScript;
     public GameObject ScoreManage;
 
     [Header("Shop Settings")]
@@ -43,11 +43,11 @@ public class Shop : MonoBehaviour
     void Start()
     {
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
-        InvManager = GameObject.FindGameObjectWithTag("InvManager").GetComponent<InventoryManager>();
+        InvManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
         anim = shopPanel.GetComponent<Animator>();
-        ScoreManage = GameObject.FindGameObjectWithTag("ScoreManager");
-        scoreScript = ScoreManage.GetComponent<ScoreManager>();
+        ScoreManage = GameObject.FindGameObjectWithTag("GameController");
+        scoreScript = ScoreManage.GetComponent<GameManager>();
         
     }
 
