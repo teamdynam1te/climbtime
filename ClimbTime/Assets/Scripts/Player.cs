@@ -36,9 +36,11 @@ public class Player : MonoBehaviour
     public SpriteRenderer crossHairSprite;
     private Vector2 playerPos;
     public Transform shootPoint;
+    public GameObject crossbow;
 
     //look at enum 
     public bool arenaCheck;
+    public bool shoppingCheck;
     public bool mountainCheck;
 
     //enum stateCheck { }
@@ -63,6 +65,16 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
         playerPos = transform.position;
+
+        if(arenaCheck == true)
+        {
+            crossbow.SetActive(true);
+        }
+
+        if(shoppingCheck == true)
+        {
+            crossbow.SetActive(false);
+        }
     }
 
     void FixedUpdate()
@@ -233,5 +245,5 @@ public class Player : MonoBehaviour
                 crossHairSprite.enabled = false;
             }
         }
-    } 
+    }
 }

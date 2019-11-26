@@ -18,13 +18,18 @@ public class SceneLoader : MonoBehaviour
         new WaitForSeconds(3f);
         player = FindObjectOfType<Player>().GetComponent<Player>();
         player.arenaCheck = true;
+        player.shoppingCheck = false;
         player.mountainCheck = false;
     }
 
     public void ArenaEnd()
     {
-    new WaitForSeconds(1f);
-    SceneManager.LoadScene("Shopping");
+        SceneManager.LoadScene("Shopping");
+        new WaitForSeconds(5f);
+        player = FindObjectOfType<Player>().GetComponent<Player>();
+        player.arenaCheck = false;
+        player.mountainCheck = false;
+        player.shoppingCheck = true;
     }
 
     public void Mountain()
@@ -33,6 +38,7 @@ public class SceneLoader : MonoBehaviour
         new WaitForSeconds(3f);
         player = FindObjectOfType<Player>().GetComponent<Player>();
         player.arenaCheck = false;
+        player.shoppingCheck = false;
         player.mountainCheck = true;
     }
 }

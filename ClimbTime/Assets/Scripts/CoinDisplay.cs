@@ -11,7 +11,7 @@ public class CoinDisplay : MonoBehaviour
 
     void Start()
     {
-        scoreText = GetComponent<Text>();
+        //scoreText = GetComponent<Text>();
         scoremanagerobj = GameObject.FindGameObjectWithTag("ScoreManager");
         scoreManager = scoremanagerobj.GetComponent<ScoreManager>();
     }
