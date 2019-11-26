@@ -144,12 +144,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33122618}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1210454217}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &33122620
 MonoBehaviour:
@@ -163,9 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e233935243ffa69478312531132295e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plr: {fileID: 8089896460577548015, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
-  gm: {fileID: 1974939542}
-  spawn: {fileID: 0}
+  spawn: {x: 0, y: 0, z: 0}
 --- !u!1 &238528457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,6 +2358,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1210454216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210454217}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1210454217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210454216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 33122619}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1220856058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,7 +2524,7 @@ Transform:
   m_Children:
   - {fileID: 910598639}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566042764
 GameObject:
@@ -2756,7 +2785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963310961
 GameObject:
@@ -2918,8 +2947,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLeft: 300
   levelTimer: {fileID: 0}
-  plr: {fileID: 8089896460577548015, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
-  spawn: {fileID: 0}
   GrappleAmmoAmount: 0
   ArmourAmount: 0
   dashPotionAmount: 0
