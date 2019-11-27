@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     private void Start()
@@ -42,12 +42,13 @@ public class GameManager : MonoBehaviour
         {
             case GameStates.init:
                 timeLeft = defaultTime;
+                DontDestroyOnLoad(this);
                 break;
 
             case GameStates.arena:
 
                 levelTimer = GameObject.FindGameObjectWithTag("LevelTimer").GetComponent<Text>();
-
+                DontDestroyOnLoad(this);
                 if (!timerActive)
                 {
                     StartCoroutine("ArenaTime");
@@ -60,18 +61,17 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameStates.shopping:
-
+                DontDestroyOnLoad(this);
                 break;
 
             case GameStates.mountain:
-
+                DontDestroyOnLoad(this);
                 break;
 
             case GameStates.end:
 
                 break;
         }
-
     }
 
     IEnumerator ArenaTime()

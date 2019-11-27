@@ -46,24 +46,6 @@ public class Player : MonoBehaviour
 
     Controller2D controller; //reference to Controller2D Script
 
-    /*private void Awake()
-    {
-        SetUpSingleton();        
-    }
-
-    private void SetUpSingleton()
-    {
-        int playerNum = FindObjectOfType<Player>();
-        if (playerNum > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(this);
-        }
-    }*/
-
     void Start()
     {
         moveState = movementStates.regMovement;
@@ -238,7 +220,7 @@ public class Player : MonoBehaviour
         velocity.y = jumpVelocity;
     }
 
-    private void SetCrosshairPosition() // cross hair aiming
+    public void SetCrosshairPosition() // cross hair aiming
     {
         if (gm.gameState == GameManager.GameStates.mountain)
         {
@@ -259,12 +241,12 @@ public class Player : MonoBehaviour
             var crossHairPosition = new Vector3(x, y, 0);
             crossHair.transform.position = crossHairPosition;
         }
-        if(gm.gameState == GameManager.GameStates.mountain)
+        /*if(gm.gameState == GameManager.GameStates.mountain)
         {
             if (crossHairSprite.enabled)
             {
                 crossHairSprite.enabled = false;
             }
-        }
+        }*/
     }
 }
