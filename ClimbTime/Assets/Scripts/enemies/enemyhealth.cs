@@ -27,7 +27,10 @@ public class enemyhealth : MonoBehaviour
     public void addDamage(float damage)
     {
         currenthealth -= damage;
-        if (currenthealth <= 0) makeDead();
+        if (currenthealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void makeDead()

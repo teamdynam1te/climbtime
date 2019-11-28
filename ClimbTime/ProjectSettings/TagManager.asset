@@ -13,6 +13,7 @@ TagManager:
   - Batspawn
   - PlayerSpawn
   - LevelTimer
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -56,9 +57,9 @@ TagManager:
   - name: ForeGround
     uniqueID: 2083760633
     locked: 0
-  - name: Characters
-    uniqueID: 4032834799
-    locked: 0
   - name: Items
     uniqueID: 691290895
+    locked: 0
+  - name: Characters
+    uniqueID: 4032834799
     locked: 0

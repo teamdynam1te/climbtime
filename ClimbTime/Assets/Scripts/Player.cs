@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     Vector2 hookDirOnClick;
     Vector3 worldMousePos;
 
+    bool doJump = false;
+    bool doHop = false;
+
     public Transform crossHair;
     public SpriteRenderer crossHairSprite;
     private Vector2 playerPos;
@@ -68,11 +71,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+        {
+            //Debug.Log("is jumping");
+            doJump = true;
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            doHop = true;
+        }
+
         if (gm.gameState == GameManager.GameStates.mountain)
         {
             crosshair.SetActive(true);
             SetCrosshairPosition();
             CheckCanHook();
+            CheckCanDash();
         }
 
         if (gm.gameState == GameManager.GameStates.arena)
@@ -125,14 +140,17 @@ public class Player : MonoBehaviour
 
     private void CheckCanDash()
     {
-        if (canDash == false)
-        {
-            dashCooldown -= Time.deltaTime;
-
-            if (dashCooldown <= 0)
+        if (gm.gameState == GameManager.GameStates.mountain)
+        {           
+            if (canDash == false)
             {
+                dashCooldown -= Time.deltaTime;
+
+                if (dashCooldown <= 0)
+                {
                 canDash = true;
                 dashCooldown = dashCooldownDefault;
+                }
             }
         }
     }
@@ -168,19 +186,21 @@ public class Player : MonoBehaviour
             }
         } //dashing only works when mountain
 
-        if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+        if (doJump)
         {
-            Debug.Log("is jumping");
+            //Debug.Log("is jumping");
             Jump(maxJumpVelocity);
         }
 
         //input for min jump height
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (doHop)
         {
             if (velocity.y > minJumpVelocity)
             {
                 velocity.y = minJumpVelocity;
             }
+
+            doHop = false;
         }
 
         switch(moveState)
@@ -218,6 +238,7 @@ public class Player : MonoBehaviour
     public void Jump(float jumpVelocity)
     {
         velocity.y = jumpVelocity;
+        doJump = false;
     }
 
     public void SetCrosshairPosition() // cross hair aiming

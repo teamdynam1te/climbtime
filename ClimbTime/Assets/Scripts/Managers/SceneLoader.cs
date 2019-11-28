@@ -12,6 +12,7 @@ public class SceneLoader : MonoBehaviour
     private void Awake()
     {
         gm = GetComponent<GameManager>();
+        //DontDestroyOnLoad(this);
     }
 
     public void PlayGame()
@@ -46,7 +47,7 @@ public class SceneLoader : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        Destroy(plr);
+        //Destroy(plr);
         gm.gameState = GameManager.GameStates.init;
     }
 
