@@ -46,7 +46,7 @@ public class SceneLoader : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        Destroy(plr);
+        //Destroy(plr);
         gm.gameState = GameManager.GameStates.init;
     }
 

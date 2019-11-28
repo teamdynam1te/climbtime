@@ -73,17 +73,33 @@ public class Player : MonoBehaviour
             crosshair.SetActive(true);
             SetCrosshairPosition();
             CheckCanHook();
+            CheckCanDash();
+            if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+            {
+                Debug.Log("is jumping");
+                Jump(maxJumpVelocity);
+            }
         }
 
         if (gm.gameState == GameManager.GameStates.arena)
         {
             crossbow.SetActive(true);
             crosshair.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+            {
+                Debug.Log("is jumping");
+                Jump(maxJumpVelocity);
+            }
         }
 
         if (gm.gameState == GameManager.GameStates.shopping)
         {
             crossbow.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+            {
+                Debug.Log("is jumping");
+                Jump(maxJumpVelocity);
+            }
         }
     }
 
@@ -125,14 +141,17 @@ public class Player : MonoBehaviour
 
     private void CheckCanDash()
     {
-        if (canDash == false)
-        {
-            dashCooldown -= Time.deltaTime;
-
-            if (dashCooldown <= 0)
+        if (gm.gameState == GameManager.GameStates.mountain)
+        {           
+            if (canDash == false)
             {
+                dashCooldown -= Time.deltaTime;
+
+                if (dashCooldown <= 0)
+                {
                 canDash = true;
                 dashCooldown = dashCooldownDefault;
+                }
             }
         }
     }
