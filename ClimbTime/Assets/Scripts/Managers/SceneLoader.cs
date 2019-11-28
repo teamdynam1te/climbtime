@@ -12,6 +12,7 @@ public class SceneLoader : MonoBehaviour
     private void Awake()
     {
         gm = GetComponent<GameManager>();
+        //DontDestroyOnLoad(this);
     }
 
     public void PlayGame()

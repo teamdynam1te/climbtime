@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 300f; //time left
     public Text levelTimer;
     //Player player;
-    SceneLoader scene;
+    public SceneLoader scene;
 
     [Header("Coin Values")]
     static int coinValue = 0;
@@ -25,9 +25,16 @@ public class GameManager : MonoBehaviour
 
     bool timerActive = false;
 
+    public static GameManager Instance { get; private set; } = null;
+
     private void Awake()
     {
-        //DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
+
+        if(GameObject.Find(gameObject.name) && GameObject.Find(gameObject.name) != this.gameObject)
+        {
+            Destroy(GameObject.Find(gameObject.name));
+        }
     }
 
     private void Start()

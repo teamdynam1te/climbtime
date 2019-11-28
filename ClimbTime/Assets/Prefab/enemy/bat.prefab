@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: -6141959458652703572}
   m_Layer: 13
   m_Name: bat
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -262132497
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e12fe611f5ff5fb4e87687fe50b8f229, type: 3}
   m_Color: {r: 0.9528302, g: 0.049439307, b: 0.049439307, a: 1}

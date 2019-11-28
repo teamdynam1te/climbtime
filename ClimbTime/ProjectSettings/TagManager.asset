@@ -13,6 +13,7 @@ TagManager:
   - Batspawn
   - PlayerSpawn
   - LevelTimer
+  - enemy
   layers:
   - Default
   - TransparentFX
