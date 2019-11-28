@@ -143,8 +143,8 @@ public class enemymovement : MonoBehaviour
 
                 gravity = batGravity;
 
-                float obstacalDistance = 0f;
-                float playerDistance = 0f;
+                float obstacalDistance = 999999999f;
+                float playerDistance = 999999999f;
 
                 foreach(LayerMask mask in controller.collisionMask)
                 {
