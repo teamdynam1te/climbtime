@@ -48,11 +48,13 @@ public class Player : MonoBehaviour
     bool canDash = true; //checks to see if can dash
 
     Controller2D controller; //reference to Controller2D Script
+    Animator anim;
 
     void Start()
     {
         moveState = movementStates.regMovement;
         controller = GetComponent<Controller2D>();
+        anim = GetComponent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
         //equation for turning movement in to velocity for movement
@@ -71,6 +73,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        FlipSprite();
+        
         if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
         {
             //Debug.Log("is jumping");
@@ -211,6 +215,9 @@ public class Player : MonoBehaviour
                 velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
                 velocity.y += gravity * Time.deltaTime;
 
+                bool PlayerHasMovement = Mathf.Abs(input.x) > Mathf.Epsilon;
+                anim.SetBool("Running", PlayerHasMovement);
+
                 break;
 
             case movementStates.dashing:
@@ -241,6 +248,15 @@ public class Player : MonoBehaviour
         doJump = false;
     }
 
+    private void FlipSprite()
+    {
+        bool PlayerHasMovement = Mathf.Abs(velocity.x) > Mathf.Epsilon;
+        if(PlayerHasMovement)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(velocity.x), 1);
+            crossbow.transform.localScale = new Vector2(Mathf.Sign(velocity.x), 1);
+        }
+    }
     public void SetCrosshairPosition() // cross hair aiming
     {
         if (gm.gameState == GameManager.GameStates.mountain)

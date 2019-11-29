@@ -27,6 +27,7 @@ public class Crossbow : MonoBehaviour
         }
     }
 
+
     public void CanShoot()
     {
         if (gm.gameState == GameManager.GameStates.arena)
