@@ -45761,6 +45761,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1053000282770521209, guid: 8bbf7649ef9e4ef4194cd6abee8c0b63,
+        type: 3}
+      propertyPath: m_Name
+      value: Batcave
+      objectReference: {fileID: 0}
     - target: {fileID: 1053000282770521208, guid: 8bbf7649ef9e4ef4194cd6abee8c0b63,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45815,11 +45820,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053000282770521209, guid: 8bbf7649ef9e4ef4194cd6abee8c0b63,
-        type: 3}
-      propertyPath: m_Name
-      value: Batcave
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bbf7649ef9e4ef4194cd6abee8c0b63, type: 3}
