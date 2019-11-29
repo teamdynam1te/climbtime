@@ -16,4 +16,8 @@ public class SimpleButton : MonoBehaviour
         //Destroy(plr);
         gm.gameState = GameManager.GameStates.init;
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
                 //DontDestroyOnLoad(this);
 
                 heightScore = player.transform.position.y - initHeight;
-                scoreHeightText.text = GetHeightScore().ToString("0");
+                scoreHeightText.text = GetHeightScore().ToString("0" + "M");
 
                 if (!timerActive)
                 {
@@ -95,7 +95,20 @@ public class GameManager : MonoBehaviour
 
             case GameStates.end:
 
+                scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
+                //heightScore = player.transform.position.y - initHeight;
+                scoreHeightText.text = GetHeightScore().ToString("0" + "M");
                 break;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            scene.MainMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            scene.QuitGame();
         }
     }
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 537678936}
   - component: {fileID: 537678938}
   - component: {fileID: 537678937}
+  - component: {fileID: 7161229256047507674}
   m_Layer: 8
   m_Name: Crossbow
   m_TagString: Untagged
@@ -100,6 +101,25 @@ MonoBehaviour:
   gm: {fileID: 0}
   startTimeBetweenShots: 1
   player: {fileID: 8089896460577548016}
+--- !u!95 &7161229256047507674
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537678935}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c951ee645ce27f42a02c7d4e3d1eb39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &609735118
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609735118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.46600002, y: 0, z: 0}
+  m_LocalPosition: {x: 0.575, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 537678936}

@@ -50,6 +50,10 @@ public class SceneLoader : MonoBehaviour
         gm.gameState = GameManager.GameStates.init;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -60,7 +64,7 @@ public class SceneLoader : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
-        gm.gameState = GameManager.GameStates.init;
+        gm.gameState = GameManager.GameStates.end;
     }
 
     public void Mountain()
