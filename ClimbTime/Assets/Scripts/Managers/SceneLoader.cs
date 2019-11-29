@@ -28,12 +28,12 @@ public class SceneLoader : MonoBehaviour
         spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
         if(spawn != null)
         {
-            Instantiate(plr, spawn.transform.position, Quaternion.identity);           
+            gm.player = Instantiate(plr, spawn.transform.position, Quaternion.identity).GetComponent<Player>();
         }
         else
         {
             spawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
-            Instantiate(plr, spawn.transform.position, Quaternion.identity);
+            gm.player = Instantiate(plr, spawn.transform.position, Quaternion.identity).GetComponent<Player>();
         }
     }
 
@@ -44,6 +44,12 @@ public class SceneLoader : MonoBehaviour
         gm.gameState = GameManager.GameStates.shopping;
     }
 
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+        gm.gameState = GameManager.GameStates.init;
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -51,10 +57,19 @@ public class SceneLoader : MonoBehaviour
         gm.gameState = GameManager.GameStates.init;
     }
 
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+        gm.gameState = GameManager.GameStates.init;
+    }
+
     public void Mountain()
     {
         SceneManager.LoadScene("Mountain");
         StartCoroutine(WaitForPlayerSpawn(0.1f));
+        gm.timeLeft = gm.defaultTime;
+        gm.timerActive = false;
+        gm.initHeight = gm.player.transform.position.y;
         gm.gameState = GameManager.GameStates.mountain;
     }
 }

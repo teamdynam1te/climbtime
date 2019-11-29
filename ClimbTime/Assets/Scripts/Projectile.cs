@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float destroyTime;
     public float attackPower = 1f;
+    //public enemyhealth enemy;
+    public ParticleSystem hitVFX;
 
     private void Start()
     {
@@ -28,8 +30,12 @@ public class Projectile : MonoBehaviour
 
         if(other.gameObject.tag == "enemy")
         {
+            enemyhealth en = other.gameObject.GetComponent<enemyhealth>();
             Debug.Log("Enemy Hit");
-            GetComponent<enemyhealth>().addDamage(1f);
+            en.addDamage(1f);
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+            hitVFX.Play();
+            Destroy(gameObject);
         }
     }
 }

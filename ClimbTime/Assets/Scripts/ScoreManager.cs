@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    static int coinValue = 0;
+    int coinValue = 0;
 
     private void Awake()
     {
@@ -34,9 +34,9 @@ public class ScoreManager : MonoBehaviour
         coinValue -= price;
     }
 
-    public void AddToScore(int scoreValue)
+    public void AddToScore(int value)
     {
-        coinValue += scoreValue;
+        coinValue += value;
     }
 
     public void ResetGame()

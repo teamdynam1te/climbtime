@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class Coins : MonoBehaviour
 {
-    int coinValue = 1;
+    public int coinValue;
     public ScoreManager scoreManager;
+
+    private void Start()
+    {
+        scoreManager = FindObjectOfType<ScoreManager>();
+    }
 
     public void AddCoin()
     {
-        FindObjectOfType<ScoreManager>().AddToScore(coinValue);
-        Debug.Log("Coin Hit");
+        scoreManager.AddToScore(coinValue);
     }
 }
 

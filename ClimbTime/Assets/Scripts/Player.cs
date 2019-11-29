@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
         if (gm.gameState == GameManager.GameStates.mountain)
         {
             crosshair.SetActive(true);
+            crossbow.SetActive(false);
             SetCrosshairPosition();
             CheckCanHook();
             CheckCanDash();
@@ -129,10 +130,11 @@ public class Player : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
             Debug.DrawRay(transform.position, facingDir, Color.red);
 
-            if (Input.GetMouseButtonDown(0) && hit)
+            if (Input.GetMouseButtonDown(0) && hit && gm.GrappleAmmoAmount > 0)
             {
                 Debug.Log("Button Down");
                 hookDirOnClick = facingDir;
+                gm.GrappleAmmoAmount -= 1;
                 moveState = movementStates.hook;
             }
             if (Input.GetMouseButtonUp(0))
@@ -146,7 +148,7 @@ public class Player : MonoBehaviour
     {
         if (gm.gameState == GameManager.GameStates.mountain)
         {           
-            if (canDash == false)
+            if (canDash == false && gm.dashPotionAmount > 0)
             {
                 dashCooldown -= Time.deltaTime;
 
@@ -156,6 +158,14 @@ public class Player : MonoBehaviour
                 dashCooldown = dashCooldownDefault;
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Treasure")
+        {
+            gm.AddToScore(Random.Range(5, 10));
         }
     }
 
@@ -180,6 +190,7 @@ public class Player : MonoBehaviour
                 {
                     canDash = false;
                     dashTime = dashTimeDefault;
+                    gm.dashPotionAmount -= 1;
                     moveState = movementStates.regMovement;
                 }
             }

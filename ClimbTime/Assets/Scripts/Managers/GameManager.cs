@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public float defaultTime = 300f;
+    public float heightScore = 0f;
+    public float initHeight;
     public float timeLeft = 300f; //time left
     public Text levelTimer;
-    //Player player;
+    public Text scoreHeightText;
+    public Player player;
     public SceneLoader scene;
 
     [Header("Coin Values")]
@@ -23,7 +26,7 @@ public class GameManager : MonoBehaviour
     public enum GameStates { init, arena, shopping, mountain, end };
     public GameStates gameState;
 
-    bool timerActive = false;
+    public bool timerActive = false;
 
     public static GameManager Instance { get; private set; } = null;
 
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        if(GameObject.Find(gameObject.name) && GameObject.Find(gameObject.name) != this.gameObject)
+        if (GameObject.Find(gameObject.name) && GameObject.Find(gameObject.name) != this.gameObject)
         {
             Destroy(GameObject.Find(gameObject.name));
         }
@@ -40,7 +43,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         scene = GetComponent<SceneLoader>();
-        //player = FindObjectOfType<Player>().GetComponent<Player>();
     }
 
     private void Update()
@@ -49,13 +51,13 @@ public class GameManager : MonoBehaviour
         {
             case GameStates.init:
                 timeLeft = defaultTime;
-                DontDestroyOnLoad(this);
+                //DontDestroyOnLoad(this);
                 break;
 
             case GameStates.arena:
 
                 levelTimer = GameObject.FindGameObjectWithTag("LevelTimer").GetComponent<Text>();
-                DontDestroyOnLoad(this);
+                //DontDestroyOnLoad(this);
                 if (!timerActive)
                 {
                     StartCoroutine("ArenaTime");
@@ -63,16 +65,32 @@ public class GameManager : MonoBehaviour
                 }
 
                 int seconds = Mathf.RoundToInt(timeLeft);
-                levelTimer.text = string.Format("{0:D2}:{1:D2}" + " Time Remaining", (seconds / 60), (seconds % 60)); // turns timer to correct format
+                levelTimer.text = string.Format("{0:D2}:{1:D2}" + " Time Left", (seconds / 60), (seconds % 60)); // turns timer to correct format
 
                 break;
 
             case GameStates.shopping:
-                DontDestroyOnLoad(this);
+                //DontDestroyOnLoad(this);
                 break;
 
             case GameStates.mountain:
-                DontDestroyOnLoad(this);
+
+                scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
+                levelTimer = GameObject.FindGameObjectWithTag("LevelTimer").GetComponent<Text>();
+                //DontDestroyOnLoad(this);
+
+                heightScore = player.transform.position.y - initHeight;
+                scoreHeightText.text = GetHeightScore().ToString("0");
+
+                if (!timerActive)
+                {
+                    StartCoroutine("MountainTime");
+                    timerActive = true;
+                }
+
+                int sec = Mathf.RoundToInt(timeLeft);
+                levelTimer.text = string.Format("{0:D2}:{1:D2}" + " Time Left", (sec / 60), (sec % 60));
+
                 break;
 
             case GameStates.end:
@@ -88,13 +106,28 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             timeLeft--;
 
-            if(timeLeft == 0)
+            if (timeLeft == 0)
             {
                 scene.ArenaEnd();
                 StopCoroutine("ArenaTime");
             }
         }
     } //countdown timer
+
+    IEnumerator MountainTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            timeLeft--;
+
+            if (timeLeft == 0)
+            {
+                scene.GameOver();
+                StopCoroutine("MountainTime");
+            }
+        }
+    }
 
     public int GetScore()
     {
@@ -114,6 +147,17 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         coinValue = 0;
+        heightScore = 0;
         Destroy(gameObject);
+    }
+
+    public float GetHeightScore()
+    {
+        return heightScore;
+    }
+
+    public void AddToHeight(float heightValue)
+    {
+        heightScore += heightValue;
     }
 }

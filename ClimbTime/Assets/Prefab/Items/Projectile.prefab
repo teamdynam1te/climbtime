@@ -98,6 +98,8 @@ MonoBehaviour:
   speed: 15
   destroyTime: 1
   attackPower: 1
+  enemy: {fileID: 0}
+  hitVFX: {fileID: 3827004105536436745, guid: 5b51a35f4007dee459aa68aab5128648, type: 3}
 --- !u!58 &-6121838706770499582
 CircleCollider2D:
   m_ObjectHideFlags: 0
