@@ -20,4 +20,10 @@ public class SimpleButton : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void HowToPlay()
+    {
+        SceneManager.LoadScene("HowToPlay");
+        gm.gameState = GameManager.GameStates.init;
+    }
 }
