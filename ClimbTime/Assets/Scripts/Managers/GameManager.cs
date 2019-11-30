@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         {
             case GameStates.init:
                 timeLeft = defaultTime;
+                ResetGame();
                 //DontDestroyOnLoad(this);
                 break;
 
@@ -161,7 +162,7 @@ public class GameManager : MonoBehaviour
     {
         coinValue = 0;
         heightScore = 0;
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     public float GetHeightScore()
