@@ -7,7 +7,7 @@ public class enemyhealth : MonoBehaviour
     public float Enemymaxhealth;
 
     float currenthealth;
-
+    public GameObject coinDrop;
 
 
 
@@ -29,12 +29,17 @@ public class enemyhealth : MonoBehaviour
         currenthealth -= damage;
         if (currenthealth <= 0)
         {
-            Destroy(gameObject);
+            makeDead();
         }
     }
 
     void makeDead()
     {
+        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skeltonattacking : MonoBehaviour
+public class Attacking : MonoBehaviour
 {
     public GameObject plr;
     public playerHealth plrH;
@@ -19,13 +19,13 @@ public class skeltonattacking : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("HIT");
+            DamagePlr();
         }
     }
 
     public void DamagePlr()
     {
-
+        plrH.DamagePlayer(damage);
     }
 
     

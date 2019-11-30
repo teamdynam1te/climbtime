@@ -27,7 +27,7 @@ public class enemymovement : MonoBehaviour
     Vector3 velocity;
    public float gravity;
     float velocitySmoothing;
- 
+   
 
 
     public bool MoveRight;
@@ -140,57 +140,58 @@ public class enemymovement : MonoBehaviour
                 break;
             case Enemytype.bat:
                 // do bat stuff here                               
-
-                gravity = batGravity;
-
-                float obstacalDistance = 999999999f;
-                float playerDistance = 999999999f;
-
-                foreach(LayerMask mask in controller.collisionMask)
+                if (batTarget != null)
                 {
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, batDirection, detectioncollider.bounds.extents.x, mask);
+                    gravity = batGravity;
 
-                    if (hit)
+                    float obstacalDistance = 999999999f;
+                    float playerDistance = 999999999f;
+
+                    foreach (LayerMask mask in controller.collisionMask)
                     {
-                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+                        RaycastHit2D hit = Physics2D.Raycast(transform.position, batDirection, detectioncollider.bounds.extents.x, mask);
+
+                        if (hit)
                         {
-                            Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
-                            //canmove = false;   
-                            obstacalDistance = hit.distance;
+                            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+                            {
+                                Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
+                                //canmove = false;   
+                                obstacalDistance = hit.distance;
 
-                        }
+                            }
 
-                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
-                        {
-                            Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
-                            //canmove = false;   
-                            playerDistance = hit.distance;
+                            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
+                            {
+                                Debug.DrawRay(transform.position, batDirection * detectioncollider.bounds.extents.x, Color.red);
+                                //canmove = false;   
+                                playerDistance = hit.distance;
 
+                            }
                         }
                     }
+
+                    if (obstacalDistance < playerDistance)
+                    {
+                        canmove = false;
+                    }
+
+                    if (canmove == true)
+                    {
+                        batTargetPos = target.position;
+                    }
+                    else if (canmove == false)
+                    {
+                        batTargetPos = batTarget.position;
+                    }
+
+                    batDirection = batTargetPos - transform.position;
+                    batDirection.Normalize();
+
+
+                    velocity.x = batDirection.x * moveSpeed;
+                    velocity.y = batDirection.y * moveSpeed;
                 }
-
-                if(obstacalDistance < playerDistance)
-                {
-                    canmove = false;
-                }
-
-                if (canmove == true)
-                {
-                    batTargetPos = target.position;
-                }
-                else if (canmove == false)
-                {
-                    batTargetPos = batTarget.position;
-                }
-
-                batDirection = batTargetPos - transform.position;
-                batDirection.Normalize();
-
-
-                velocity.x = batDirection.x * moveSpeed;
-                velocity.y = batDirection.y * moveSpeed;
-
                 break;
         }
 
