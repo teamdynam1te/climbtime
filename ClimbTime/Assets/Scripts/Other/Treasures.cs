@@ -9,7 +9,7 @@ public class Treasures : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        treasureValue = Random.Range(5, 10);
+        treasureValue = Random.Range(5, 15);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
