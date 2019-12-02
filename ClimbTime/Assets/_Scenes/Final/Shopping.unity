@@ -3825,7 +3825,7 @@ SpriteRenderer:
   m_SortingLayerID: 691290895
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 267a6fd51e791644b86989abd8e6bcfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 270e5b416c345b34ab05943ebda60556, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4132,7 +4132,7 @@ SpriteRenderer:
   m_SortingLayerID: 691290895
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 267a6fd51e791644b86989abd8e6bcfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd9e701cdc35c864f810a57b161b0fc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4667,7 +4667,7 @@ GameObject:
   - component: {fileID: 1135454644}
   - component: {fileID: 1135454643}
   m_Layer: 0
-  m_Name: Shop Item 2
+  m_Name: Grapple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4692,8 +4692,8 @@ MonoBehaviour:
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
-  itemPrice: 100
-  itemStock: 2
+  itemPrice: 10
+  itemStock: 150
   canBuy: 0
   anim: {fileID: 0}
   itemTitleText: {fileID: 578562890}
@@ -5127,7 +5127,7 @@ SpriteRenderer:
   m_SortingLayerID: 691290895
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 267a6fd51e791644b86989abd8e6bcfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a91364c77d35062488b5df5c54883cf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5151,7 +5151,7 @@ GameObject:
   - component: {fileID: 1388925221}
   - component: {fileID: 1388925220}
   m_Layer: 0
-  m_Name: Shop Item 3
+  m_Name: Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5176,8 +5176,8 @@ MonoBehaviour:
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
-  itemPrice: 200
-  itemStock: 50
+  itemPrice: 20
+  itemStock: 250
   canBuy: 0
   anim: {fileID: 0}
   itemTitleText: {fileID: 1738054705}
@@ -5291,7 +5291,7 @@ GameObject:
   - component: {fileID: 1408349184}
   - component: {fileID: 1408349187}
   m_Layer: 0
-  m_Name: Shop Item 1
+  m_Name: Armour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5408,7 +5408,7 @@ MonoBehaviour:
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
   itemPrice: 50
-  itemStock: 10
+  itemStock: 25
   canBuy: 0
   anim: {fileID: 0}
   itemTitleText: {fileID: 34676448}
