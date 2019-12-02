@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plr: {fileID: 0}
   plrH: {fileID: 0}
-  damage: 0
+  damage: 1
   canDamagePlayer: 0
 --- !u!1 &1399746093691422988
 GameObject:
@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemymaxhealth: 1
+  coinDrop: {fileID: 5958480507511857468, guid: 238f1d100b28ecd438d73b204212d97a,
+    type: 3}
 --- !u!114 &-2916547010958425485
 MonoBehaviour:
   m_ObjectHideFlags: 0
