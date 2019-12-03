@@ -64,6 +64,11 @@ public class CoinMovement : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+
+    }
+
     void FixedUpdate()
     {
         Move();
@@ -87,12 +92,18 @@ public class CoinMovement : MonoBehaviour
             jumpHeight = jumpHeight / 1.25f;
         }
 
-        if(jumpHeight <= 0.832f)
+
+
+        if (jumpHeight <= 0.832f)
         {
             jumpHeight = 0;
             moveX = 0;
         }
-   
+
+        if (controller.collisions.left || controller.collisions.right)
+        {
+            moveX = -moveX;
+        }
 
 
         //movement and acceleration
