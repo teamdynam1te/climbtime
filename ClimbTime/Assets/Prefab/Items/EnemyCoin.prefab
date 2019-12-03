@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5958480507511857468}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.538812, y: -5.199352, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
@@ -181,18 +181,10 @@ MonoBehaviour:
   particleSys: {fileID: 0}
   jumpHeight: 10
   gravity: -20
-  plr: {fileID: 0}
-  plrhealth: {fileID: 0}
-  damage: 0
-  randomMoveXDir:
-  - 0
-  - 0
   moveXDir: 0
-  RandomMoveXSpeed:
-  - 0
-  - 0
-  - 0
-  - 0
+  minSpeed: 0.5
+  maxSpeed: 10
+  maxJump: 10
 --- !u!114 &6106223729770314809
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,27 +12,16 @@ public class CoinMovement : MonoBehaviour
     [Range(-1, 1)]
     public float moveX;
     public GameObject particleSys;
-
     public float jumpHeight;
-    
-
-    [Header("PlayerSettings")]
     
     Vector3 velocity;
     public float gravity;
-    float velocitySmoothing;
-    Vector2 facingDir;
-
-    public GameObject plr;
-    public playerHealth plrhealth;
-    public int damage;
-
     Controller2D controller; //reference to Controller2D Script
 
-    public float[] randomMoveXDir;
     public float moveXDir;
-    public float[] RandomMoveXSpeed;
-
+    public float minSpeed;
+    public float maxSpeed;
+    public float maxJump;
 
 
     void Start()
@@ -41,31 +30,15 @@ public class CoinMovement : MonoBehaviour
 
         //equation for turning movement in to velocity for movement
         // gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
-        plr = GameObject.FindGameObjectWithTag("Player");
-        plrhealth = plr.GetComponent<playerHealth>();
-        randomMoveXDir[0] = -0.35f;
-        randomMoveXDir[1] = 0.35f;
-        RandomMoveXSpeed[0] = -0.25f;
-        RandomMoveXSpeed[1] = -0.35f;
-        RandomMoveXSpeed[2] = 0.25f;
-        RandomMoveXSpeed[3] = 0.35f;
-        
 
-        moveXDir = Random.Range(randomMoveXDir[0], randomMoveXDir[1]);
-        if (moveXDir > 0)
+        while (moveXDir == 0)
         {
-            moveX = randomMoveXDir[1] + Random.Range(RandomMoveXSpeed[2], RandomMoveXSpeed[3]);
-            
+            moveXDir = Random.Range(-1f, 1f);
         }
-        else
-        {
-            moveX = randomMoveXDir[0] - Random.Range(RandomMoveXSpeed[0], RandomMoveXSpeed[1]);
-        }
-        
-    }
 
-    private void Update()
-    {
+        moveSpeed = Random.Range(minSpeed, maxSpeed);
+        moveX = moveXDir * moveSpeed;
+        velocity.y = Random.Range(0f, maxJump);
 
     }
 
@@ -107,10 +80,9 @@ public class CoinMovement : MonoBehaviour
 
 
         //movement and acceleration
-        controller.Move(velocity * Time.deltaTime);
-        float targetVelocityX = input.x * moveSpeed;
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocitySmoothing, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
+        velocity.x = moveX;
         velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 
 
