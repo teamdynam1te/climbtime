@@ -26,4 +26,9 @@ public class SimpleButton : MonoBehaviour
         SceneManager.LoadScene("HowToPlay");
         gm.gameState = GameManager.GameStates.init;
     }
+    public void HighScoreScene()
+    {
+        SceneManager.LoadScene("HighScoreScene");
+        gm.gameState = GameManager.GameStates.init;
+    }
 }

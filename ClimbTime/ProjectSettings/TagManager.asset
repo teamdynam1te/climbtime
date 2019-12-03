@@ -16,6 +16,7 @@ TagManager:
   - enemy
   - ScoreHeight
   - Treasure
+  - HighScoreThing
   layers:
   - Default
   - TransparentFX
