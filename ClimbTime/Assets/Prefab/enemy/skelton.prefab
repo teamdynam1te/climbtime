@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1416822680}
   - component: {fileID: 1416822679}
   m_Layer: 0
-  m_Name: hit
+  m_Name: skeleton hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1521918476219564306}
   - component: {fileID: -2916547010958425485}
   - component: {fileID: 289212253}
+  - component: {fileID: 7548659}
   m_Layer: 13
   m_Name: skelton
   m_TagString: enemy
@@ -105,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 1399746093691422988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.94, y: -7.83, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 2.9118958, z: 1}
   m_Children:
   - {fileID: 1416822678}
   m_Father: {fileID: 0}
@@ -227,6 +228,9 @@ MonoBehaviour:
   Enemymaxhealth: 1
   coinDrop: {fileID: 5958480507511857468, guid: 238f1d100b28ecd438d73b204212d97a,
     type: 3}
+  dropAmount: 0
+  minDrop: 3
+  maxDrop: 10
 --- !u!114 &-2916547010958425485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,3 +271,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!58 &7548659
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399746093691422988}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.38}
+  serializedVersion: 2
+  m_Radius: 0.201

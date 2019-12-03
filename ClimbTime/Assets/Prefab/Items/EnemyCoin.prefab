@@ -184,7 +184,7 @@ MonoBehaviour:
   moveXDir: 0
   minSpeed: 0.5
   maxSpeed: 10
-  maxJump: 10
+  maxJump: 12
 --- !u!114 &6106223729770314809
 MonoBehaviour:
   m_ObjectHideFlags: 0

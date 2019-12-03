@@ -9,6 +9,9 @@ public class enemyhealth : MonoBehaviour
     float currenthealth;
     public GameObject coinDrop;
 
+    public int dropAmount;
+    public int minDrop;
+    public int maxDrop;
 
 
 
@@ -16,6 +19,7 @@ public class enemyhealth : MonoBehaviour
     void Start()
     {
         currenthealth = Enemymaxhealth;
+        dropAmount = Random.Range(minDrop, maxDrop);
     }
 
     // Update is called once per frame
@@ -35,13 +39,16 @@ public class enemyhealth : MonoBehaviour
 
     void makeDead()
     {
-        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
-        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
-        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
-        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
-        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+       while (dropAmount > 0)
+        {
+            DropCoins(); 
+        }
         Destroy(gameObject);
     }
 
-
+    public void DropCoins()
+    {
+        Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+        dropAmount--;
+    }
 }
