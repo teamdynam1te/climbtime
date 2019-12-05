@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     public GameObject crossbow;
     public GameObject crosshair;
     public GameManager gm;
+    public AudioSource jump;
 
     //enum stateCheck { }
 
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
         {
             //Debug.Log("is jumping");
             doJump = true;
+            jump.Play();
         }
 
         if(Input.GetKeyUp(KeyCode.Space))
@@ -205,6 +207,7 @@ public class Player : MonoBehaviour
         {
             //Debug.Log("is jumping");
             Jump(maxJumpVelocity);
+           
         }
 
         //input for min jump height
@@ -269,7 +272,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            anim.SetBool("Running", !PlayerHasMovement);
+            anim.SetBool("Running", false);
         }
 
         if(PlayerHasMovement)

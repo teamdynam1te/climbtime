@@ -17,6 +17,7 @@ TagManager:
   - ScoreHeight
   - Treasure
   - HighScoreThing
+  - ScoreTimer
   layers:
   - Default
   - TransparentFX
@@ -33,8 +34,8 @@ TagManager:
   - Coin
   - enemy
   - Projectile
-  - Shop
-  - Door
+  - 
+  - 
   - 
   - 
   - 

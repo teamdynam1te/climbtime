@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
 
                 scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
                 levelTimer = GameObject.FindGameObjectWithTag("LevelTimer").GetComponent<Text>();
-                new WaitForSeconds(1f);
+                //DontDestroyOnLoad(this);
 
                 heightScore = player.transform.position.y - initHeight;
                 scoreHeightText.text = GetHeightScore().ToString("0" + "M");
