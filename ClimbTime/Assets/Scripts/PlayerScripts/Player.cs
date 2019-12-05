@@ -269,7 +269,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            anim.SetBool("Running", false);
+            anim.SetBool("Running", !PlayerHasMovement);
         }
 
         if(PlayerHasMovement)
