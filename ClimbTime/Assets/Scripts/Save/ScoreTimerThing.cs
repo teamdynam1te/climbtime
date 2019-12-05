@@ -16,6 +16,8 @@ public class ScoreTimerThing : MonoBehaviour
     {
         timer = 0;
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        
+
     }
 
     // Update is called once per frame
