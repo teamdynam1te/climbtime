@@ -13,13 +13,17 @@ public class enemyhealth : MonoBehaviour
     public int minDrop;
     public int maxDrop;
 
+    Animator anim;
 
+    enemymovement move;
 
     // Start is called before the first frame update
     void Start()
     {
         currenthealth = Enemymaxhealth;
         dropAmount = Random.Range(minDrop, maxDrop);
+        anim = this.gameObject.GetComponent<Animator>();
+        move = this.gameObject.GetComponent<enemymovement>();
     }
 
     // Update is called once per frame
@@ -43,7 +47,10 @@ public class enemyhealth : MonoBehaviour
         {
             DropCoins(); 
         }
-        Destroy(gameObject);
+        anim.SetTrigger("Die");
+        move.moveSpeed  = 0f;
+
+        Destroy(gameObject, 1f);
     }
 
     public void DropCoins()

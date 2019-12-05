@@ -123,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0042477846, y: 0.045187235}
+  m_Offset: {x: 0.009366296, y: -0.017493539}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -134,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1104114, y: 1.361496}
+  m_Size: {x: 0.38611716, y: 0.06275129}
   m_EdgeRadius: 0
 --- !u!1 &4490799169812345367
 GameObject:
@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 5932842154704650857}
   - component: {fileID: -8592503308251237873}
   - component: {fileID: -6141959458652703572}
+  - component: {fileID: 1362877113}
   m_Layer: 13
   m_Name: bat
   m_TagString: enemy
@@ -166,7 +167,7 @@ Transform:
   m_GameObject: {fileID: 4490799169812345367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.33, y: -7.57, z: 0}
-  m_LocalScale: {x: 1.511, y: 0.568, z: 1}
+  m_LocalScale: {x: 4.667824, y: 5.069367, z: 1}
   m_Children:
   - {fileID: 897899887}
   - {fileID: 951373795}
@@ -211,8 +212,9 @@ SpriteRenderer:
   m_SortingLayerID: -262132497
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e12fe611f5ff5fb4e87687fe50b8f229, type: 3}
-  m_Color: {r: 0.9528302, g: 0.049439307, b: 0.049439307, a: 1}
+  m_Sprite: {fileID: -823039087019788674, guid: 262819d9778806f4087ad9167f72cfcd,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -235,18 +237,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.098412395}
+  m_Offset: {x: 0.0027228296, y: -0.005644817}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.32, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.1646708}
+  m_Size: {x: 0.34105623, y: 0.25705454}
   m_EdgeRadius: 0
 --- !u!114 &5932842154704650857
 MonoBehaviour:
@@ -312,3 +314,22 @@ MonoBehaviour:
   MoveRight: 0
   canmove: 0
   batGravity: -5
+--- !u!95 &1362877113
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490799169812345367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b00751cbef6d0134d98171bd1513bb49, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

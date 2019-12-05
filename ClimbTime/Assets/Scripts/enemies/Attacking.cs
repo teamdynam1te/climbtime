@@ -8,11 +8,13 @@ public class Attacking : MonoBehaviour
     public playerHealth plrH;
     public float damage;
     public bool canDamagePlayer;
-
+    Animator anim;
+    public bool isSkeleton = false;
     void Start()
     {
         plr = GameObject.FindGameObjectWithTag("Player");
         plrH = plr.GetComponent<playerHealth>();
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +28,11 @@ public class Attacking : MonoBehaviour
     public void DamagePlr()
     {
         plrH.DamagePlayer(damage);
+        if (isSkeleton)
+        {
+         anim.SetTrigger("attack");
+        }
+        
     }
 
     

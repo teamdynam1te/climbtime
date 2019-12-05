@@ -36,7 +36,7 @@ public class enemymovement : MonoBehaviour
 
     SpriteRenderer sprite;
 
-    Animation anim; // change
+    Animator anim; // change
 
     Vector3 batTargetPos = Vector3.zero;
     Vector3 batDirection = Vector3.zero;
@@ -63,7 +63,8 @@ public class enemymovement : MonoBehaviour
 
         sprite = GetComponent<SpriteRenderer>();
 
-        anim = GetComponent<Animation>(); // change
+        anim = this.gameObject.GetComponent<Animator>();
+
 
 
     }
@@ -113,17 +114,23 @@ public class enemymovement : MonoBehaviour
 
                 {                 
                     velocity.y = maxJumpVelocity;
+                    anim.SetTrigger("jump");
                     actualTimer = Timer;
                 }
                 if(canmove == true)
                 {
+                    anim.SetBool("is run", true);
                 Vector3 thispostion = transform.position;
                 Vector3 otherpostion = target.position;
                 Vector3 direction = otherpostion - thispostion;
                 direction.Normalize();
                 velocity.x = direction.x * moveSpeed;
-                }
 
+                }
+                else
+                {
+                    anim.SetBool("is run", false);
+                }
                   
                    if(velocity.x <= 0)
                    {
@@ -147,26 +154,30 @@ public class enemymovement : MonoBehaviour
             case Enemytype.skeleton:
                 // do skeleton stuff here
                 // if move right bool is true means he will move to the right
-               if(MoveRight)
-                {
-                    moveX = -1;
-                }
-                else
-                {
-                    moveX = 1;
-                }
+                
+                
 
-                if (velocity.x <= 0)
-                {
-                    sprite.flipX = true;
+                    if (MoveRight)
+                    {
+                        moveX = -1;
+                    }
+                    else
+                    {
+                        moveX = 1;
+                    }
 
-                }
-                else
-                {
-                    sprite.flipX = false;
 
-                }
+                    if (velocity.x <= 0)
+                    {
+                        sprite.flipX = true;
 
+                    }
+                    else
+                    {
+                        sprite.flipX = false;
+
+                    }
+                
 
                 break;
             case Enemytype.bat:
