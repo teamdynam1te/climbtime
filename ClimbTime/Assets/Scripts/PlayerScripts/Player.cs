@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [Header("PlayerSettings")]
     float maxJumpVelocity;
     float minJumpVelocity;
-    Vector3 velocity;
+    public Vector3 velocity;
     float gravity;
     float velocitySmoothing;
     Vector2 facingDir;
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     public GameObject crossbow;
     public GameObject crosshair;
     public GameManager gm;
+    public AudioSource jump;
 
     //enum stateCheck { }
 
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
         {
             //Debug.Log("is jumping");
             doJump = true;
+            jump.Play();
         }
 
         if(Input.GetKeyUp(KeyCode.Space))
@@ -205,6 +207,7 @@ public class Player : MonoBehaviour
         {
             //Debug.Log("is jumping");
             Jump(maxJumpVelocity);
+           
         }
 
         //input for min jump height
@@ -227,7 +230,15 @@ public class Player : MonoBehaviour
                 velocity.y += gravity * Time.deltaTime;
 
                 bool PlayerHasMovement = Mathf.Abs(input.x) > Mathf.Epsilon;
-                anim.SetBool("Running", PlayerHasMovement);
+                
+                if(controller.collisions.below )
+                {
+                    anim.SetBool("Running", PlayerHasMovement);
+                }
+                else
+                {
+                    anim.SetBool("Running", false);
+                }
 
                 break;
 
@@ -262,6 +273,16 @@ public class Player : MonoBehaviour
     private void FlipSprite()
     {
         bool PlayerHasMovement = Mathf.Abs(velocity.x) > Mathf.Epsilon;
+
+        if(controller.collisions.below)
+        {
+            anim.SetBool("Running", PlayerHasMovement);
+        }
+        else
+        {
+            anim.SetBool("Running", false);
+        }
+
         if(PlayerHasMovement)
         {
             transform.localScale = new Vector2(Mathf.Sign(velocity.x), 1);
@@ -289,12 +310,5 @@ public class Player : MonoBehaviour
             var crossHairPosition = new Vector3(x, y, 0);
             crossHair.transform.position = crossHairPosition;
         }
-        /*if(gm.gameState == GameManager.GameStates.mountain)
-        {
-            if (crossHairSprite.enabled)
-            {
-                crossHairSprite.enabled = false;
-            }
-        }*/
     }
 }
