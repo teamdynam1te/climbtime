@@ -6,13 +6,11 @@ public class SaveGame : MonoBehaviour
 {
 
     public GameManager gm;
-    public ScoreTimerThing scoreTimer;
     public float HighestScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreTimer = GameObject.
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         HighestScore = PlayerPrefs.GetFloat("HighScore", 0);
         if (gm.heightScore > HighestScore)
