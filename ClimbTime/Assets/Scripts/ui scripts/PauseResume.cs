@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseResume : MonoBehaviour
 {
@@ -10,8 +11,24 @@ public class PauseResume : MonoBehaviour
 
     bool GamePaused;
 
+    public GameManager gm;
+    private void Awake()
+    {
+        gm = GetComponent<GameManager>();
+    }
 
-    // Start is called before the first frame update
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        //Destroy(plr);
+        gm.gameState = GameManager.GameStates.init;
+    }
+
     void Start()
     {
         GamePaused = false;
