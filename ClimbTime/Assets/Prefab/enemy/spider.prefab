@@ -231,3 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemymaxhealth: 1
+  coinDrop: {fileID: 0}
+  dropAmount: 0
+  minDrop: 0
+  maxDrop: 0
