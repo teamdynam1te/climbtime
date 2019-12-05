@@ -17,6 +17,7 @@ TagManager:
   - ScoreHeight
   - Treasure
   - HighScoreThing
+  - ScoreTimer
   layers:
   - Default
   - TransparentFX
