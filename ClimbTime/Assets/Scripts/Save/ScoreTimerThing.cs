@@ -31,18 +31,10 @@ public class ScoreTimerThing : MonoBehaviour
             {
                 canCount = false;
                 currentTime = timerToInt;
+                Destroy(this.gameObject, 5f);
             }
         }
-
-        if (gm.gameState == GameManager.GameStates.shopping)
-        {
-            checkManager = true;
-        }
-        if (checkManager)
-        {
-            gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-            checkManager = false;
-        }
+        
 
     }
 }
