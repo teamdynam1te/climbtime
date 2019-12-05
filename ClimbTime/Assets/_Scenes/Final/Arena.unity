@@ -2882,34 +2882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: ced8f3ba8eb48704993c4e531bc78d62, type: 3}
---- !u!1 &575622700 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5943755679763620535, guid: bd7a52723f045f4439028bf5684dd5de,
-    type: 3}
-  m_PrefabInstance: {fileID: 1654400684}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &575622701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575622700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279ec4cb91ff66a4589a221320298465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSpawn: 0
-  enemyCounter: 0
-  enemyPrefab: {fileID: 1399746093691422988, guid: 2b0271156c71ffa40a9eee8972b3aaac,
-    type: 3}
-  spawnPos: {fileID: 5943755679763620532, guid: bd7a52723f045f4439028bf5684dd5de,
-    type: 3}
-  realTimer: 0
-  timer: 3
-  enemylimt: 2
-  spawn: {fileID: 0}
 --- !u!1001 &621005060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8516,52 +8488,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1691964582}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1723195630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1723195632}
-  - component: {fileID: 1723195631}
-  m_Layer: 0
-  m_Name: SpawnManager
-  m_TagString: SpawnManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1723195631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723195630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991d1a17ca76cf3458738883b1903330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentenemys: 0
-  maxenemys: 0
-  canspawn: 0
---- !u!4 &1723195632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723195630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3805168, y: 2.1615202, z: -90.265625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1725718962
 PrefabInstance:
   m_ObjectHideFlags: 0
