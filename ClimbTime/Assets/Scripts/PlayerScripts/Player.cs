@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [Header("PlayerSettings")]
     float maxJumpVelocity;
     float minJumpVelocity;
-    Vector3 velocity;
+    public Vector3 velocity;
     float gravity;
     float velocitySmoothing;
     Vector2 facingDir;
@@ -230,7 +230,15 @@ public class Player : MonoBehaviour
                 velocity.y += gravity * Time.deltaTime;
 
                 bool PlayerHasMovement = Mathf.Abs(input.x) > Mathf.Epsilon;
-                anim.SetBool("Running", PlayerHasMovement);
+                
+                if(controller.collisions.below )
+                {
+                    anim.SetBool("Running", PlayerHasMovement);
+                }
+                else
+                {
+                    anim.SetBool("Running", false);
+                }
 
                 break;
 
@@ -302,12 +310,5 @@ public class Player : MonoBehaviour
             var crossHairPosition = new Vector3(x, y, 0);
             crossHair.transform.position = crossHairPosition;
         }
-        /*if(gm.gameState == GameManager.GameStates.mountain)
-        {
-            if (crossHairSprite.enabled)
-            {
-                crossHairSprite.enabled = false;
-            }
-        }*/
     }
 }
