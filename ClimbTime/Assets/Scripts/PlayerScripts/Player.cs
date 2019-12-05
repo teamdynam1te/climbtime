@@ -262,6 +262,16 @@ public class Player : MonoBehaviour
     private void FlipSprite()
     {
         bool PlayerHasMovement = Mathf.Abs(velocity.x) > Mathf.Epsilon;
+
+        if(controller.collisions.below)
+        {
+            anim.SetBool("Running", PlayerHasMovement);
+        }
+        else
+        {
+            anim.SetBool("Running", false);
+        }
+
         if(PlayerHasMovement)
         {
             transform.localScale = new Vector2(Mathf.Sign(velocity.x), 1);
