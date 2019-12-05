@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plr: {fileID: 0}
   plrH: {fileID: 0}
-  damage: 1
+  damage: 0
   canDamagePlayer: 0
 --- !u!61 &951373796
 BoxCollider2D:
@@ -305,7 +305,8 @@ MonoBehaviour:
   Timer: 1.5
   enemytype: 2
   target: {fileID: 6962046729570295572}
-  batTarget: {fileID: 0}
+  batTarget: {fileID: 6395876432305684066, guid: 8bbf7649ef9e4ef4194cd6abee8c0b63,
+    type: 3}
   JumpHeight: 3.9
   gravity: -5
   MoveRight: 0
