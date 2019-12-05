@@ -34,6 +34,10 @@ public class enemymovement : MonoBehaviour
     public bool canmove;
    public float batGravity;
 
+    SpriteRenderer sprite;
+
+    Animation anim; // change
+
     Vector3 batTargetPos = Vector3.zero;
     Vector3 batDirection = Vector3.zero;
 
@@ -57,7 +61,9 @@ public class enemymovement : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        
+        sprite = GetComponent<SpriteRenderer>();
+
+        anim = GetComponent<Animation>(); // change
 
 
     }
@@ -118,6 +124,20 @@ public class enemymovement : MonoBehaviour
                 velocity.x = direction.x * moveSpeed;
                 }
 
+                  
+                   if(velocity.x <= 0)
+                   {
+                    sprite.flipX = false;
+                       
+                   }
+                   else
+                   {
+                    sprite.flipX = true;
+                      
+                   }
+                
+                Debug.Log(velocity.x);
+
                 
 
                 
@@ -134,6 +154,17 @@ public class enemymovement : MonoBehaviour
                 else
                 {
                     moveX = 1;
+                }
+
+                if (velocity.x <= 0)
+                {
+                    sprite.flipX = true;
+
+                }
+                else
+                {
+                    sprite.flipX = false;
+
                 }
 
 
