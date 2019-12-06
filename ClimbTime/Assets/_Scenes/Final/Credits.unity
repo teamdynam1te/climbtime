@@ -2099,8 +2099,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Chris Baron\nMichael S\nOwen Foster Griffith\nLiam Hamilton\n\nAssisted
-    by \n\nDaniel Beaumont"
+  m_Text: 'Daniel Beaumont
+
+    Chris Baron
+
+    Michael "xD" Sanson
+
+    Owen Foster Griffith
+
+    Liam Hamilton'
 --- !u!222 &1773439651
 CanvasRenderer:
   m_ObjectHideFlags: 0
