@@ -5,11 +5,12 @@ using UnityEngine;
 public class HazardScript : MonoBehaviour
 {
     public float jumpHeight = 25;
+    public GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -25,9 +26,15 @@ public class HazardScript : MonoBehaviour
         {
             playerHealth plr = collision.gameObject.GetComponent<playerHealth>();
             Player move = collision.gameObject.GetComponent<Player>();
-            //Debug.Log("Hit");
-            move.Jump(jumpHeight);
-            plr.DamagePlayer(1f);
+            if (plr.currentPlayerHealth >= 0 && gm.ArmourAmount >= 0)
+            {
+                move.Jump(jumpHeight);
+                gm.ArmourAmount--;
+            }
+            if(plr.currentPlayerHealth <= 1 && gm.ArmourAmount <= 0)
+            {
+                plr.DamagePlayer(1f);
+            }
         }
     }
 

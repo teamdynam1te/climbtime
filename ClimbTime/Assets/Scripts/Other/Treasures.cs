@@ -16,7 +16,7 @@ public class Treasures : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            //gameManager.AddToScore(treasureValue);
+            gameManager.AddToScore(treasureValue);
             //audioclip
             Destroy(gameObject);
         }

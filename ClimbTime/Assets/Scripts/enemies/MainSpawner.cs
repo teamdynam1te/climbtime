@@ -11,7 +11,7 @@ public class MainSpawner : MonoBehaviour
     public int enemyCounter = 0;
     void Start()
     {
-        spwnTime = Random.Range(0.5f, 1.5f);
+        spwnTime = Random.Range(0.5f, 3f);
         InvokeRepeating("Spawn", spwnTime, spwnTime);
     }
 

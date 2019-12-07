@@ -16,6 +16,7 @@ public class Shop : MonoBehaviour
     public GameManager InvManager;
     public GameManager scoreScript;
     public GameObject GameManager;
+    public playerHealth PlayerHealth;
 
     [Header("Shop Settings")]
     public int itemPrice;
@@ -44,6 +45,7 @@ public class Shop : MonoBehaviour
     {
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
         Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<playerHealth>();
         anim = shopPanel.GetComponent<Animator>();
         GameManager = GameObject.FindGameObjectWithTag("GameController");
         scoreScript = GameManager.GetComponent<GameManager>();
@@ -90,7 +92,8 @@ public class Shop : MonoBehaviour
                 itemStock--;
                 if (isArmour)
                 {
-                    InvManager.ArmourAmount++;       
+                    InvManager.ArmourAmount++;
+                    PlayerHealth.currentPlayerHealth++;
                 }
                 if (isGrapple)
                 {

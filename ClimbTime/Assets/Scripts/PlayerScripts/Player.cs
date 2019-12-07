@@ -270,6 +270,14 @@ public class Player : MonoBehaviour
         doJump = false;
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "enemy" && doJump == true)
+        {
+            Jump(25);
+        }
+    }
+
     private void FlipSprite()
     {
         bool PlayerHasMovement = Mathf.Abs(velocity.x) > Mathf.Epsilon;

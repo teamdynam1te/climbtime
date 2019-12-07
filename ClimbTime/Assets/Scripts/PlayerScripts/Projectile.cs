@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     public float attackPower = 1f;
     //public enemyhealth enemy;
     public ParticleSystem hitVFX;
+    public ParticleSystem breakVFX;
 
     private void Start()
     {
@@ -25,6 +26,8 @@ public class Projectile : MonoBehaviour
         if(other.gameObject.tag == "Obstacles")
         {
             Debug.Log("Hit");
+            Instantiate(breakVFX, transform.position, Quaternion.identity);
+            breakVFX.Play();
             Destroy(gameObject);
         }
 

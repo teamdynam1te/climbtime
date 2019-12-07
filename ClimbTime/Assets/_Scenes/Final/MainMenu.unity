@@ -4523,7 +4523,7 @@ MonoBehaviour:
   player: {fileID: 0}
   scene: {fileID: 0}
   GrappleAmmoAmount: 0
-  ArmourAmount: 0
+  ArmourAmount: 1
   dashPotionAmount: 0
   gameState: 0
   timerActive: 0
