@@ -45,7 +45,7 @@ public class Shop : MonoBehaviour
     {
         buyKey = shopManager.gameObject.GetComponent<ShopManager>().buyKey;
         Player = GameObject.FindGameObjectWithTag("Player");
-        PlayerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<playerHealth>();
+        //PlayerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<playerHealth>();
         anim = shopPanel.GetComponent<Animator>();
         GameManager = GameObject.FindGameObjectWithTag("GameController");
         scoreScript = GameManager.GetComponent<GameManager>();
@@ -93,7 +93,7 @@ public class Shop : MonoBehaviour
                 if (isArmour)
                 {
                     InvManager.ArmourAmount++;
-                    PlayerHealth.currentPlayerHealth++;
+                    //PlayerHealth.currentPlayerHealth++;
                 }
                 if (isGrapple)
                 {

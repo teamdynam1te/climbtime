@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    int coinValue = 0;
+    public int coinValue = 0;
 
     private void Awake()
     {

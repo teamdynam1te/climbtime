@@ -183,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 8089896460577548015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -9, z: 0}
-  m_LocalScale: {x: 1, y: 1.1, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_Children:
   - {fileID: 8089896461449857810}
   - {fileID: 537678936}
@@ -255,8 +255,8 @@ MonoBehaviour:
   collisionMask:
   - serializedVersion: 2
     m_Bits: 12800
-  horizontalRayCount: 6
-  verticalRayCount: 4
+  horizontalRayCount: 8
+  verticalRayCount: 8
 --- !u!114 &8089896460577548016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +280,7 @@ MonoBehaviour:
   dashTime: 0.1
   hookSpeed: 5
   hookDist: 20
+  velocity: {x: 0, y: 0, z: 0}
   crossHair: {fileID: 8089896461449857810}
   crossHairSprite: {fileID: 8089896461449857813}
   shootPoint: {fileID: 8089896461449857810}
@@ -322,6 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setPlayerHealth: 1
   currentPlayerHealth: 0
+  gm: {fileID: 0}
+  scene: {fileID: 0}
 --- !u!82 &-6437880513324469706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -450,7 +453,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.058217406, y: -0.21154407}
+  m_Offset: {x: -0.043218136, y: -0.23717928}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -461,7 +464,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.981195, y: 1.5769119}
+  m_Size: {x: 0.75920606, y: 1.5256414}
   m_EdgeRadius: 0
 --- !u!1 &8089896461449857811
 GameObject:

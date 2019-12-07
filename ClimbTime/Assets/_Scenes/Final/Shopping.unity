@@ -20547,10 +20547,11 @@ MonoBehaviour:
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
+  PlayerHealth: {fileID: 0}
   itemPrice: 10
   itemStock: 150
   canBuy: 0
-  anim: {fileID: 0}
+  anim: {fileID: 282396151}
   itemTitleText: {fileID: 578562890}
   itemPriceText: {fileID: 2053980943}
   itemStockText: {fileID: 1114002343}
@@ -21031,10 +21032,11 @@ MonoBehaviour:
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
+  PlayerHealth: {fileID: 0}
   itemPrice: 20
   itemStock: 250
   canBuy: 0
-  anim: {fileID: 0}
+  anim: {fileID: 1943570852}
   itemTitleText: {fileID: 1738054705}
   itemPriceText: {fileID: 703212210}
   itemStockText: {fileID: 244954984}
@@ -21262,10 +21264,11 @@ MonoBehaviour:
   InvManager: {fileID: 0}
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
+  PlayerHealth: {fileID: 0}
   itemPrice: 50
   itemStock: 25
   canBuy: 0
-  anim: {fileID: 0}
+  anim: {fileID: 1994745890}
   itemTitleText: {fileID: 34676448}
   itemPriceText: {fileID: 1056051482}
   itemStockText: {fileID: 2074014371}

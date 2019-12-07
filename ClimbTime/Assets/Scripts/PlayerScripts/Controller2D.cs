@@ -113,7 +113,6 @@ public class Controller2D : MonoBehaviour
         if (hit.collider.tag == "Coin")
         {
             Destroy(hit.collider.gameObject);
-            //audio clip
             if (gm != null)
             {
                 gm.AddToScore(coinValue);

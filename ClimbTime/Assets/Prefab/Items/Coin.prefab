@@ -94,7 +94,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinValue: 1
   scoreManager: {fileID: 0}
+  pickUpSound: {fileID: 8300000, guid: 47d66cd9b7515bf4489a054af776188b, type: 3}
+  vol: 0.3
 --- !u!95 &-6905479940774636014
 Animator:
   serializedVersion: 3

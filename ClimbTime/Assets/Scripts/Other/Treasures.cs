@@ -6,6 +6,8 @@ public class Treasures : MonoBehaviour
 {
     public int treasureValue;
     public GameManager gameManager;
+    public AudioClip pickUpSound;
+    public float vol = 1;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -17,7 +19,7 @@ public class Treasures : MonoBehaviour
         if(collision.tag == "Player")
         {
             gameManager.AddToScore(treasureValue);
-            //audioclip
+            AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, vol);
             Destroy(gameObject);
         }
     }

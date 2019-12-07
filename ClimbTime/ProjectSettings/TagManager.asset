@@ -18,6 +18,7 @@ TagManager:
   - Treasure
   - HighScoreThing
   - ScoreTimer
+  - TreasureSpawner
   layers:
   - Default
   - TransparentFX

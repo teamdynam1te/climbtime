@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public SceneLoader scene;
 
     [Header("Coin Values")]
-    static int coinValue = 0;
+    public static int coinValue = 0;
 
     [Header("Inventory Manager Values")]
     public int GrappleAmmoAmount;
