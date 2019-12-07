@@ -11,6 +11,7 @@ public class Spawning : MonoBehaviour
     public float realTimer;
     public float timer;
     public float enemylimt = 0f;
+    int maxEnemies = 2;
 
 
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class Spawning : MonoBehaviour
     {
         realTimer -= Time.deltaTime;
 
-        if (canSpawn == true)
+        if (canSpawn == true && enemylimt < maxEnemies)
         {
             if (realTimer <= 0)
             {
@@ -40,7 +41,7 @@ public class Spawning : MonoBehaviour
         {
             canSpawn = false;
         }
-        if (enemyCounter <= enemylimt)
+        if (enemyCounter <= enemylimt && enemylimt < maxEnemies)
         {
             canSpawn = true;
         }
