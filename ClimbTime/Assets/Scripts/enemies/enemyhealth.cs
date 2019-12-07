@@ -8,6 +8,7 @@ public class enemyhealth : MonoBehaviour
 
     float currenthealth;
     public GameObject coinDrop;
+    public Spawning spwn;
 
     public int dropAmount;
     public int minDrop;
@@ -21,6 +22,7 @@ public class enemyhealth : MonoBehaviour
     void Start()
     {
         currenthealth = Enemymaxhealth;
+        spwn = FindObjectOfType<Spawning>();
         dropAmount = Random.Range(minDrop, maxDrop);
         anim = this.gameObject.GetComponent<Animator>();
         move = this.gameObject.GetComponent<enemymovement>();
@@ -56,6 +58,7 @@ public class enemyhealth : MonoBehaviour
     public void DropCoins()
     {
         Instantiate(coinDrop, this.transform.position, Quaternion.identity);
+        spwn.enemyCounter--;
         dropAmount--;
     }
 }

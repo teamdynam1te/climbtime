@@ -25,8 +25,6 @@ public class Spawning : MonoBehaviour
     private void Update()
     {
         realTimer -= Time.deltaTime;
-        // if (enemyCounter <= enemylimt)
-        // {
 
         if (canSpawn == true)
         {
@@ -35,12 +33,16 @@ public class Spawning : MonoBehaviour
                 Instantiate(enemyPrefab, spawnPos.transform.position, Quaternion.identity);
                 realTimer = timer;
                 enemyCounter++;
+                timer = 0;
             }
         }
-        // }
         if (enemyCounter >= enemylimt)
         {
             canSpawn = false;
+        }
+        if (enemyCounter <= enemylimt)
+        {
+            canSpawn = true;
         }
 
     }

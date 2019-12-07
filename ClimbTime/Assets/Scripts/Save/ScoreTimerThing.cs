@@ -27,8 +27,7 @@ public class ScoreTimerThing : MonoBehaviour
         {
             timer += Time.deltaTime;
             timerToInt = Mathf.RoundToInt(timer);
-            Debug.Log(timer);
-
+            
             if (gm.gameState == GameManager.GameStates.end)
             {
                 canCount = false;

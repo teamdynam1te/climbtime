@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseResume : MonoBehaviour
 {
 
     public GameObject PauseScreen;
     public GameObject PauseButton;
+    public GameManager gm;
+    public SceneLoader scene;
 
     bool GamePaused;
 
@@ -15,6 +18,23 @@ public class PauseResume : MonoBehaviour
     void Start()
     {
         GamePaused = false;
+    }
+
+    private void Awake()
+    {
+        gm = GetComponent<GameManager>();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        //Destroy(plr);
+        gm.gameState = GameManager.GameStates.init;
     }
 
     // Update is called once per frame
