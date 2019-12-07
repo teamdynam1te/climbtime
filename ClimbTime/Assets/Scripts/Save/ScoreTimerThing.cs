@@ -33,7 +33,10 @@ public class ScoreTimerThing : MonoBehaviour
             {
                 canCount = false;
                 currentTime = timerToInt;
-                Destroy(this.gameObject, 5f);
+            }
+            if (gm.gameState == GameManager.GameStates.arena)
+            {
+                Destroy(this);
             }
         }
 

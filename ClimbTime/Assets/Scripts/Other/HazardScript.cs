@@ -13,8 +13,8 @@ public class HazardScript : MonoBehaviour
     void Start()
     {
         plr = GameObject.FindGameObjectWithTag("Player");
-        playerMove = plr.GetComponent<Player>();
-        healthScript = plr.GetComponent<playerHealth>();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<playerHealth>();
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public class HazardScript : MonoBehaviour
         {
             Debug.Log("Hit");
             playerMove.Jump(jumpHeight);
+            
             
             healthScript.currentPlayerHealth--;
         }

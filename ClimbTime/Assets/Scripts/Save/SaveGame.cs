@@ -14,8 +14,9 @@ public class SaveGame : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        scoreTimerThing = GameObject.FindGameObjectWithTag("ScoreTimer").GetComponent<ScoreTimerThing>();
         HighestScore = PlayerPrefs.GetFloat("HighScore", 0);
-        BestTime = PlayerPrefs.GetInt("BestTime", 0);
+        BestTime = PlayerPrefs.GetInt("BestTime", 300);
         if (gm.heightScore >= HighestScore ) // High score system
         {
             if (scoreTimerThing.currentTime < BestTime)
@@ -36,12 +37,23 @@ public class SaveGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            ResetHighScore();
+        }
+
     }
 
     public float CheckHighestScore()
     {
         return HighestScore;
+    }
+
+    public void ResetHighScore()
+    {
+        PlayerPrefs.SetInt("BestTime", 0);
+        PlayerPrefs.SetFloat("HighScore", 0);
     }
 
    /* public void SaveScore()
