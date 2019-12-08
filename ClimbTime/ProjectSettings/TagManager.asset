@@ -19,6 +19,7 @@ TagManager:
   - HighScoreThing
   - ScoreTimer
   - TreasureSpawner
+  - SkelSpawner
   layers:
   - Default
   - TransparentFX

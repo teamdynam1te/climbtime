@@ -750,7 +750,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4654,10 +4654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f5bff1c50200042a3b80f63aa87b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTime: 300
+  defaultTime: 180
   heightScore: 0
   initHeight: 0
-  timeLeft: 300
+  timeLeft: 180
   levelTimer: {fileID: 0}
   scoreHeightText: {fileID: 0}
   player: {fileID: 0}

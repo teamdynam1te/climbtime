@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
     public GameObject crosshair;
     public GameManager gm;
     public AudioSource jump;
+    public AudioClip dashSFX;
+    public float vol = 1f;
 
     //enum stateCheck { }
 
@@ -156,8 +158,8 @@ public class Player : MonoBehaviour
 
                 if (dashCooldown <= 0)
                 {
-                canDash = true;
-                dashCooldown = dashCooldownDefault;
+                    canDash = true;
+                    dashCooldown = dashCooldownDefault;
                 }
             }
         }
@@ -185,6 +187,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) && canDash)
             {
                 Debug.Log("is dashing");
+                AudioSource.PlayClipAtPoint(dashSFX, Camera.main.transform.position, vol);
                 moveState = movementStates.dashing;
                 dashTime -= Time.deltaTime;
 

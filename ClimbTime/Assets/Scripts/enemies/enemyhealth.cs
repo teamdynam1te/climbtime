@@ -14,6 +14,8 @@ public class enemyhealth : MonoBehaviour
     public int minDrop;
     public int maxDrop;
 
+    Collider2D collider;
+
     Animator anim;
 
     enemymovement move;
@@ -22,7 +24,8 @@ public class enemyhealth : MonoBehaviour
     void Start()
     {
         currenthealth = Enemymaxhealth;
-        spwn = FindObjectOfType<MainSpawner>();
+        spwn = GameObject.FindGameObjectWithTag("SkelSpawner").GetComponent<MainSpawner>();
+        collider = GetComponent<Collider2D>();
         dropAmount = Random.Range(minDrop, maxDrop);
         anim = this.gameObject.GetComponent<Animator>();
         move = this.gameObject.GetComponent<enemymovement>();
@@ -39,8 +42,8 @@ public class enemyhealth : MonoBehaviour
         currenthealth -= damage;
         if (currenthealth <= 0)
         {
-            makeDead();
             spwn.enemyCounter--;
+            makeDead();
         }
     }
 

@@ -19,9 +19,8 @@ public class Chests : MonoBehaviour
         if (collision.tag == "Player")
         {
             gameManager.AddToScore(treasureValue);
-            //audioclip
-            Destroy(gameObject);
             spwner.enemyCounter--;
+            Destroy(gameObject);
         }
     }
 }

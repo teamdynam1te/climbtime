@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float destroyTime;
     public float attackPower = 1f;
+    public AudioClip hitSFX;
+    public float vol = .3f;
     //public enemyhealth enemy;
     public ParticleSystem hitVFX;
     public ParticleSystem breakVFX;
@@ -27,6 +29,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Hit");
             Instantiate(breakVFX, transform.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, vol);
             breakVFX.Play();
             Destroy(gameObject);
         }
@@ -38,6 +41,7 @@ public class Projectile : MonoBehaviour
             en.addDamage(1f);
             Instantiate(hitVFX, transform.position, Quaternion.identity);
             hitVFX.Play();
+            AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, vol);
             Destroy(gameObject);
         }
     }

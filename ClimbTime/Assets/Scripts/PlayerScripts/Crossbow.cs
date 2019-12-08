@@ -7,6 +7,8 @@ public class Crossbow : MonoBehaviour
     public float offset;
     public GameObject shot;
     public Transform shotZone;
+    public AudioClip shotSFX;
+    public float vol = 1f;
     public GameManager gm;
 
     private float timeBetweenShots;
@@ -41,6 +43,7 @@ public class Crossbow : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     Instantiate(shot, shotZone.position, transform.rotation);
+                    AudioSource.PlayClipAtPoint(shotSFX, Camera.main.transform.position, vol);
                     timeBetweenShots = startTimeBetweenShots;
                 }
             }
