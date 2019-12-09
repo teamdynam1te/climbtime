@@ -21,8 +21,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Arena");
         StartCoroutine(WaitForPlayerSpawn(0.1f));
         gm.gameState = GameManager.GameStates.arena;
-    }
-
+    }    
     IEnumerator WaitForPlayerSpawn(float time)
     {
         yield return new WaitForSeconds(time);
@@ -68,6 +67,13 @@ public class SceneLoader : MonoBehaviour
         gm.gameState = GameManager.GameStates.end;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            GameOver();
+        }
+    }
     public void Mountain()
     {
         SceneManager.LoadScene("Mountain");
