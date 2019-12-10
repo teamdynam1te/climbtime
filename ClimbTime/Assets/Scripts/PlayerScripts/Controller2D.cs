@@ -115,14 +115,19 @@ public class Controller2D : MonoBehaviour
 
         if (hit.collider.tag == "Coin")
         {
-            Destroy(hit.collider.gameObject);
-            if (gm != null)
+            Coins coin = hit.collider.gameObject.GetComponent<Coins>();
+
+            if (coin.pickupTimer < 0)
             {
-                AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, vol);
-                gm.AddToScore(coinValue);
+                Destroy(hit.collider.gameObject);
+                if (gm != null)
+                {
+                    AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, vol);
+                    gm.AddToScore(coinValue);
+                }
+                Debug.Log("Coin Hit");
+                return true;
             }
-            Debug.Log("Coin Hit");
-            return true;
         }
         return false;
     }
