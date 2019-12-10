@@ -117,7 +117,7 @@ public class enemymovement : MonoBehaviour
                     anim.SetTrigger("jump");
                     actualTimer = Timer;
                 }
-                if(canmove == true)
+                if(canmove) //if you can move
                 {
                     anim.SetBool("is run", true);
                 Vector3 thispostion = transform.position;
@@ -127,7 +127,7 @@ public class enemymovement : MonoBehaviour
                 velocity.x = direction.x * moveSpeed;
 
                 }
-                else
+                else if (!canmove)
                 {
                     anim.SetBool("is run", false);
                 }
