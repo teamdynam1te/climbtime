@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4586836103283317012}
   - component: {fileID: 4586836103283317013}
   - component: {fileID: 4586836103283317014}
+  - component: {fileID: 8210104244477217749}
   m_Layer: 0
   m_Name: StalagMight
   m_TagString: Untagged
@@ -92,7 +93,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -122,7 +123,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd02d2b05b831a478ecb84690733e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMove: {fileID: 0}
-  plr: {fileID: 0}
-  healthScript: {fileID: 0}
   jumpHeight: 25
+  gm: {fileID: 0}
+--- !u!58 &8210104244477217749
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586836103283317010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.059900608}
+  serializedVersion: 2
+  m_Radius: 0.02009939

@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
     {
         if (gm.gameState == GameManager.GameStates.mountain)
         {           
-            if (canDash == false && gm.dashPotionAmount > 0)
+            if (canDash == false && gm.dashPotionAmount >= 1)
             {
                 dashCooldown -= Time.deltaTime;
 
@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
 
         if (gm.gameState == GameManager.GameStates.mountain)
         {
-            if (Input.GetKey(KeyCode.LeftShift) && canDash)
+            if (Input.GetKey(KeyCode.LeftShift) && canDash && gm.dashPotionAmount > 0)
             {
                 Debug.Log("is dashing");
                 AudioSource.PlayClipAtPoint(dashSFX, Camera.main.transform.position, vol);
