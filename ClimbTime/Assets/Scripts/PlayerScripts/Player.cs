@@ -136,6 +136,7 @@ public class Player : MonoBehaviour
 
             LayerMask mask = LayerMask.GetMask("Obstacles");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
+
             Debug.DrawRay(transform.position, facingDir, Color.red);
 
             if (Input.GetMouseButtonDown(0) && hit && gm.GrappleAmmoAmount > 0)

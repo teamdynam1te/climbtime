@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
     public GameObject plr;
     public GameManager gm;
     public GameObject spawn;
+    public Text scoreHeightText;
 
     private void Awake()
     {
@@ -70,6 +72,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
         StartCoroutine(WaitForScore(0.1f));
+        scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
+        scoreHeightText.text = gm.GetHeightScore().ToString("0" + "M");
         gm.gameState = GameManager.GameStates.end;
     }
 

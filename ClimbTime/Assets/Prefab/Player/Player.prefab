@@ -315,7 +315,7 @@ MonoBehaviour:
   dashCooldownDefault: 1.5
   dashTime: 0.1
   hookSpeed: 5
-  hookDist: 20
+  hookDist: 15
   velocity: {x: 0, y: 0, z: 0}
   crossHair: {fileID: 8089896461449857810}
   crossHairSprite: {fileID: 8089896461449857813}
