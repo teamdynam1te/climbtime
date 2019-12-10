@@ -15,7 +15,7 @@ public class Controller2D : MonoBehaviour
     float verticalRaySpacing;
 
     public AudioClip pickUpSound;
-    public float vol = 1;
+    public float vol;
 
     BoxCollider2D collider;
     GameManager gm;

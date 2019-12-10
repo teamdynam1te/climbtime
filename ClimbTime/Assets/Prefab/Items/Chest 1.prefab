@@ -15,6 +15,8 @@ MonoBehaviour:
   treasureValue: 0
   gameManager: {fileID: 0}
   spwner: {fileID: 0}
+  pickUpSound: {fileID: 8300000, guid: b1c316a8f3b9af446b45dba9a918ed06, type: 3}
+  vol: 0.15
 --- !u!1001 &3307626450680004580
 PrefabInstance:
   m_ObjectHideFlags: 0

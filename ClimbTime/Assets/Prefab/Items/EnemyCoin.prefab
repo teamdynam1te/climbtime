@@ -119,7 +119,7 @@ MonoBehaviour:
   coinValue: 1
   scoreManager: {fileID: 0}
   pickUpSound: {fileID: 8300000, guid: 47d66cd9b7515bf4489a054af776188b, type: 3}
-  vol: 0.3
+  vol: 0.02
 --- !u!95 &8401294360941496859
 Animator:
   serializedVersion: 3
@@ -204,6 +204,8 @@ MonoBehaviour:
     m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
+  pickUpSound: {fileID: 0}
+  vol: 0.02
 --- !u!1 &6106223728699869228
 GameObject:
   m_ObjectHideFlags: 0

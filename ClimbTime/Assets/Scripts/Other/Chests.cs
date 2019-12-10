@@ -7,6 +7,8 @@ public class Chests : MonoBehaviour
     public int treasureValue;
     public GameManager gameManager;
     public MainSpawner spwner;
+    public AudioClip pickUpSound;
+    public float vol;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -19,6 +21,7 @@ public class Chests : MonoBehaviour
         if (collision.tag == "Player")
         {
             gameManager.AddToScore(treasureValue);
+            AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, vol);
             spwner.enemyCounter--;
             Destroy(gameObject);
         }

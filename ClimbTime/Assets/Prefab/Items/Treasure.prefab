@@ -114,7 +114,7 @@ MonoBehaviour:
   treasureValue: 0
   gameManager: {fileID: 0}
   pickUpSound: {fileID: 8300000, guid: 47d66cd9b7515bf4489a054af776188b, type: 3}
-  vol: 1
+  vol: 0.15
 --- !u!1 &2858120541531006172
 GameObject:
   m_ObjectHideFlags: 0

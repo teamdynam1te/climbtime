@@ -21005,8 +21005,8 @@ MonoBehaviour:
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
   PlayerHealth: {fileID: 0}
-  itemPrice: 10
-  itemStock: 150
+  itemPrice: 100
+  itemStock: 50
   canBuy: 0
   anim: {fileID: 282396151}
   itemTitleText: {fileID: 578562890}
@@ -21490,8 +21490,8 @@ MonoBehaviour:
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
   PlayerHealth: {fileID: 0}
-  itemPrice: 20
-  itemStock: 250
+  itemPrice: 50
+  itemStock: 50
   canBuy: 0
   anim: {fileID: 1943570852}
   itemTitleText: {fileID: 1738054705}
@@ -21722,8 +21722,8 @@ MonoBehaviour:
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
   PlayerHealth: {fileID: 0}
-  itemPrice: 50
-  itemStock: 25
+  itemPrice: 25
+  itemStock: 50
   canBuy: 0
   anim: {fileID: 1994745890}
   itemTitleText: {fileID: 34676448}
