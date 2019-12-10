@@ -12,8 +12,12 @@ public class Attacking : MonoBehaviour
     Animator anim;
     public bool isSkeleton = false;
     public Player playerMove;
-    public float knockback = 15f;
+    public float knockback = 3f;
+    public float jumpKnockback = 5f;
     public enemymovement enemyMove;
+    public GameObject coin;
+    public float waitTime = 5;
+
 
 
     void Start()
@@ -32,20 +36,31 @@ public class Attacking : MonoBehaviour
         {
             Debug.Log("HIT: " + collision.gameObject.name);
             DamagePlr();
+            if (gm.GetScore() > 10)
+            {
+                while (gm.GetScore() > 0 && waitTime > 1)
+                {
+                    Instantiate(coin, collision.transform.position, Quaternion.identity);
+                    gm.TakeScore(1);
+                    waitTime--;
+                }
+            }
+            else
+            {
+                while (gm.GetScore() > 0)
+                {
+                    Instantiate(coin, collision.transform.position, Quaternion.identity);
+                    gm.TakeScore(1);
+                }
+            }
         }
     }
 
     public void DamagePlr()
     {
-        if (gm.GetScore() > 10)
-        {
-            gm.TakeScore(10);
-        }
-        else
-        {
-            gm.TakeScore(gm.GetScore());
-        }
-        playerMove.KnockBack(-playerMove.velocity.x * knockback, knockback);
+        
+        playerMove.KnockBack(-playerMove.velocity.x * knockback, jumpKnockback);
+        waitTime = 5;
     }
 
     
@@ -53,6 +68,6 @@ public class Attacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        waitTime -= Time.deltaTime;
     }
 }

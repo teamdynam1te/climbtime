@@ -9,23 +9,15 @@ public class Coins : MonoBehaviour
     public ScoreManager scoreManager;
     public AudioClip pickUpSound;
     public float vol = 1;
+    public float pickupTimer = 0.5f;
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "Player")
-        {
-            AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, vol);
-        }
-    }
-
-    public void AddCoin()
-    {
-        scoreManager.AddToScore(coinValue);
+        pickupTimer -= Time.deltaTime;
     }
 }
 
