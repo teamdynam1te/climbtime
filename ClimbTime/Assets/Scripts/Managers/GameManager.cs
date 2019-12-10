@@ -96,9 +96,9 @@ public class GameManager : MonoBehaviour
 
             case GameStates.end:
 
-                //scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
+                scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
                 //heightScore = player.transform.position.y - initHeight;
-                //scoreHeightText.text = GetHeightScore().ToString("0" + "M");
+                scoreHeightText.text = GetHeightScore().ToString("0" + "M");
                 break;
         }
 

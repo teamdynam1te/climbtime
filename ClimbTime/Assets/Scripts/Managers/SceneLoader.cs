@@ -72,8 +72,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
         StartCoroutine(WaitForScore(0.1f));
-        scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
-        scoreHeightText.text = gm.GetHeightScore().ToString("0" + "M");
+        //scoreHeightText = GameObject.FindGameObjectWithTag("ScoreHeight").GetComponent<Text>();
+        //scoreHeightText.text = gm.GetHeightScore().ToString("0" + "M");
         gm.gameState = GameManager.GameStates.end;
     }
 
