@@ -273,6 +273,13 @@ public class Player : MonoBehaviour
         doJump = false;
     }
 
+    public void KnockBack(float knockbackX, float knockbackY)
+    {
+        velocity.x = knockbackX;
+        velocity.y = knockbackY;
+
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "enemy" && doJump == true)
