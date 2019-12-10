@@ -14,6 +14,9 @@ public class Controller2D : MonoBehaviour
     float horizontalRaySpacing;
     float verticalRaySpacing;
 
+    public AudioClip pickUpSound;
+    public float vol = 1;
+
     BoxCollider2D collider;
     GameManager gm;
     RaycastOrigins raycastOrigins;
@@ -115,6 +118,7 @@ public class Controller2D : MonoBehaviour
             Destroy(hit.collider.gameObject);
             if (gm != null)
             {
+                AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position, vol);
                 gm.AddToScore(coinValue);
             }
             Debug.Log("Coin Hit");
