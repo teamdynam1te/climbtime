@@ -21,6 +21,7 @@ public class spidertrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            
             enemyscript.canmove = true;
         }
     }
