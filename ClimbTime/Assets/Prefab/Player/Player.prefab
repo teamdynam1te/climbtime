@@ -152,6 +152,36 @@ Transform:
   m_Father: {fileID: 537678936}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1284776765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1284776766}
+  m_Layer: 8
+  m_Name: JumpSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1284776766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284776765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8089896460577548021}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8089896460577548015
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +220,7 @@ Transform:
   m_Children:
   - {fileID: 8089896461449857810}
   - {fileID: 537678936}
+  - {fileID: 1284776766}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -295,6 +326,9 @@ MonoBehaviour:
   jump: {fileID: -6437880513324469706}
   dashSFX: {fileID: 8300000, guid: f9d1775396dfccb419d0b32cd88e7c9c, type: 3}
   vol: 0.1
+  jumpParticles: {fileID: 4100397208376865095, guid: 27442710fb6a0e845ae864feb664c0e6,
+    type: 3}
+  jumpSpawnPoint: {fileID: 1284776766}
 --- !u!50 &7186729534659376045
 Rigidbody2D:
   serializedVersion: 4
@@ -314,7 +348,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 6
 --- !u!114 &7182392968606685800
 MonoBehaviour:

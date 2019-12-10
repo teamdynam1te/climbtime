@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
     public AudioSource jump;
     public AudioClip dashSFX;
     public float vol = 1f;
+    public GameObject jumpParticles;
+    public Transform jumpSpawnPoint;
 
     //enum stateCheck { }
 
@@ -89,7 +91,6 @@ public class Player : MonoBehaviour
         {
             doHop = true;
         }
-
         if (gm.gameState == GameManager.GameStates.mountain)
         {
             crosshair.SetActive(true);
@@ -109,6 +110,9 @@ public class Player : MonoBehaviour
         {
             crossbow.SetActive(false);
         }
+
+        
+
     }
 
     public void RemoveCrossbow()
@@ -270,6 +274,8 @@ public class Player : MonoBehaviour
     public void Jump(float jumpVelocity)
     {
         velocity.y = jumpVelocity;
+
+        Instantiate(jumpParticles, jumpSpawnPoint.position, Quaternion.identity);
         doJump = false;
     }
 
