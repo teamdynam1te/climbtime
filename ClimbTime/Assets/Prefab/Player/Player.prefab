@@ -99,9 +99,9 @@ MonoBehaviour:
   shot: {fileID: 4413496649617815074, guid: 257727ae899341d4da041d7a864a39ca, type: 3}
   shotZone: {fileID: 609735119}
   shotSFX: {fileID: 8300000, guid: 6d12230991fffe64a91f619035dac6ce, type: 3}
-  vol: 1
+  vol: 0.15
   gm: {fileID: 0}
-  startTimeBetweenShots: 1
+  startTimeBetweenShots: 0.8
   player: {fileID: 8089896460577548016}
 --- !u!95 &7161229256047507674
 Animator:
@@ -260,7 +260,7 @@ MonoBehaviour:
   horizontalRayCount: 8
   verticalRayCount: 8
   pickUpSound: {fileID: 8300000, guid: 47d66cd9b7515bf4489a054af776188b, type: 3}
-  vol: 1
+  vol: 0.02
 --- !u!114 &8089896460577548016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   jump: {fileID: -6437880513324469706}
   dashSFX: {fileID: 8300000, guid: f9d1775396dfccb419d0b32cd88e7c9c, type: 3}
-  vol: 1
+  vol: 0.1
 --- !u!50 &7186729534659376045
 Rigidbody2D:
   serializedVersion: 4
@@ -343,7 +343,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 31875ca44edaa0d4db28a94f5933766f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.05
   m_Pitch: 0.5
   Loop: 0
   Mute: 0

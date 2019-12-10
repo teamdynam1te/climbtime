@@ -100,7 +100,7 @@ MonoBehaviour:
   destroyTime: 1.5
   attackPower: 1
   hitSFX: {fileID: 8300000, guid: 2ef3d617467f7de4f985236e69e3b0ca, type: 3}
-  vol: 1
+  vol: 0.15
   hitVFX: {fileID: 3827004105536436745, guid: 5b51a35f4007dee459aa68aab5128648, type: 3}
   breakVFX: {fileID: 3827004105536436745, guid: 4168d55f375d40046834a78f77432e1b,
     type: 3}
