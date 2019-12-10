@@ -37,6 +37,11 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    IEnumerator WaitForScore(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
     public void ArenaEnd()
     {
         SceneManager.LoadScene("Shopping");
@@ -64,6 +69,7 @@ public class SceneLoader : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+        StartCoroutine(WaitForScore(0.1f));
         gm.gameState = GameManager.GameStates.end;
     }
 
