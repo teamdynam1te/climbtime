@@ -77,10 +77,11 @@ MonoBehaviour:
   gm: {fileID: 0}
   isSkeleton: 1
   playerMove: {fileID: 0}
-  knockback: 15
-  jumpKnockback: 5
+  knockback: 5
+  jumpKnockback: 15
   enemyMove: {fileID: 0}
   coin: {fileID: 5958480507511857468, guid: 238f1d100b28ecd438d73b204212d97a, type: 3}
+  waitTime: 5
 --- !u!1 &1399746093691422988
 GameObject:
   m_ObjectHideFlags: 0
