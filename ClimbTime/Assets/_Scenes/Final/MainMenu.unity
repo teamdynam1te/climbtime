@@ -3862,7 +3862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1566042765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3913,7 +3913,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Test Build v0.85
+  m_Text: 
 --- !u!222 &1566042767
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4696,6 +4696,7 @@ MonoBehaviour:
   plr: {fileID: 8089896460577548015, guid: 522db23fb6c687e48a7ade7f44694d70, type: 3}
   gm: {fileID: 1974939542}
   spawn: {fileID: 0}
+  scoreHeightText: {fileID: 0}
 --- !u!1001 &2029200908
 PrefabInstance:
   m_ObjectHideFlags: 0
