@@ -74,6 +74,14 @@ MonoBehaviour:
   plrH: {fileID: 0}
   damage: 0
   canDamagePlayer: 0
+  gm: {fileID: 0}
+  isSkeleton: 0
+  playerMove: {fileID: 0}
+  knockback: 3
+  jumpKnockback: 5
+  enemyMove: {fileID: 0}
+  coin: {fileID: 0}
+  waitTime: 5
 --- !u!1 &1162865978
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +94,7 @@ GameObject:
   - component: {fileID: 1162865980}
   - component: {fileID: 8905722564199954501}
   - component: {fileID: 786696027}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: spidertrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,6 +299,8 @@ MonoBehaviour:
     m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
+  pickUpSound: {fileID: 0}
+  vol: 0
 --- !u!114 &5904878772073567934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +342,7 @@ MonoBehaviour:
   Enemymaxhealth: 1
   coinDrop: {fileID: 5958480507511857468, guid: 238f1d100b28ecd438d73b204212d97a,
     type: 3}
+  spwn: {fileID: 0}
   dropAmount: 0
   minDrop: 3
   maxDrop: 10
