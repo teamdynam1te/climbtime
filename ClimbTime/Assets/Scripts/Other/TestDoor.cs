@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class TestDoor : MonoBehaviour
 {
-    public SceneLoader scene;
+    public GameManager gm;
 
     void Start()
     {
-        scene = FindObjectOfType<SceneLoader>().GetComponent<SceneLoader>();
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            scene.MainMenu();
+            gm.scene.GameOver();
         }
     }
 }
