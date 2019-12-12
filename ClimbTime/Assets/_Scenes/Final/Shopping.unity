@@ -21020,7 +21020,7 @@ MonoBehaviour:
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
   PlayerHealth: {fileID: 0}
-  itemPrice: 100
+  itemPrice: 50
   itemStock: 50
   canBuy: 0
   anim: {fileID: 282396151}
@@ -21459,7 +21459,7 @@ MonoBehaviour:
   scoreScript: {fileID: 0}
   GameManager: {fileID: 0}
   PlayerHealth: {fileID: 0}
-  itemPrice: 50
+  itemPrice: 25
   itemStock: 50
   canBuy: 0
   anim: {fileID: 1943570852}
