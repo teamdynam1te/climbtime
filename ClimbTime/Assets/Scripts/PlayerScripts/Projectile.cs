@@ -34,7 +34,18 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "Hound")
+        {
+            WolfScript en = other.gameObject.GetComponent<WolfScript>();
+            Debug.Log("Enemy Hit");
+            en.addDamage(1f);
+            Destroy(gameObject);
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+            hitVFX.Play();
+            AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, vol);
+        }
+
+        if (other.gameObject.tag == "enemy")
         {
             enemyhealth en = other.gameObject.GetComponent<enemyhealth>();
             Debug.Log("Enemy Hit");

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyhealth : MonoBehaviour
+public class WolfScript : MonoBehaviour
 {
     public float Enemymaxhealth;
 
     float currenthealth;
     public GameObject coinDrop;
-    public MainSpawner spwn;
+    public MainSpawner spwner;
 
     public int dropAmount;
     public int minDrop;
@@ -24,11 +24,9 @@ public class enemyhealth : MonoBehaviour
     void Start()
     {
         currenthealth = Enemymaxhealth;
-        spwn = GameObject.FindGameObjectWithTag("SkelSpawner").GetComponent<MainSpawner>();
+        spwner = GameObject.FindGameObjectWithTag("HnDSpawn").GetComponent<MainSpawner>();
         collider = GetComponent<Collider2D>();
         dropAmount = Random.Range(minDrop, maxDrop);
-        anim = this.gameObject.GetComponent<Animator>();
-        move = this.gameObject.GetComponent<enemymovement>();
     }
 
     public void addDamage(float damage)
@@ -36,21 +34,18 @@ public class enemyhealth : MonoBehaviour
         currenthealth -= damage;
         if (currenthealth <= 0)
         {
-            spwn.enemyCounter--;
+            spwner.enemyCounter--;
             makeDead();
         }
     }
 
     void makeDead()
     {
-       while (dropAmount > 0)
+        while (dropAmount > 0)
         {
-            DropCoins(); 
+            DropCoins();
         }
-        anim.SetTrigger("Die");
-        move.moveSpeed  = 0f;
-
-        Destroy(gameObject, 1f);
+        Destroy(gameObject);
     }
 
     public void DropCoins()
@@ -59,3 +54,4 @@ public class enemyhealth : MonoBehaviour
         dropAmount--;
     }
 }
+

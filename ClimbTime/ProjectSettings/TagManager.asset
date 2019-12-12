@@ -20,6 +20,9 @@ TagManager:
   - ScoreTimer
   - TreasureSpawner
   - SkelSpawner
+  - HoundSpawner
+  - HnDSpawn
+  - Hound
   layers:
   - Default
   - TransparentFX

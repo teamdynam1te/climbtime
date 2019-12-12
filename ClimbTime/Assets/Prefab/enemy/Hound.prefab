@@ -179,11 +179,11 @@ GameObject:
   - component: {fileID: -3922301518603461394}
   - component: {fileID: 769000740327457655}
   - component: {fileID: 5904878772073567934}
-  - component: {fileID: 6443119656226072284}
   - component: {fileID: 13504384}
+  - component: {fileID: 4791675444482362903}
   m_Layer: 13
-  m_Name: spider
-  m_TagString: enemy
+  m_Name: Hound
+  m_TagString: Hound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,25 +327,6 @@ MonoBehaviour:
   MoveRight: 0
   canmove: 0
   batGravity: 0
---- !u!114 &6443119656226072284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443777718924498027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9802e1da9e0318a4486d3d8ba4193d0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemymaxhealth: 1
-  coinDrop: {fileID: 5958480507511857468, guid: 238f1d100b28ecd438d73b204212d97a,
-    type: 3}
-  spwn: {fileID: 0}
-  dropAmount: 0
-  minDrop: 3
-  maxDrop: 10
 --- !u!95 &13504384
 Animator:
   serializedVersion: 3
@@ -365,3 +346,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4791675444482362903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443777718924498027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1e4a1c477ce4b4fb668e8f8319ecd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemymaxhealth: 1
+  coinDrop: {fileID: 5958480507511857468, guid: 238f1d100b28ecd438d73b204212d97a,
+    type: 3}
+  spwner: {fileID: 0}
+  dropAmount: 0
+  minDrop: 5
+  maxDrop: 12
