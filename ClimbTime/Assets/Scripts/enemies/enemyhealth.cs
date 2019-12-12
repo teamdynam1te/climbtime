@@ -13,7 +13,8 @@ public class enemyhealth : MonoBehaviour
     public int dropAmount;
     public int minDrop;
     public int maxDrop;
-
+    public bool isHound;
+    public GameObject houndParticle;
     Collider2D collider;
 
     Animator anim;
@@ -29,6 +30,7 @@ public class enemyhealth : MonoBehaviour
         dropAmount = Random.Range(minDrop, maxDrop);
         anim = this.gameObject.GetComponent<Animator>();
         move = this.gameObject.GetComponent<enemymovement>();
+        
     }
 
     public void addDamage(float damage)
@@ -49,7 +51,10 @@ public class enemyhealth : MonoBehaviour
         }
         anim.SetTrigger("Die");
         move.moveSpeed  = 0f;
-
+        if (isHound)
+        {
+            Instantiate(houndParticle, this.transform.position, Quaternion.identity);
+        }
         Destroy(gameObject, 1f);
     }
 
