@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     bool doHop = false;
 
     public Transform crossHair;
+    public LineRenderer lineRenderer;
     public SpriteRenderer crossHairSprite;
     private Vector2 playerPos;
     public Transform shootPoint;
@@ -93,6 +94,7 @@ public class Player : MonoBehaviour
         }
         if (gm.gameState == GameManager.GameStates.mountain)
         {
+            lineRenderer.enabled = false;
             crosshair.SetActive(true);
             crossbow.SetActive(false);
             SetCrosshairPosition();
@@ -137,10 +139,16 @@ public class Player : MonoBehaviour
             LayerMask mask = LayerMask.GetMask("Obstacles");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDir, hookDist, mask);
 
+            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(1, hit.point);
+
             Debug.DrawRay(transform.position, facingDir, Color.red);
 
             if (Input.GetMouseButtonDown(0) && hit && gm.GrappleAmmoAmount > 0)
             {
+                lineRenderer.enabled = true;
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, hit.point);
                 Debug.Log("Button Down");
                 hookDirOnClick = facingDir;
                 gm.GrappleAmmoAmount -= 1;
@@ -148,6 +156,7 @@ public class Player : MonoBehaviour
             }
             if (Input.GetMouseButtonUp(0))
             {
+                lineRenderer.enabled = false;
                 moveState = movementStates.regMovement;
             }
         }

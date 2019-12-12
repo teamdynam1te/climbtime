@@ -14,7 +14,7 @@ public class SaveGame : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        scoreTimerThing = GameObject.FindGameObjectWithTag("ScoreTimer").GetComponent<ScoreTimerThing>();
+        //scoreTimerThing = GameObject.FindGameObjectWithTag("ScoreTimer").GetComponent<ScoreTimerThing>();
         HighestScore = PlayerPrefs.GetFloat("HighScore", 0);
         BestTime = PlayerPrefs.GetInt("BestTime", 300);
         if (gm.heightScore >= HighestScore ) // High score system
